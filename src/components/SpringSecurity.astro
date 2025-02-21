@@ -1,0 +1,101 @@
+<style>
+    article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container {
+        border: 5px;
+        border-style: solid;
+        border-radius: 10px;
+        border-color: yellow;
+        padding: 3%;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+    }
+    .container-text-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+    }
+    a {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+        border: solid;
+        border-radius: 20px;
+    }
+    .images-container {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+</style>
+
+<article>
+    <h2>My Spring Security 6</h2>
+    <div class="container">
+        <div class="container-text-image">
+            <div class="text-container">
+                <p>This is my project about a Spring Security configuration.</p>
+                <ul>
+                    <li>Java 21</li>
+                    <li>Spring 3.4.7</li>
+                    <li>PostgreSQL 17</li>
+                </ul>
+
+                <h3>Copy Register JSON</h3>
+                <textarea id="jsonTextRegister" rows="6" cols="30" readonly>
+                    {
+                        `{"username":"user007", "password":"pass1234", "email":"user007@gmail.com" }`
+                    }
+                </textarea>
+                <button id="copyButtonRegister">Copy</button>
+
+                <h3>Copy Login JSON</h3>
+                <textarea id="jsonTextLogin" rows="5" cols="30" readonly>
+                    {`{"username":"user007", "password":"pass1234"}`}
+                </textarea>
+                <button id="copyButtonLogin">Copy</button>
+            </div>
+
+            <div class="images-container">
+                <img
+                    class="logo"
+                    src="/spring-security-logo.png"
+                    alt="Spring Security Logo"
+                />
+                <img
+                    class="logo"
+                    style="width: 60px;"
+                    src="/jwt-logo.png"
+                    alt="JWT Logo"
+                />
+                <img
+                    class="logo"
+                    style="width: 130px;"
+                    src="/postgresql-logo.png"
+                    alt="PostgreSQL Logo"
+                />
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <a
+                href="https://github.com/gjohnn/myNewSpringSecurity"
+                target="_blank">REPOSITORY LINK</a>
+        </div>
+    </div>
+</article>

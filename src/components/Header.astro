@@ -1,9 +1,51 @@
-<header class="fixed top-0 w-full bg-blue-500 text-white p-4 shadow-lg">
-  <nav class="flex justify-between items-center max-w-4xl mx-auto">
-    <ul class="flex gap-4">
-      <li><a href="/" class="hover:underline">Home</a></li>
-      <li><a href="/about" class="hover:underline">About</a></li>
-      <li><a href="/contact" class="hover:underline">Contact</a></li>
+---
+// src/components/Header.astro
+---
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    color: yellow;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  ul {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: yellow;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: white;
+  }
+</style>
+
+<header>
+  <nav>
+    <ul>
+      <li><a style="font-weight: bold;" href="/">Home</a></li>
+      <li><a style="font-weight: bold;" href="/projects">Projects</a></li>
+      <li><a style="font-weight: bold;" href="/contact">Contact</a></li>
     </ul>
   </nav>
 </header>

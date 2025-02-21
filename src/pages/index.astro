@@ -1,8 +1,335 @@
 ---
+import SpringSecurity from "../components/SpringSecurity.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
+<style>
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+</style>
+
 <MainLayout>
-  <h2 class="text-3xl font-bold">Welcome to my Portfolio!!!</h2>
-  <p></p>
+  <main
+    style="display:flex ;justify-content: center; align-items: center; flex-direction: column; margin-left:100px;margin-right:100px;"
+  >
+    <section class="intro">
+      <h1>Welcome to my Portfolio!</h1>
+      <p>
+        Hi, I'm <strong>Juan Guerrero</strong>, a passionate backend developer
+        with a strong focus on creating robust, scalable, and efficient
+        applications. I specialize in <strong>backend development</strong>,
+        leveraging modern technologies such as <strong
+          >Java, Spring Boot, Laravel, Docker</strong
+        >, and <strong>Kubernetes</strong> to build high-performance systems.
+      </p>
+    </section>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        With a deep understanding of server-side technologies, I design and
+        implement solutions that deliver exceptional user experiences. I am
+        constantly evolving and learning, driven by the need to solve complex
+        problems and create software that matters.
+      </p>
+      <p>
+        In addition to my backend expertise, I work with a range of tools such
+        as <strong>Neovim</strong>, <strong>DBeaver</strong>, <strong
+          >PostgreSQL</strong
+        >, and <strong>Spring Security</strong> to ensure that every project I take
+        on is well-architected and secure. I also work on microservices architectures,
+        web scrapers, job schedulers, and real-time notifications.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>My Skills</h2>
+      <ul class="skills-list">
+        <li style="margin-right: 60px;">
+          <strong>Backend Development</strong>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Java (Spring Boot)</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/spring.svg"
+              alt="Spring Boot Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>PHP (Laravel)</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/laravel.svg"
+              alt="Laravel Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Node.js</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/node-dot-js.svg"
+              alt="Node.js Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+        </li>
+        <li style="margin-right: 60px;">
+          <strong>Database Management</strong>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>PostgreSQL</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/postgresql.svg"
+              alt="PostgreSQL Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>MySQL</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg"
+              alt="MySQL Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>MongoDB</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mongodb.svg"
+              alt="MongoDB Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+        </li>
+        <li style="margin-right: 60px;">
+          <strong>DevOps & Cloud</strong>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Docker</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/docker.svg"
+              alt="Docker Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Kubernetes</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/kubernetes.svg"
+              alt="Kubernetes Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>CI/CD</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/ci-circle.svg"
+              alt="CI/CD Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>AWS</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/amazonaws.svg"
+              alt="AWS Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Azure</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/microsoftazure.svg"
+              alt="Azure Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+        </li>
+        <li style="margin-right: 60px;">
+          <strong>Version Control</strong>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Git</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/git.svg"
+              alt="Git Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>GitHub</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg"
+              alt="GitHub Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>GitLab</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/gitlab.svg"
+              alt="GitLab Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+        </li>
+        <li style="margin-right: 60px;">
+          <strong>Tools</strong>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Neovim</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/neovim.svg"
+              alt="Neovim Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Wezterm</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/wezterm.svg"
+              alt="Wezterm Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>DBeaver</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/dbeaver.svg"
+              alt="DBeaver Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Visual Studio Code</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/visualstudiocode.svg"
+              alt="Visual Studio Code Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+        </li>
+        <li style="margin-right: 60px;">
+          <strong>Security</strong>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>Spring Security</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/springsecurity.svg"
+              alt="Spring Security Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>OAuth2</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/oauth.svg"
+              alt="OAuth2 Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>JWT</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/jsonwebtokens.svg"
+              alt="JWT Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>My Spring Security</strong>: Created a security base backend
+          for Java Spring with PostgreSQL. You can clone it and build your app
+          secure!
+        </li>
+        <br />
+        <li>
+          <strong>Alkilate</strong>: A personal project where I used Laravel and
+          React Native to build a user-friendly, scalable platform for renting.
+        </li>
+        <br />
+        <li>
+          <strong>DNA Mutants</strong>: An app created in university for a final
+          exam. It handles matrices and determines if the DNA belongs to a
+          mutant or a human.
+        </li>
+      </ul>
+    </section>
+
+    <section class="education">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <strong>Bachelor’s in Computer Science</strong> – [University Name]
+        </li>
+        <li>
+          <strong>Certifications</strong>: Java Spring Developer, Kubernetes
+          Certified Developer
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>
+        Feel free to reach out for collaborations, job opportunities, or just a
+        chat about technology. I'm always looking for exciting new projects.
+      </p>
+      <ul>
+        <li>
+          <strong>Email</strong>: <a href="mailto:youremail@example.com"
+            >youremail@example.com</a
+          >
+        </li>
+        <li>
+          <strong>LinkedIn</strong>: <a
+            href="https://www.linkedin.com/in/juanguerrero"
+            target="_blank">Juan Guerrero LinkedIn</a
+          >
+        </li>
+        <li>
+          <strong>GitHub</strong>: <a
+            href="https://github.com/juanguerrero"
+            target="_blank">Juan Guerrero GitHub</a
+          >
+        </li>
+      </ul>
+    </section>
+  </main>
 </MainLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Obtener los botones y las áreas de texto
+    const copyButtonRegister = document.getElementById("copyButtonRegister");
+    const jsonTextRegister = document.getElementById("jsonTextRegister");
+
+    const copyButtonLogin = document.getElementById("copyButtonLogin");
+    const jsonTextLogin = document.getElementById("jsonTextLogin");
+
+    // Función para copiar texto al portapapeles
+    function copyJson(textarea) {
+      textarea.select();
+      textarea.setSelectionRange(0, 99999); // Para dispositivos móviles
+      document.execCommand("copy");
+    }
+
+    // Asignar eventos a los botones
+    copyButtonRegister.addEventListener("click", () => {
+      copyJson(jsonTextRegister);
+    });
+
+    copyButtonLogin.addEventListener("click", () => {
+      copyJson(jsonTextLogin);
+    });
+  });
+</script>
