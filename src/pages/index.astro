@@ -1,9 +1,16 @@
 ---
-import SpringSecurity from "../components/SpringSecurity.astro";
+import ContactComponent from "../components/Myself-Info/ContactComponent.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import EducationComponent from "../components/Myself-Info//EducationComponent.astro";
 ---
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   section {
     display: flex;
     justify-content: center;
@@ -11,92 +18,154 @@ import MainLayout from "../layouts/MainLayout.astro";
     flex-direction: column;
   }
 
-  .skills-list {
+  .skills {
     display: flex;
-    flex-wrap: wrap;
   }
 
-  .contact {
-    text-align: center;
-    color: white;
-    padding: 20px;
+  .skills-list {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .skills-list > li {
+    padding: 5px;
+    border: solid yellow 2px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .contact h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  .contact p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-  }
-  .contact ul {
-    list-style-type: none;
+
+  ul {
     padding: 0;
   }
-  .contact li {
-    margin: 10px 0;
+
+  li {
+    list-style: none;
   }
 
-  .contact a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: black;
+  h2 {
     color: yellow;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
   }
 
-  .contact a:hover {
-    background-color: yellow;
-    color: black;
+  strong {
+    font-size: 20px;
   }
 
-  .contact .icon {
-    margin-right: 10px;
+  .intro {
+    width: auto;
+  }
+
+  .intro > p {
+    width: auto;
+    text-align: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: wrap;
+    width: 100%;
+    margin: 0; /* Center the container and add automatic margin */
+    padding: 0; /* Add padding similar to Bootstrap's container */
+  }
+
+  html {
+    font-size: 100%; /* Establece un tamaño de fuente base */
+  }
+
+  body {
+    font-size: 1rem; /* 1rem es igual al tamaño de fuente base */
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Usa rem para relleno */
+  }
+
+  h1 {
+    font-size: 2rem; /* Usa rem para títulos */
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    color: yellow;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  strong {
+    font-size: 1.25rem; /* Usa rem para texto en negrita */
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 1rem; /* Usa rem para márgenes */
+  }
+
+  .skills-list > li {
+    padding: 0.5rem; /* Usa rem para relleno */
+    border: solid yellow 2px;
+    border-radius: 10px;
   }
 </style>
 
 <MainLayout>
-  <main
-    style="display:flex ;justify-content: center; align-items: center; flex-direction: column; margin-left:20px;margin-right:20px;"
-  >
+  <main>
     <section class="intro">
       <h1>Welcome to my Portfolio!</h1>
-      <p>
+      <p style="">
         Hi, I'm <strong>Juan Guerrero</strong>, a passionate backend developer
         with a strong focus on creating robust, scalable, and efficient
         applications. I specialize in <strong>backend development</strong>,
         leveraging modern technologies such as <strong
-          >Java, Spring Boot, Laravel, Docker</strong
-        >, and <strong>Kubernetes</strong> to build high-performance systems.
+          >Java, Spring Boot and Laravel</strong
+        >, and <strong>Docker</strong> to build high-performance systems.
       </p>
     </section>
 
     <section class="about">
       <h2>About Me</h2>
       <p>
-        With a deep understanding of server-side technologies, I design and
-        implement solutions that deliver exceptional user experiences. I am
-        constantly evolving and learning, driven by the need to solve complex
-        problems and create software that matters.
+        I specialize in server-side technologies, designing and implementing
+        solutions that enhance user experiences. Driven by a passion for solving
+        complex problems, I continuously learn and evolve to create impactful
+        software.
       </p>
       <p>
-        In addition to my backend expertise, I work with a range of tools such
-        as <strong>Neovim</strong>, <strong>DBeaver</strong>, <strong
-          >PostgreSQL</strong
-        >, and <strong>Spring Security</strong> to ensure that every project I take
-        on is well-architected and secure. I also work on microservices architectures,
-        web scrapers, job schedulers, and real-time notifications.
+        My expertise includes backend development, and I utilize tools such as <strong
+          >Neovim</strong
+        >, <strong>DBeaver</strong>, <strong>PostgreSQL</strong>, and <strong
+          >Spring Security</strong
+        > to ensure well-architected and secure projects. Additionally, I work on
+        microservices architectures, web scrapers, job schedulers, and real-time
+        notifications.
       </p>
     </section>
 
     <section class="skills">
       <h2>My Skills</h2>
       <ul class="skills-list">
-        <li style="margin-right: 60px;">
+        <li>
           <div style="margin-bottom: 10px;">
             <strong>Backend Development</strong>
           </div>
@@ -105,6 +174,14 @@ import MainLayout from "../layouts/MainLayout.astro";
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/spring.svg"
               alt="Spring Boot Logo"
+              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+            />
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+            <span>C# .NET8/9</span>
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@5.24.0/icons/csharp.svg"
+              alt="Csharp Logo"
               style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
             />
           </div>
@@ -119,14 +196,14 @@ import MainLayout from "../layouts/MainLayout.astro";
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <span>Node.js</span>
             <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/node-dot-js.svg"
+              src="https://cdn.jsdelivr.net/npm/simple-icons@5.24.0/icons/nodedotjs.svg"
               alt="Node.js Logo"
               style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
             />
           </div>
         </li>
 
-        <li style="margin-right: 60px;">
+        <li>
           <div style="margin-bottom: 10px;">
             <strong>Database Management</strong>
           </div>
@@ -146,17 +223,9 @@ import MainLayout from "../layouts/MainLayout.astro";
               style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
-            <span>MongoDB</span>
-            <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mongodb.svg"
-              alt="MongoDB Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
-            />
-          </div>
         </li>
 
-        <li style="margin-right: 60px;">
+        <li>
           <div style="margin-bottom: 10px;">
             <strong>DevOps & Cloud</strong>
           </div>
@@ -177,8 +246,8 @@ import MainLayout from "../layouts/MainLayout.astro";
             />
           </div>
         </li>
-
-        <li style="margin-right: 60px;">
+        <!-- VERSION CONTROL -->
+        <li>
           <div style="margin-bottom: 10px;">
             <strong>Version Control</strong>
           </div>
@@ -207,10 +276,11 @@ import MainLayout from "../layouts/MainLayout.astro";
             />
           </div>
         </li>
+        <!-- TOOLS -->
 
-        <li style="margin-right: 60px;">
+        <li>
           <div style="margin-bottom: 10px;">
-            <strong>Tools</strong>
+            <strong>Tools I use for work </strong>
           </div>
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <span>Neovim</span>
@@ -246,7 +316,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           </div>
         </li>
 
-        <li style="margin-right: 60px;">
+        <li>
           <div style="margin-bottom: 10px;">
             <strong>Security</strong>
           </div>
@@ -261,7 +331,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <span>OAuth2</span>
             <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/oauth.svg"
+              src="https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png"
               alt="OAuth2 Logo"
               style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
             />
@@ -277,92 +347,6 @@ import MainLayout from "../layouts/MainLayout.astro";
         </li>
       </ul>
     </section>
-
-    <section class="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <strong>My Spring Security</strong>: Created a security base backend
-          for Java Spring with PostgreSQL. You can clone it and build your app
-          secure!
-        </li>
-        <br />
-        <li>
-          <strong>Alkilate</strong>: A personal project where I used Laravel and
-          React Native to build a user-friendly, scalable platform for renting.
-        </li>
-        <br />
-        <li>
-          <strong>DNA Mutants</strong>: An app created in university for a final
-          exam. It handles matrices and determines if the DNA belongs to a
-          mutant or a human.
-        </li>
-      </ul>
-    </section>
-
-    <section class="education">
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <strong>Bachelor’s in Computer Science</strong> – [University Name]
-        </li>
-        <li>
-          <strong>Certifications</strong>: Java Spring Developer, Kubernetes
-          Certified Developer
-        </li>
-      </ul>
-    </section>
-
-    <section class="contact">
-      <h2>Contact</h2>
-      <p>
-        Feel free to reach out for collaborations, job opportunities, or just a
-        chat about technology. I'm always looking for exciting new projects.
-      </p>
-      <ul>
-        <li>
-          <a href="mailto:juansgb316@example.com">
-            <strong><span class="icon">📧</span> Email</strong>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/juanguerrero" target="_blank">
-            <strong><span class="icon">🔗</span> LinkedIn</strong>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/juanguerrero" target="_blank">
-            <strong><span class="icon">🐙</span> GitHub</strong>
-          </a>
-        </li>
-      </ul>
-    </section>
+    <EducationComponent />
   </main>
 </MainLayout>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Obtener los botones y las áreas de texto
-    const copyButtonRegister = document.getElementById("copyButtonRegister");
-    const jsonTextRegister = document.getElementById("jsonTextRegister");
-
-    const copyButtonLogin = document.getElementById("copyButtonLogin");
-    const jsonTextLogin = document.getElementById("jsonTextLogin");
-
-    // Función para copiar texto al portapapeles
-    function copyJson(textarea) {
-      textarea.select();
-      textarea.setSelectionRange(0, 99999); // Para dispositivos móviles
-      document.execCommand("copy");
-    }
-
-    // Asignar eventos a los botones
-    copyButtonRegister.addEventListener("click", () => {
-      copyJson(jsonTextRegister);
-    });
-
-    copyButtonLogin.addEventListener("click", () => {
-      copyJson(jsonTextLogin);
-    });
-  });
-</script>
