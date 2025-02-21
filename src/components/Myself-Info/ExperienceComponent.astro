@@ -1,0 +1,89 @@
+---
+// src/components/Experience.astro
+---
+
+<style>
+  .experience {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto; /* Center the container and add automatic margin */
+    padding: 0 15px; /* Add padding similar to Bootstrap's container */
+  }
+  .experience ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .experience li {
+    margin-bottom: 20px;
+  }
+
+  .experience h3 {
+    color: yellow;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .experience p {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+</style>
+
+<section class="experience">
+  <h2>Experience</h2>
+  <ul>
+    <li>
+      <h3>Penaqua - “Estoy Aca” App (PHP, Laravel 11, MySQL)</h3>
+      <p><strong>Backend Developer</strong></p>
+      <p>2023 – Current</p>
+      <ul>
+        <li>
+          Responsible for implementing and optimizing geolocation features to
+          connect users efficiently.
+        </li>
+        <li>
+          Developed precise and optimized queries based on user preferences
+          (time, category, subcategories, place) to enhance app functionality.
+        </li>
+        <li>Deep focus on containerization.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Alquileres Costeros (C# NET 8, WPF)</h3>
+      <p><strong>Personal micro-entrepreneurial project</strong></p>
+      <p>2024 – Current</p>
+      <ul>
+        <li>
+          Developed a desktop application to manage property rentals with a
+          one-time payment model.
+        </li>
+        <li>
+          Designed and implemented features for rental tracking, customer
+          management, financial reporting, and an interactive calendar.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h3>IT Hotbed – Quinto Impacto (Java 17, Spring Boot, MySQL)</h3>
+      <p><strong>Backend Developer</strong></p>
+      <p>2024 – Current</p>
+      <ul>
+        <li>
+          Designed and implemented RESTful APIs for seamless backend
+          communication.
+        </li>
+        <li>Optimized database queries and enhanced system performance.</li>
+        <li>
+          Worked with dependency injection, security, and microservices
+          architecture.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
