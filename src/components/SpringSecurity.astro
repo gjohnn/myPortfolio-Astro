@@ -4,27 +4,30 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        padding: 20px;
     }
     .container {
-        border: 5px;
-        border-style: solid;
+        border: 5px solid yellow;
         border-radius: 10px;
-        border-color: yellow;
         padding: 3%;
-        align-items: center;
-        flex-direction: column;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        width: 100%;
+        max-width: 600px;
     }
     .container-text-image {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     .logo {
         width: 100px;
         height: 100px;
         object-fit: contain;
+        margin: 10px 0;
     }
     a {
         display: flex;
@@ -34,14 +37,41 @@
         text-decoration: none;
         color: black;
         padding: 10px;
-        border: solid;
+        border: 1px solid black;
         border-radius: 20px;
+        margin-top: 20px;
     }
     .images-container {
         display: flex;
-        flex-direction: column;
-        justify-items: center;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+    }
+    textarea {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+        .container-text-image {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .text-container {
+            width: 50%;
+        }
+        .images-container {
+            width: 50%;
+            justify-content: center;
+        }
+        .logo {
+            margin: 10px;
+        }
     }
 </style>
 
@@ -58,16 +88,17 @@
                 </ul>
 
                 <h3>Copy Register JSON</h3>
-                <textarea id="jsonTextRegister" rows="6" cols="30" readonly>
-                    {
-                        `{"username":"user007", "password":"pass1234", "email":"user007@gmail.com" }`
-                    }
+                <textarea id="jsonTextRegister" rows="6" readonly>
+                    {`{"username":"user007",
+                        "password":"pass1234",
+                        "email":"user007@gmail.com"}`}
                 </textarea>
                 <button id="copyButtonRegister">Copy</button>
 
                 <h3>Copy Login JSON</h3>
-                <textarea id="jsonTextLogin" rows="5" cols="30" readonly>
-                    {`{"username":"user007", "password":"pass1234"}`}
+                <textarea id="jsonTextLogin" rows="5" readonly>
+                    {`{"username":"user007",
+                        "password":"pass1234"}`}
                 </textarea>
                 <button id="copyButtonLogin">Copy</button>
             </div>
@@ -92,10 +123,34 @@
                 />
             </div>
         </div>
-        <div style="margin-top: 20px;">
+        <div>
             <a
                 href="https://github.com/gjohnn/myNewSpringSecurity"
                 target="_blank">REPOSITORY LINK</a>
         </div>
     </div>
 </article>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const copyButtonRegister = document.getElementById("copyButtonRegister");
+        const jsonTextRegister = document.getElementById("jsonTextRegister");
+
+        const copyButtonLogin = document.getElementById("copyButtonLogin");
+        const jsonTextLogin = document.getElementById("jsonTextLogin");
+
+        function copyJson(textarea) {
+            textarea.select();
+            textarea.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+
+        copyButtonRegister.addEventListener("click", () => {
+            copyJson(jsonTextRegister);
+        });
+
+        copyButtonLogin.addEventListener("click", () => {
+            copyJson(jsonTextLogin);
+        });
+    });
+</script>

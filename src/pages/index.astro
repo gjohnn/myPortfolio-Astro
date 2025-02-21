@@ -15,11 +15,53 @@ import MainLayout from "../layouts/MainLayout.astro";
     display: flex;
     flex-wrap: wrap;
   }
+
+  .contact {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  .contact p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  .contact ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .contact li {
+    margin: 10px 0;
+  }
+
+  .contact a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: yellow;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .contact a:hover {
+    background-color: yellow;
+    color: black;
+  }
+
+  .contact .icon {
+    margin-right: 10px;
+  }
 </style>
 
 <MainLayout>
   <main
-    style="display:flex ;justify-content: center; align-items: center; flex-direction: column; margin-left:100px;margin-right:100px;"
+    style="display:flex ;justify-content: center; align-items: center; flex-direction: column; margin-left:20px;margin-right:20px;"
   >
     <section class="intro">
       <h1>Welcome to my Portfolio!</h1>
@@ -55,7 +97,9 @@ import MainLayout from "../layouts/MainLayout.astro";
       <h2>My Skills</h2>
       <ul class="skills-list">
         <li style="margin-right: 60px;">
-          <strong>Backend Development</strong>
+          <div style="margin-bottom: 10px;">
+            <strong>Backend Development</strong>
+          </div>
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <span>Java (Spring Boot)</span>
             <img
@@ -81,8 +125,11 @@ import MainLayout from "../layouts/MainLayout.astro";
             />
           </div>
         </li>
+
         <li style="margin-right: 60px;">
-          <strong>Database Management</strong>
+          <div style="margin-bottom: 10px;">
+            <strong>Database Management</strong>
+          </div>
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <span>PostgreSQL</span>
             <img
@@ -108,8 +155,11 @@ import MainLayout from "../layouts/MainLayout.astro";
             />
           </div>
         </li>
+
         <li style="margin-right: 60px;">
-          <strong>DevOps & Cloud</strong>
+          <div style="margin-bottom: 10px;">
+            <strong>DevOps & Cloud</strong>
+          </div>
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <span>Docker</span>
             <img
@@ -126,33 +176,12 @@ import MainLayout from "../layouts/MainLayout.astro";
               style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
-            <span>CI/CD</span>
-            <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/ci-circle.svg"
-              alt="CI/CD Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
-            />
-          </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
-            <span>AWS</span>
-            <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/amazonaws.svg"
-              alt="AWS Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
-            />
-          </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
-            <span>Azure</span>
-            <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/microsoftazure.svg"
-              alt="Azure Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
-            />
-          </div>
         </li>
+
         <li style="margin-right: 60px;">
-          <strong>Version Control</strong>
+          <div style="margin-bottom: 10px;">
+            <strong>Version Control</strong>
+          </div>
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <span>Git</span>
             <img
@@ -178,8 +207,11 @@ import MainLayout from "../layouts/MainLayout.astro";
             />
           </div>
         </li>
+
         <li style="margin-right: 60px;">
-          <strong>Tools</strong>
+          <div style="margin-bottom: 10px;">
+            <strong>Tools</strong>
+          </div>
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <span>Neovim</span>
             <img
@@ -213,8 +245,11 @@ import MainLayout from "../layouts/MainLayout.astro";
             />
           </div>
         </li>
+
         <li style="margin-right: 60px;">
-          <strong>Security</strong>
+          <div style="margin-bottom: 10px;">
+            <strong>Security</strong>
+          </div>
           <div style="display: flex; align-items: center; margin-bottom: 5px;">
             <span>Spring Security</span>
             <img
@@ -286,21 +321,19 @@ import MainLayout from "../layouts/MainLayout.astro";
       </p>
       <ul>
         <li>
-          <strong>Email</strong>: <a href="mailto:youremail@example.com"
-            >youremail@example.com</a
-          >
+          <a href="mailto:juansgb316@example.com">
+            <strong><span class="icon">📧</span> Email</strong>
+          </a>
         </li>
         <li>
-          <strong>LinkedIn</strong>: <a
-            href="https://www.linkedin.com/in/juanguerrero"
-            target="_blank">Juan Guerrero LinkedIn</a
-          >
+          <a href="https://www.linkedin.com/in/juanguerrero" target="_blank">
+            <strong><span class="icon">🔗</span> LinkedIn</strong>
+          </a>
         </li>
         <li>
-          <strong>GitHub</strong>: <a
-            href="https://github.com/juanguerrero"
-            target="_blank">Juan Guerrero GitHub</a
-          >
+          <a href="https://github.com/juanguerrero" target="_blank">
+            <strong><span class="icon">🐙</span> GitHub</strong>
+          </a>
         </li>
       </ul>
     </section>
