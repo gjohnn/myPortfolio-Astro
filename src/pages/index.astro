@@ -1,5 +1,4 @@
 ---
-import ContactComponent from "../components/Myself-Info/ContactComponent.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import EducationComponent from "../components/Myself-Info//EducationComponent.astro";
 ---
@@ -9,162 +8,152 @@ import EducationComponent from "../components/Myself-Info//EducationComponent.as
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  section {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-  }
-
-  .skills {
-    display: flex;
-  }
-
-  .skills-list {
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-  }
-
-  .skills-list > li {
-    padding: 5px;
-    border: solid yellow 2px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  ul {
-    padding: 0;
-  }
-
-  li {
-    list-style: none;
-  }
-
-  h2 {
-    color: yellow;
-  }
-
-  strong {
-    font-size: 20px;
+    text-align: center;
+    max-width: 1200px; /* Evita que el contenido sea demasiado ancho */
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
 
   .intro {
-    width: auto;
-  }
-
-  .intro > p {
-    width: auto;
-    text-align: center;
-  }
-
-  main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en pantallas pequeñas */
     justify-content: center;
     align-items: center;
-    text-align: center;
-    text-wrap: wrap;
+    gap: 20px;
+    max-width: 900px;
+  }
+
+  .intro > article {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+
+  .intro > article > p {
     width: 100%;
-    margin: 0; /* Center the container and add automatic margin */
-    padding: 0; /* Add padding similar to Bootstrap's container */
+    max-width: 600px; /* Evita que el texto se haga demasiado ancho */
   }
 
-  html {
-    font-size: 100%; /* Establece un tamaño de fuente base */
+  .welcome > P {
+    text-align: left;
   }
 
-  body {
-    font-size: 1rem; /* 1rem es igual al tamaño de fuente base */
+  .about > p {
+    text-align: right;
   }
 
-  main {
+  .skills-list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 80%;
-    margin: 0 auto;
-    padding: 0 1.5rem; /* Usa rem para relleno */
-  }
-
-  h1 {
-    font-size: 2rem; /* Usa rem para títulos */
-  }
-
-  h2 {
-    font-size: 1.75rem;
-    color: yellow;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  strong {
-    font-size: 1.25rem; /* Usa rem para texto en negrita */
-  }
-
-  ul {
-    padding: 0;
-  }
-
-  li {
-    list-style: none;
-    margin-bottom: 1rem; /* Usa rem para márgenes */
+    gap: 15px;
+    width: 100%;
+    max-width: 800px; /* Limita el ancho de la lista de skills */
   }
 
   .skills-list > li {
-    padding: 0.5rem; /* Usa rem para relleno */
+    padding: 0.5rem;
     border: solid yellow 2px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px; /* Controla el ancho de cada skill */
   }
+
+  @media screen and (max-width: 768px) {
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      max-width: 800px; /* Limita el ancho de la lista de skills */
+    }
+    .intro {
+      flex-direction: column;
+    }
+
+    .intro > article {
+      max-width: 100%;
+    }
+
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+    }
+
+    .welcome > P {
+      text-align: center;
+    }
+
+    .about > p {
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    main {
+      width: 95%;
+      padding: 0 0.5rem;
+    }
+
+    .intro > article > p {
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
 </style>
 
 <MainLayout>
   <main>
+    <h1>Welcome to my Portfolio!</h1>
     <section class="intro">
-      <h1>Welcome to my Portfolio!</h1>
-      <p style="">
-        Hi, I'm <strong>Juan Guerrero</strong>, a passionate backend developer
-        with a strong focus on creating robust, scalable, and efficient
-        applications. I specialize in <strong>backend development</strong>,
-        leveraging modern technologies such as <strong
-          >Java, Spring Boot and Laravel</strong
-        >, and <strong>Docker</strong> to build high-performance systems.
-      </p>
-    </section>
-
-    <section class="about">
-      <h2>About Me</h2>
-      <p>
-        I specialize in server-side technologies, designing and implementing
-        solutions that enhance user experiences. Driven by a passion for solving
-        complex problems, I continuously learn and evolve to create impactful
-        software.
-      </p>
-      <p>
-        My expertise includes backend development, and I utilize tools such as <strong
-          >Neovim</strong
-        >, <strong>DBeaver</strong>, <strong>PostgreSQL</strong>, and <strong
-          >Spring Security</strong
-        > to ensure well-architected and secure projects. Additionally, I work on
-        microservices architectures, web scrapers, job schedulers, and real-time
-        notifications.
-      </p>
+      <article class="welcome">
+        <p>
+          Hi, I'm <strong>Juan Guerrero</strong>, a passionate backend developer
+          with a strong focus on creating robust, scalable, and efficient
+          applications. I specialize in <strong>backend development</strong>,
+          leveraging modern technologies such as <strong
+            >Java, Spring Boot and Laravel</strong
+          >, and <strong>Docker</strong> to build high-performance systems.
+        </p>
+      </article>
+      <article class="about">
+        <p>
+          I specialize in server-side technologies, designing and implementing
+          solutions that enhance user experiences. Driven by a passion for
+          solving complex problems, I continuously learn and evolve to create
+          impactful software.
+        </p>
+        <p>
+          My expertise includes backend development, and I utilize tools such as <strong
+            >Neovim</strong
+          >, <strong>DBeaver</strong>, <strong>PostgreSQL</strong>, and <strong
+            >Spring Security</strong
+          > to ensure well-architected and secure projects. Additionally, I work
+          on microservices architectures, web scrapers, job schedulers, and real-time
+          notifications.
+        </p>
+      </article>
     </section>
 
     <section class="skills">
       <h2>My Skills</h2>
-      <ul class="skills-list">
+      <ul class="skills-list" style="padding: 0;">
         <li>
           <div style="margin-bottom: 10px;">
             <strong>Backend Development</strong>
