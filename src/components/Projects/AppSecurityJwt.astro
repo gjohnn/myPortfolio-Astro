@@ -1,0 +1,165 @@
+<style>
+    article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .container {
+        border: 5px solid yellow;
+        border-radius: 10px;
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 600px;
+    }
+    .container-text-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .logo {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin: 10px 0;
+    }
+    a {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+    .images-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    textarea {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+        .container-text-image {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .text-container {
+            width: 50%;
+        }
+        .images-container {
+            width: 50%;
+            justify-content: center;
+        }
+        .logo {
+            margin: 10px;
+        }
+    }
+</style>
+
+<article>
+    <h2>My Security Projects</h2>
+    <div class="container">
+        <div class="container-text-image">
+            <div class="text-container">
+                <p>These are my projects about security configurations.</p>
+                
+                <h3>Spring Security Project</h3>
+                <ul>
+                    <li>Java 21</li>
+                    <li>Maven 4.0.0</li>
+                    <li>Spring 3.4.2</li>
+                    <li>PostgreSQL 17</li>
+                </ul>
+                <h3>Copy Register JSON </h3>
+                <h4>base_url/auth/register</h4>
+                <textarea id="jsonTextRegister" rows="6" readonly>
+                    {`{"username":"user007",
+                        "password":"pass1234",
+                        "email":"user007@gmail.com"}`}
+                </textarea>
+                <button id="copyButtonRegister">Copy</button>
+                
+                <h3>Copy Login JSON</h3>
+                <h4>base_url/auth/login</h4>
+                <textarea id="jsonTextLogin" rows="5" readonly>
+                    {`{"username":"user007",
+                        "password":"pass1234"}`}
+                </textarea>
+                <button id="copyButtonLogin">Copy</button>
+            </div>
+
+            <div class="images-container">
+                <img class="logo" src="/spring-security-logo.png" alt="Spring Security Logo" />
+                <img class="logo" style="width: 60px;" src="/jwt-logo.png" alt="JWT Logo" />
+                <img class="logo" style="width: 130px;" src="/postgresql-logo.png" alt="PostgreSQL Logo" />
+            </div>
+        </div>
+        <div>
+            <a href="https://github.com/gjohnn/app-security-jwt.git" target="_blank">SPRING SECURITY REPOSITORY LINK</a>
+        </div>
+        
+        <div class="container-text-image">
+            <div class="text-container">
+                <h3>Node.js Security Project</h3>
+                <ul>
+                    <li>Node.js 20</li>
+                    <li>Express 4.18.2</li>
+                    <li>JWT Authentication</li>
+                </ul>
+            </div>
+
+            <div class="images-container">
+                <i class="fab fa-node-js fa-3x"></i>
+                <i class="fab fa-js fa-3x"></i>
+                <img class="logo" style="width: 60px;" src="/jwt-logo.png" alt="JWT Logo" />
+            </div>
+        </div>
+        <div>
+            <a href="https://github.com/gjohnn/app-security-node.git" target="_blank">NODE.JS SECURITY REPOSITORY LINK</a>
+        </div>
+    </div>
+</article>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const copyButtonRegister = document.getElementById("copyButtonRegister");
+        const jsonTextRegister = document.getElementById("jsonTextRegister");
+
+        const copyButtonLogin = document.getElementById("copyButtonLogin");
+        const jsonTextLogin = document.getElementById("jsonTextLogin");
+
+        function copyJson(textarea) {
+            textarea.select();
+            textarea.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+
+        copyButtonRegister.addEventListener("click", () => {
+            copyJson(jsonTextRegister);
+        });
+
+        copyButtonLogin.addEventListener("click", () => {
+            copyJson(jsonTextLogin);
+        });
+    });
+</script>
