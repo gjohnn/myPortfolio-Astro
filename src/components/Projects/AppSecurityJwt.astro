@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Security Projects</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
 <article class="flex flex-col items-center p-5 justify-center w-full max-w-3xl text-center">
-    <h2 class="text-2xl font-bold mb-4">My Security Projects</h2>
-    <div class="border-4 border-yellow-500 rounded-lg p-8 flex flex-col items-center w-full">
+    <!-- Spring Security Project Section -->
+    <div class="border-4 border-yellow-500 rounded-lg p-8 flex flex-col items-center w-full mb-8">
         <div class="flex flex-col items-center w-full md:flex-row md:justify-center">
             <div class="text-container w-full md:w-1/2">
                 <p class="mb-4">These are my projects about security configurations.</p>
@@ -41,31 +31,32 @@
                 <button id="copyButtonLogin" class="bg-blue-500 text-white px-4 py-2 rounded mb-4">Copy</button>
             </div>
         </div>
-
-        <div class="w-full text-center mb-4">
-            <div class="images-container flex flex-wrap justify-center items-center mb-2">
-                <img class="logo w-24 h-24 object-contain m-2" src="/spring-security-logo.png" alt="Spring Security Logo" />
-                <img class="logo w-16 h-16 object-contain m-2" src="/jwt-logo.png" alt="JWT Logo" />
-                <img class="logo w-32 h-32 object-contain m-2" src="/postgresql-logo.png" alt="PostgreSQL Logo" />
-            </div>
-            <a href="https://github.com/gjohnn/app-security-jwt.git" target="_blank" class="bg-white text-black px-4 py-2 rounded border border-black inline-block">SPRING SECURITY REPOSITORY LINK</a>
+        <div class="images-container flex flex-wrap justify-center items-center mb-2">
+            <!-- Logo oficial de Spring -->
+            <img src="../../../public/spring-48.png" alt="Spring Logo" class="w-16 h-16 m-2" />
+            <!-- Logo oficial de PostgreSQL -->
+            <img src="../../../public/postgresql-48.png" alt="PostgreSQL Logo" class="w-16 h-16 m-2" />
         </div>
+        <a href="https://github.com/gjohnn/app-security-jwt.git" target="_blank" class="bg-white text-black px-4 py-2 rounded border border-black inline-block">SPRING SECURITY REPOSITORY LINK</a>
+    </div>
 
+    <!-- Node.js Security Project Section -->
+    <div class="border-4 border-yellow-500 rounded-lg p-8 flex flex-col items-center w-full">
         <div class="flex flex-col items-center w-full md:flex-row md:justify-center">
             <div class="text-container w-full md:w-1/2">
                 <h3 class="text-xl font-semibold mb-2">Node.js Security Project</h3>
                 <ul class="list-disc list-inside mb-4">
-                    <li>Node.js 20</li>
-                    <li>Express 4.18.2</li>
+                    <li>Node.js 22</li>
+                    <li>Express</li>
                     <li>JWT Authentication</li>
                 </ul>
             </div>
         </div>
-
         <div class="w-full text-center mb-4">
             <div class="images-container flex flex-wrap justify-center items-center mb-2">
                 <i class="fab fa-node-js fa-3x m-2"></i>
                 <i class="fab fa-js fa-3x m-2"></i>
+                <i class="fas fa-lock fa-3x m-2"></i> <!-- Icono genérico para JWT -->
             </div>
             <a href="https://github.com/gjohnn/app-security-node.git" target="_blank" class="bg-white text-black px-4 py-2 rounded border border-black inline-block">NODE.JS SECURITY REPOSITORY LINK</a>
         </div>
