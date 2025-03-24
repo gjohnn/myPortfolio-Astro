@@ -14,22 +14,35 @@ import MainLayout from "../layouts/MainLayout.astro";
       Feel free to reach out for collaborations, job opportunities, or just a chat about technology.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-md mx-auto">
-      <!-- Email -->
-      <a 
-        href="mailto:juansgb316@outlook.com" 
-        class="flex items-center justify-center gap-3 p-4 bg-gray-800 hover:bg-yellow-500 text-yellow-400 hover:text-gray-900 rounded-lg transition-all duration-300 border border-yellow-500/30 hover:border-yellow-500"
-      >
-        <span class="text-xl">📧</span>
-        <span class="font-medium">Email</span>
-      </a>
+    <div class="flex flex-col items-center gap-4 w-full max-w-xs mx-auto">
+      <!-- Email Section -->
+      <div class="w-full">
+        <!-- Email Link -->
+        <a 
+          href="mailto:juansgb316@outlook.com" 
+          class="flex items-center justify-center gap-3 w-full p-4 bg-gray-800 hover:bg-yellow-500 text-yellow-400 hover:text-gray-900 rounded-lg transition-all duration-300 border border-yellow-500/30 hover:border-yellow-500 mb-2"
+        >
+          <span class="text-xl">📧</span>
+          <span class="font-medium">Email</span>
+        </a>
+        
+        <!-- Copy Email Button -->
+        <button 
+          id="copyEmailBtn"
+          class="flex items-center justify-center gap-2 w-full p-3 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-all duration-300 text-sm"
+          onclick="copyEmailToClipboard()"
+        >
+          <span id="copyEmailText">Copy Email Address</span>
+          <span id="copyEmailIcon">📋</span>
+        </button>
+      </div>
 
       <!-- LinkedIn -->
       <a 
         href="https://www.linkedin.com/in/juan-guerre3168" 
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center justify-center gap-3 p-4 bg-gray-800 hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white rounded-lg transition-all duration-300 border border-[#0A66C2]/30 hover:border-[#0A66C2]"
+        class="flex items-center justify-center gap-3 w-full p-4 bg-gray-800 hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white rounded-lg transition-all duration-300 border border-[#0A66C2]/30 hover:border-[#0A66C2]"
       >
         <span class="text-xl">🔗</span>
         <span class="font-medium">LinkedIn</span>
@@ -40,16 +53,38 @@ import MainLayout from "../layouts/MainLayout.astro";
         href="https://github.com/gjohnn" 
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center justify-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition-all duration-300 border border-gray-600/30 hover:border-gray-500"
+        class="flex items-center justify-center gap-3 w-full p-4 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition-all duration-300 border border-gray-600/30 hover:border-gray-500"
       >
         <span class="text-xl">🐙</span>
         <span class="font-medium">GitHub</span>
       </a>
-
-    <!-- Additional Info -->
-    <div class="mt-12 text-gray-400 text-sm">
-      <p>Prefer a more direct approach?</p>
-      <p class="mt-2">I'm usually available for quick chats on Discord during work hours.</p>
     </div>
   </section>
+
+  <script is:inline>
+    function copyEmailToClipboard() {
+      const email = 'juansgb316@outlook.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById('copyEmailBtn');
+        const text = document.getElementById('copyEmailText');
+        const icon = document.getElementById('copyEmailIcon');
+        
+        // Feedback visual
+        text.textContent = 'Copied!';
+        icon.textContent = '✓';
+        btn.classList.add('bg-green-600', 'text-white');
+        btn.classList.remove('bg-gray-700', 'hover:bg-gray-600', 'text-gray-300');
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+          text.textContent = 'Copy Email Address';
+          icon.textContent = '📋';
+          btn.classList.remove('bg-green-600', 'text-white');
+          btn.classList.add('bg-gray-700', 'hover:bg-gray-600', 'text-gray-300');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy email: ', err);
+      });
+    }
+  </script>
 </MainLayout>

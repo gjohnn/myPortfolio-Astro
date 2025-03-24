@@ -13,7 +13,7 @@ const experiences: Experience[] = [
   {
     company: "Tecnologia Activa",
     role: "Full Stack Developer (Backend Focus)",
-    period: "2023 – 2024",
+    period: "2025 – Current",
     technologies: ["JavaScript","React", "Node.js", "Express", "MySQL"],
     responsibilities: [
       "Developed and maintained RESTful APIs for web applications",
@@ -27,7 +27,7 @@ const experiences: Experience[] = [
     company: "Penaqua",
     project: "Estoy Aca App",
     role: "Backend Developer",
-    period: "2023 – Present",
+    period: "2024 – Present",
     technologies: ["PHP", "Laravel 11", "MySQL", "Docker"],
     responsibilities: [
       "Implemented and optimized geolocation features to connect users efficiently",
@@ -39,7 +39,7 @@ const experiences: Experience[] = [
   {
     company: "Alquileres Costeros",
     role: "Personal Project",
-    period: "2024 – Present",
+    period: "2024 – Discontinued ",
     technologies: ["C#", ".NET 8", "WPF", "SQLite"],
     responsibilities: [
       "Developed desktop application for property rental management",
