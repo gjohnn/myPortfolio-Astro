@@ -1,89 +1,42 @@
 ---
-// src/components/Experience.astro
+// src/components/Myself-info/Experience.astro
+import experiences from '../../data/experiences';
 ---
 
-<style>
-  .experience {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 80%;
-    margin: 0 auto; /* Center the container and add automatic margin */
-    padding: 0 15px; /* Add padding similar to Bootstrap's container */
-  }
-  .experience ul {
-    list-style: none;
-    padding: 0;
-  }
+<section class="max-w-4xl mx-auto py-12 px-6">
+  <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+    Professional Experience
+  </h2>
 
-  .experience li {
-    margin-bottom: 20px;
-  }
-
-  .experience h3 {
-    color: yellow;
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-
-  .experience p {
-    font-size: 1em;
-    margin-bottom: 10px;
-  }
-</style>
-
-<section class="experience">
-  <h2>Experience</h2>
-  <ul>
-    <li>
-      <h3>Penaqua - “Estoy Aca” App (PHP, Laravel 11, MySQL)</h3>
-      <p><strong>Backend Developer</strong></p>
-      <p>2023 – Current</p>
-      <ul>
-        <li>
-          Responsible for implementing and optimizing geolocation features to
-          connect users efficiently.
-        </li>
-        <li>
-          Developed precise and optimized queries based on user preferences
-          (time, category, subcategories, place) to enhance app functionality.
-        </li>
-        <li>Deep focus on containerization.</li>
-      </ul>
-    </li>
-    <li>
-      <h3>Alquileres Costeros (C# NET 8, WPF)</h3>
-      <p><strong>Personal micro-entrepreneurial project</strong></p>
-      <p>2024 – Current</p>
-      <ul>
-        <li>
-          Developed a desktop application to manage property rentals with a
-          one-time payment model.
-        </li>
-        <li>
-          Designed and implemented features for rental tracking, customer
-          management, financial reporting, and an interactive calendar.
-        </li>
-      </ul>
-    </li>
-    <li>
-      <h3>IT Hotbed – Quinto Impacto (Java 17, Spring Boot, MySQL)</h3>
-      <p><strong>Backend Developer</strong></p>
-      <p>2024 – Current</p>
-      <ul>
-        <li>
-          Designed and implemented RESTful APIs for seamless backend
-          communication.
-        </li>
-        <li>Optimized database queries and enhanced system performance.</li>
-        <li>
-          Worked with dependency injection, security, and microservices
-          architecture.
-        </li>
-      </ul>
-    </li>
-  </ul>
+  <div class="space-y-10">
+    {
+      experiences.map((exp) => (
+        <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-lg border-l-4 border-indigo-400 hover:border-cyan-400 transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4 gap-2">
+            <h3 class="text-2xl font-bold text-indigo-300">
+              {exp.company}{exp.project && ` - ${exp.project}`}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {exp.technologies.map((tech) => (
+                <span class="px-3 py-1 bg-indigo-900/50 text-indigo-200 rounded-full text-sm">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <p class="font-medium text-lg text-cyan-100">{exp.role}</p>
+            <p class="text-gray-400">{exp.period}</p>
+          </div>
+          
+          <ul class="space-y-3 pl-5 list-disc list-outside text-gray-300 marker:text-indigo-400">
+            {exp.responsibilities.map((resp) => (
+              <li>{resp}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
 </section>

@@ -1,8 +1,55 @@
 ---
-import ContactComponent from "../components/Myself-Info/ContactComponent.astro";
+// src/pages/contact.astro
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-  <ContactComponent/>
+  <section class="max-w-2xl mx-auto py-16 px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+      Let's Connect
+    </h1>
+    
+    <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
+      I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+      Feel free to reach out for collaborations, job opportunities, or just a chat about technology.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-md mx-auto">
+      <!-- Email -->
+      <a 
+        href="mailto:juansgb316@outlook.com" 
+        class="flex items-center justify-center gap-3 p-4 bg-gray-800 hover:bg-yellow-500 text-yellow-400 hover:text-gray-900 rounded-lg transition-all duration-300 border border-yellow-500/30 hover:border-yellow-500"
+      >
+        <span class="text-xl">📧</span>
+        <span class="font-medium">Email</span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a 
+        href="https://www.linkedin.com/in/juan-guerre3168" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center gap-3 p-4 bg-gray-800 hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white rounded-lg transition-all duration-300 border border-[#0A66C2]/30 hover:border-[#0A66C2]"
+      >
+        <span class="text-xl">🔗</span>
+        <span class="font-medium">LinkedIn</span>
+      </a>
+
+      <!-- GitHub -->
+      <a 
+        href="https://github.com/gjohnn" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition-all duration-300 border border-gray-600/30 hover:border-gray-500"
+      >
+        <span class="text-xl">🐙</span>
+        <span class="font-medium">GitHub</span>
+      </a>
+
+    <!-- Additional Info -->
+    <div class="mt-12 text-gray-400 text-sm">
+      <p>Prefer a more direct approach?</p>
+      <p class="mt-2">I'm usually available for quick chats on Discord during work hours.</p>
+    </div>
+  </section>
 </MainLayout>

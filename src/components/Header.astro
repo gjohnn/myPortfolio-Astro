@@ -1,37 +1,75 @@
 ---
-  // src/components/Header.astro
-  import "../styles/global.css";
+import "../styles/global.css";
 ---
 
-<header class="fixed top-0 w-full bg-black text-yellow-500 py-5 shadow-lg z-50">
-  <nav class="flex justify-between items-center px-4">
-    <div class="text-lg font-bold">Juan Guerrero</div>
-    <!-- Hamburger button (only visible below 768px) -->
-    <div class="block lg:hidden">
-      <button id="hamburger" class="text-yellow-500 hover:text-white focus:outline-none">
-        <svg id="hamburgerIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<header class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md text-indigo-100 py-4 shadow-lg z-50 border-b border-indigo-500/30">
+  <nav class="flex justify-between items-center px-6 max-w-7xl mx-auto">
+    <!-- Logo/Brand -->
+    <div class="flex items-center">
+      <a href="/" class="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent hover:from-indigo-300 hover:to-cyan-300 transition-all duration-300">
+        JG
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden lg:flex">
+      <ul class="flex justify-center flex-wrap gap-8 list-none p-0 m-0">
+        <li>
+          <a class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 px-2 py-1 rounded" href="/">
+            Home
+          </a>
+        </li>
+        <li>
+          <a class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 px-2 py-1 rounded" href="/projects">
+            Projects
+          </a>
+        </li>
+        <li>
+          <a class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 px-2 py-1 rounded" href="/experience">
+            Experience
+          </a>
+        </li>
+        <li>
+          <a class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 px-2 py-1 rounded" href="/contact">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex lg:hidden items-center gap-4">
+      <button id="hamburger" class="text-indigo-200 hover:text-white focus:outline-none transition-colors duration-200 p-1 rounded-md hover:bg-gray-700/50">
+        <svg id="hamburgerIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path id="hamburgerPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
-    <!-- Navigation menu (hidden in mobile and shown in larger screens) -->
-    <div class="hidden lg:flex">
-      <ul class="flex justify-center flex-wrap gap-5 list-none p-0 m-0">
-        <li><a class="font-bold text-lg hover:text-white" href="/">Home</a></li>
-        <li><a class="font-bold text-lg hover:text-white" href="/projects">Projects</a></li>
-        <li><a class="font-bold text-lg hover:text-white" href="/experience">Experience</a></li>
-        <li><a class="font-bold text-lg hover:text-white" href="/contact">Contact</a></li>
-      </ul>
-    </div>
   </nav>
 
-  <!-- Dropdown menu for mobile (only visible below 768px) with transparency -->
-  <div id="dropdownMenu" class="lg:hidden hidden bg-black bg-opacity-70 text-yellow-500 py-3 absolute w-full left-0 top-full">
-    <ul class="flex flex-col items-center gap-5">
-      <li><a class="font-bold text-lg hover:text-white" href="/">Home</a></li>
-      <li><a class="font-bold text-lg hover:text-white" href="/projects">Projects</a></li>
-      <li><a class="font-bold text-lg hover:text-white" href="/experience">Experience</a></li>
-      <li><a class="font-bold text-lg hover:text-white" href="/contact">Contact</a></li>
+  <!-- Mobile Dropdown Menu -->
+  <div id="dropdownMenu" class="lg:hidden hidden bg-gray-800 text-indigo-100 py-4 absolute w-full left-0 top-full border-t border-indigo-500/30 shadow-xl">
+    <ul class="flex flex-col items-center gap-5 py-2">
+      <li class="w-full text-center">
+        <a class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 block py-3 hover:bg-gray-700/50" href="/">
+          Home
+        </a>
+      </li>
+      <li class="w-full text-center">
+        <a class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 block py-3 hover:bg-gray-700/50" href="/projects">
+          Projects
+        </a>
+      </li>
+      <li class="w-full text-center">
+        <a class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 block py-3 hover:bg-gray-700/50" href="/experience">
+          Experience
+        </a>
+      </li>
+      <li class="w-full text-center">
+        <a class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 block py-3 hover:bg-gray-700/50" href="/contact">
+          Contact
+        </a>
+      </li>
     </ul>
   </div>
 </header>
@@ -39,7 +77,6 @@
 <script>
   const hamburgerButton = document.getElementById('hamburger');
   const dropdownMenu = document.getElementById('dropdownMenu');
-  const hamburgerIcon = document.getElementById('hamburgerIcon');
   const hamburgerPath = document.getElementById('hamburgerPath');
 
   hamburgerButton.addEventListener('click', () => {
@@ -50,6 +87,22 @@
       hamburgerPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Hamburger
     } else {
       hamburgerPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X
+    }
+  });
+
+  // Close menu when clicking on a link (mobile)
+  document.querySelectorAll('#dropdownMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      dropdownMenu.classList.add('hidden');
+      hamburgerPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!dropdownMenu.contains(e.target) && !hamburgerButton.contains(e.target)) {
+      dropdownMenu.classList.add('hidden');
+      hamburgerPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
     }
   });
 </script>
