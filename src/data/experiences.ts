@@ -1,7 +1,6 @@
 // src/data/experiences.ts
 
 interface Experience {
-  id: number;
   company: string;
   project?: string;
   role: string;
@@ -12,7 +11,19 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    id: 1,
+    company: "Tecnologia Activa",
+    role: "Full Stack Developer (Backend Focus)",
+    period: "2023 – 2024",
+    technologies: ["JavaScript","React", "Node.js", "Express", "MySQL"],
+    responsibilities: [
+      "Developed and maintained RESTful APIs for web applications",
+      "Collaborated on frontend components using React",
+      "Optimized MySQL database schemas and queries",
+      "Participated in code reviews and architectural decisions",
+      "Implemented CI/CD pipeline for automated deployments"
+    ]
+  },
+  {
     company: "Penaqua",
     project: "Estoy Aca App",
     role: "Backend Developer",
@@ -26,7 +37,6 @@ const experiences: Experience[] = [
     ]
   },
   {
-    id: 2,
     company: "Alquileres Costeros",
     role: "Personal Project",
     period: "2024 – Present",
@@ -39,7 +49,6 @@ const experiences: Experience[] = [
     ]
   },
   {
-    id: 3,
     company: "IT Hotbed",
     project: "Quinto Impacto",
     role: "Backend Developer",
@@ -52,20 +61,7 @@ const experiences: Experience[] = [
       "Worked with dependency injection and microservices architecture"
     ]
   },
-  {
-    id: 4,
-    company: "Tecnologia Activa",
-    role: "Full Stack Developer (Backend Focus)",
-    period: "2023 – 2024",
-    technologies: ["JavaScript","React", "Node.js", "Express", "MySQL"],
-    responsibilities: [
-      "Developed and maintained RESTful APIs for web applications",
-      "Collaborated on frontend components using React",
-      "Optimized MySQL database schemas and queries",
-      "Participated in code reviews and architectural decisions",
-      "Implemented CI/CD pipeline for automated deployments"
-    ]
-  }
+
 ];
 
 export default experiences;
