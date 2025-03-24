@@ -20,7 +20,6 @@ const experiences: Experience[] = [
       "Collaborated on frontend components using React",
       "Optimized MySQL database schemas and queries",
       "Participated in code reviews and architectural decisions",
-      "Implemented CI/CD pipeline for automated deployments"
     ]
   },
   {
@@ -31,7 +30,7 @@ const experiences: Experience[] = [
     technologies: ["PHP", "Laravel 11", "MySQL", "Docker"],
     responsibilities: [
       "Implemented and optimized geolocation features to connect users efficiently",
-      "Developed precise queries based on user preferences (time, category, location)",
+      "Developed precise queries based on user preferences (time, category, location, etc)",
       "Containerized application using Docker for easier deployment",
       "Improved API response time by 40% through query optimization"
     ]
@@ -58,7 +57,7 @@ const experiences: Experience[] = [
       "Designed and implemented RESTful APIs for backend services",
       "Optimized database queries improving system performance",
       "Implemented JWT authentication and authorization",
-      "Worked with dependency injection and microservices architecture"
+      "Worked with Clean Architecture method"
     ]
   },
 
