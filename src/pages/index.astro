@@ -1,129 +1,20 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import EducationComponent from "../components/Myself-Info//EducationComponent.astro";
+import EducationComponent from "../components/Myself-Info/EducationComponent.astro";
 ---
 
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    max-width: 1200px; /* Evita que el contenido sea demasiado ancho */
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .intro {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* Permite que los elementos se acomoden en pantallas pequeñas */
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    max-width: 900px;
-  }
-
-  .intro > article {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-  }
-
-  .intro > article > p {
-    width: 100%;
-    max-width: 600px; /* Evita que el texto se haga demasiado ancho */
-  }
-
-  .welcome > P {
-    text-align: left;
-  }
-
-  .about > p {
-    text-align: right;
-  }
-
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-    max-width: 800px; /* Limita el ancho de la lista de skills */
-  }
-
-  .skills-list > li {
-    padding: 0.5rem;
-    border: solid yellow 2px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 250px; /* Controla el ancho de cada skill */
-  }
-
-  @media screen and (max-width: 768px) {
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      max-width: 800px; /* Limita el ancho de la lista de skills */
-    }
-    .intro {
-      flex-direction: column;
-    }
-
-    .intro > article {
-      max-width: 100%;
-    }
-
-    .skills-list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 100%;
-    }
-
-    .welcome > P {
-      text-align: center;
-    }
-
-    .about > p {
-      text-align: center;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    main {
-      width: 95%;
-      padding: 0 0.5rem;
-    }
-
-    .intro > article > p {
-      font-size: 0.9rem;
-    }
-
-    h1 {
-      font-size: 1.75rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-    }
-  }
-
-</style>
-
 <MainLayout>
-  <main>
-    <h1>Welcome to my Portfolio!</h1>
-    <section class="intro">
-      <article class="welcome">
-        <p>
+  <main class="flex flex-col items-center justify-center text-center max-w-4xl w-full mx-auto p-4">
+    <button id="theme-toggle" class="fixed top-4 right-4 p-2 bg-gray-200 dark:bg-gray-800 rounded-full shadow-md">
+      <svg id="theme-icon" class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m6.364-1.364l-1.414 1.414m2.828 2.828l-2.828-2.828M3 12h1m16.364 1.364l-1.414-1.414m2.828 2.828l-2.828-2.828M12 21v1m-9.364-1.364l1.414-1.414M5.636 5.636l1.414 1.414M12 12a5 5 0 110-10 5 5 0 010 10z"></path>
+      </svg>
+    </button>
+
+    <h1 class="text-4xl font-bold mb-8">Welcome to my Portfolio!</h1>
+    <section class="intro flex flex-wrap justify-center items-center gap-6 max-w-3xl w-full">
+      <article class="welcome flex-1 min-w-[300px] max-w-[600px]">
+        <p class="text-left dark:text-gray-200">
           Hi, I'm <strong>Juan Guerrero</strong>, a passionate backend developer
           with a strong focus on creating robust, scalable, and efficient
           applications. I specialize in <strong>backend development</strong>,
@@ -132,14 +23,14 @@ import EducationComponent from "../components/Myself-Info//EducationComponent.as
           >, and <strong>Docker</strong> to build high-performance systems.
         </p>
       </article>
-      <article class="about">
-        <p>
+      <article class="about flex-1 min-w-[300px] max-w-[600px]">
+        <p class="text-right">
           I specialize in server-side technologies, designing and implementing
           solutions that enhance user experiences. Driven by a passion for
           solving complex problems, I continuously learn and evolve to create
           impactful software.
         </p>
-        <p>
+        <p class="text-right">
           My expertise includes backend development, and I utilize tools such as <strong
             >Neovim</strong
           >, <strong>DBeaver</strong>, <strong>PostgreSQL</strong>, and <strong
@@ -151,186 +42,173 @@ import EducationComponent from "../components/Myself-Info//EducationComponent.as
       </article>
     </section>
 
-    <section class="skills">
-      <h2>My Skills</h2>
-      <ul class="skills-list" style="padding: 0;">
-        <li>
-          <div style="margin-bottom: 10px;">
-            <strong>Backend Development</strong>
-          </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+    <section class="skills mt-12 w-full">
+      <h2 class="text-3xl font-bold mb-6">My Skills</h2>
+      <ul class="skills-list flex flex-wrap justify-center gap-6 w-full max-w-2xl mx-auto">
+        <li class="skill-item p-4 border-2 border-yellow-500 rounded-lg flex flex-col items-center max-w-xs w-full">
+          <div class="mb-4 font-bold">Backend Development</div>
+          <div class="flex items-center mb-2">
             <span>Java (Spring Boot)</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/spring.svg"
               alt="Spring Boot Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-6 h-6 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>C# .NET8/9</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@5.24.0/icons/csharp.svg"
               alt="Csharp Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-6 h-6 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>PHP (Laravel)</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/laravel.svg"
               alt="Laravel Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-6 h-6 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>Node.js</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@5.24.0/icons/nodedotjs.svg"
               alt="Node.js Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-6 h-6 ml-2 invert"
             />
           </div>
-        </li>
+          
 
-        <li>
-          <div style="margin-bottom: 10px;">
-            <strong>Database Management</strong>
-          </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <li class="skill-item p-4 border-2 border-yellow-500 rounded-lg flex flex-col items-center max-w-xs w-full">
+          <div class="mb-4 font-bold">Database Management</div>
+          <div class="flex items-center mb-2">
             <span>PostgreSQL</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/postgresql.svg"
               alt="PostgreSQL Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>MySQL</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg"
               alt="MySQL Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
         </li>
 
-        <li>
-          <div style="margin-bottom: 10px;">
-            <strong>DevOps & Cloud</strong>
-          </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <li class="skill-item p-4 border-2 border-yellow-500 rounded-lg flex flex-col items-center max-w-xs w-full">
+          <div class="mb-4 font-bold">DevOps & Cloud</div>
+          <div class="flex items-center mb-2">
             <span>Docker</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/docker.svg"
               alt="Docker Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>Kubernetes</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/kubernetes.svg"
               alt="Kubernetes Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
         </li>
-        <!-- VERSION CONTROL -->
-        <li>
-          <div style="margin-bottom: 10px;">
-            <strong>Version Control</strong>
-          </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+
+        <li class="skill-item p-4 border-2 border-yellow-500 rounded-lg flex flex-col items-center max-w-xs w-full">
+          <div class="mb-4 font-bold">Version Control</div>
+          <div class="flex items-center mb-2">
             <span>Git</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/git.svg"
               alt="Git Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>GitHub</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg"
               alt="GitHub Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>GitLab</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/gitlab.svg"
               alt="GitLab Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
         </li>
-        <!-- TOOLS -->
 
-        <li>
-          <div style="margin-bottom: 10px;">
-            <strong>Tools I use for work </strong>
-          </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <li class="skill-item p-4 border-2 border-yellow-500 rounded-lg flex flex-col items-center max-w-xs w-full">
+          <div class="mb-4 font-bold">Tools I use for work</div>
+          <div class="flex items-center mb-2">
             <span>Neovim</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/neovim.svg"
               alt="Neovim Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>Wezterm</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/wezterm.svg"
               alt="Wezterm Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>DBeaver</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/dbeaver.svg"
               alt="DBeaver Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>Visual Studio Code</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/visualstudiocode.svg"
               alt="Visual Studio Code Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
         </li>
 
-        <li>
-          <div style="margin-bottom: 10px;">
-            <strong>Security</strong>
-          </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <li class="skill-item p-4 border-2 border-yellow-500 rounded-lg flex flex-col items-center max-w-xs w-full">
+          <div class="mb-4 font-bold">Security</div>
+          <div class="flex items-center mb-2">
             <span>Spring Security</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/springsecurity.svg"
               alt="Spring Security Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>OAuth2</span>
             <img
               src="https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png"
               alt="OAuth2 Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <div class="flex items-center mb-2">
             <span>JWT</span>
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/jsonwebtokens.svg"
               alt="JWT Logo"
-              style="width: 30px; height: auto; filter: invert(1); margin-left: 8px;"
+              class="w-8 h-8 ml-2 invert"
             />
           </div>
         </li>
@@ -338,4 +216,40 @@ import EducationComponent from "../components/Myself-Info//EducationComponent.as
     </section>
     <EducationComponent />
   </main>
+
+  <script>
+    // JavaScript para alternar entre tema claro y oscuro
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const html = document.documentElement;
+
+      if (localStorage.getItem('theme') === 'dark') {
+        html.classList.add('dark');
+        themeIcon.innerHTML = `
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        `;
+      } else {
+        html.classList.remove('dark');
+        themeIcon.innerHTML = `
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m6.364-1.364l-1.414 1.414m2.828 2.828l-2.828-2.828M3 12h1m16.364 1.364l-1.414-1.414m2.828 2.828l-2.828-2.828M12 21v1m-9.364-1.364l1.414-1.414M5.636 5.636l1.414 1.414M12 12a5 5 0 110-10 5 5 0 010 10z"></path>
+        `;
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        if (html.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark');
+          themeIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          `;
+        } else {
+          localStorage.setItem('theme', 'light');
+          themeIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m6.364-1.364l-1.414 1.414m2.828 2.828l-2.828-2.828M3 12h1m16.364 1.364l-1.414-1.414m2.828 2.828l-2.828-2.828M12 21v1m-9.364-1.364l1.414-1.414M5.636 5.636l1.414 1.414M12 12a5 5 0 110-10 5 5 0 010 10z"></path>
+          `;
+        }
+      });
+    });
+  </script>
 </MainLayout>
