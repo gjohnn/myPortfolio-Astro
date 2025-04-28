@@ -14,26 +14,26 @@ const experiences: Experience[] = [
     company: "Tecnologia Activa",
     role: "Full Stack Developer (Backend Focus)",
     period: "2025 – Current",
-    technologies: ["JavaScript","React", "Node.js", "Express", "MySQL"],
+    technologies: ["JavaScript", "React", "Node.js", "Express", "MySQL"],
     responsibilities: [
       "Developed and maintained RESTful APIs for web applications",
       "Collaborated on frontend components using React",
       "Optimized MySQL database schemas and queries",
       "Participated in code reviews and architectural decisions",
-    ]
+    ],
   },
   {
     company: "Penaqua",
     project: "Estoy Aca App",
-    role: "Backend Developer",
-    period: "2024 – Present",
-    technologies: ["PHP", "Laravel 11", "MySQL", "Docker"],
+    role: "Technical Leader | Backend Developer",
+    period: "2024 – Current",
+    technologies: ["PHP", "Laravel 11", "MySQL", "Docker", "Nginx", "VPS"],
     responsibilities: [
       "Implemented and optimized geolocation features to connect users efficiently",
       "Developed precise queries based on user preferences (time, category, location, etc)",
       "Containerized application using Docker for easier deployment",
-      "Improved API response time by 40% through query optimization"
-    ]
+      "Improved API response time by 40% through query optimization",
+    ],
   },
   {
     company: "Alquileres Costeros",
@@ -44,8 +44,8 @@ const experiences: Experience[] = [
       "Developed desktop application for property rental management",
       "Implemented rental tracking and customer management features",
       "Created financial reporting system and interactive calendar",
-      "Designed one-time payment business model"
-    ]
+      "Designed one-time payment business model",
+    ],
   },
   {
     company: "IT Hotbed",
@@ -57,10 +57,10 @@ const experiences: Experience[] = [
       "Designed and implemented RESTful APIs for backend services",
       "Optimized database queries improving system performance",
       "Implemented JWT authentication and authorization",
-      "Worked with Clean Architecture method"
-    ]
+      "Worked with Clean Architecture method",
+    ],
   },
-
 ];
 
 export default experiences;
+
