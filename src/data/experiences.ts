@@ -25,8 +25,8 @@ const experiences: Experience[] = [
     ],
   },
   {
-    company: "Penaqua",
-    project: "Estoy Aca App",
+    company: "Apequa",
+    project: "Estoy Aca - App",
     role: "Tech Lead Manager",
     period: "2024 – Current",
     technologies: ["PHP", "Laravel 11", "MySQL", "Docker", "Nginx", "VPS Cloud Server"],
