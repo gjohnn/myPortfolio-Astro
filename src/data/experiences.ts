@@ -15,7 +15,13 @@ const experiences: Experience[] = [
     project: "Estoy Acá – Mobile App",
     role: "Tech Lead Manager",
     period: "Aug 2024 – Present",
-    technologies: ["Node.js / TypeScript", "PostgreSQL", "Docker", "Nginx", "VPS Cloud Server"],
+    technologies: [
+      "Node.js / TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "Nginx",
+      "VPS Cloud Server",
+    ],
     responsibilities: [
       "Led the backend architecture and system design of a real-time geolocation app",
       "Implemented international date/time handling to support multi-timezone usage",
@@ -25,7 +31,7 @@ const experiences: Experience[] = [
       "Improved error-handling strategy across frontend and backend layers",
       "Managed VPS performance and stability through optimized server configuration",
       "Developed category/time/location-based search filters with high precision",
-      "Containerized services using Docker for consistent deployment pipelines"
+      "Containerized services using Docker for consistent deployment pipelines",
     ],
   },
   {
@@ -39,7 +45,7 @@ const experiences: Experience[] = [
       "Contributed to frontend components using React and context-based state management",
       "Handled infrastructure logic for OLTs, ONUs, and NAPs device management",
       "Led the migration and restructuring of legacy database models",
-      "Participated in architectural reviews and DevOps process improvements"
+      "Participated in architectural reviews and DevOps process improvements",
     ],
   },
   {
@@ -64,7 +70,7 @@ const experiences: Experience[] = [
       "Developed microservices and APIs using Spring Boot with Clean Architecture principles",
       "Implemented JWT-based authentication and role-based access control",
       "Improved system performance by optimizing SQL queries and indexes",
-      "Collaborated with frontend and QA teams in an agile delivery environment"
+      "Collaborated with frontend and QA teams in an agile delivery environment",
     ],
   },
 ];
