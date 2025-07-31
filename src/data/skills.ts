@@ -71,7 +71,7 @@ export const skillsCarousels: CarouselSection[] = [
             { name: "Postman", icon: "logos:postman-icon", colorClass: "text-pink-400" },
             { name: "Log Analysis", icon: "mdi:file-search-outline", colorClass: "text-pink-400" },
             { name: "Git", icon: "logos:git-icon", colorClass: "text-pink-400" },
-            { name: "Agile Methodologies", icon: "mdi:agile", colorClass: "text-pink-400" },
+            { name: "Agile Methodologies", icon: "fluent:people-team-16-filled", colorClass: "text-pink-400" },
             { name: "Discord", icon: "logos:discord-icon", colorClass: "text-pink-400" },
             { name: "Trello", icon: "logos:trello", colorClass: "text-pink-400" },
             { name: "Jira", icon: "logos:jira", colorClass: "text-pink-400" },
