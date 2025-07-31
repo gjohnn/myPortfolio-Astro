@@ -1,21 +1,22 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import EducationComponent from "../components/Myself-Info/EducationComponent.astro";
+import Carrusel from "../components/Carrusel.astro";
 ---
 
 <MainLayout>
     <main
         class="flex flex-col items-center justify-center max-w-6xl w-full mx-auto px-4 py-8"
-  >   
-    <!-- Hero Section -->
+    >
+        <!-- Hero Section -->
         <section class="w-full mb-12 text-center">
             <h1
-                class="text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent"
+                class="text-5xl font-bold mb-4 bg-gradient-to-r from-red-800 to-red-300 bg-clip-text text-transparent"
             >
                 Juan Guerrero
             </h1>
             <h2 class="text-2xl font-semibold mb-8 text-gray-300">
-               Software Developer
+                Software Developer
             </h2>
 
             <div class="flex flex-col items-center gap-6 max-w-3xl mx-auto">
@@ -23,12 +24,12 @@ import EducationComponent from "../components/Myself-Info/EducationComponent.ast
                     <p
                         class="text-lg text-center text-gray-300 leading-relaxed"
                     >
-                        Hi, I'm <strong class="text-indigo-300"
+                        Hi, I'm <strong class="text-red-300"
                             >Juan Guerrero</strong
-                        >, a passionate backend developer specializing in <strong
-                            class="text-indigo-300"
-                            >Java, JS/TS, PHP
-                        </strong> and <strong class="text-indigo-300"
+                        >, a passionate backend developer specialized in <strong
+                            class="text-red-300"
+                            >C#, JS/TS,
+                        </strong> and <strong class="text-red-300"
                             >Docker</strong
                         > to build scalable systems.
                     </p>
@@ -38,8 +39,8 @@ import EducationComponent from "../components/Myself-Info/EducationComponent.ast
                         class="text-lg text-center text-gray-300 leading-relaxed"
                     >
                         I design server-side solutions with expertise in
-                        microservices, web scrapers, and real-time systems,
-                        focused on security and performance.
+                        microservices, REST APIs, and cloud technologies, focused on security
+                        and performance.
                     </p>
                 </article>
             </div>
@@ -49,254 +50,20 @@ import EducationComponent from "../components/Myself-Info/EducationComponent.ast
         <section class="skills mt-12 w-full">
             <h2 class="text-3xl font-bold mb-8 relative inline-block">
                 <span
-                    class="relative z-10 px-4 bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent"
+                    class="relative z-10 px-4 bg-gradient-to-r from-red-500 to-red-300 bg-clip-text text-transparent"
                     >My Skills</span
                 >
                 <span
-                    class="absolute bottom-0 left-0 w-full h-1 bg-indigo-500/30 rounded-full"
+                    class="absolute bottom-0 left-0 w-full h-1 bg-orange-500/30 rounded-full"
                 ></span>
             </h2>
 
-            <ul
-                class="skills-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl mx-auto"
-            >
-                <!-- Backend Development -->
-                <li
-                    class="skill-item p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-indigo-500/10 transition-all duration-300 border-l-4 border-indigo-400 hover:border-cyan-400"
-                >
-                    <div class="mb-4 font-bold text-xl text-indigo-100">
-                        Backend Development
-                    </div>
-                    <div class="space-y-3">
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">Python</span
-                            >
-                            <img class="w-8 h-8 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python">        
-                        </div>
-                    <div class="space-y-3">
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">Java 8+ (Spring Boot)</span
-                            >
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/spring.svg"
-                                alt="Spring Boot"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                       <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">Node.js</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@5.24.0/icons/nodedotjs.svg"
-                                alt="Node.js"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                    </div>
-                </li>
+            <!-- Carousel of Skills (destacadas) -->
+            <div class="m-0 w-full max-w-4xl mx-auto">
+                <Carrusel />
+            </div>
 
-                <!-- Database Management -->
-                <li
-                    class="skill-item p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-indigo-500/10 transition-all duration-300 border-l-4 border-indigo-400 hover:border-cyan-400"
-                >
-                    <div class="mb-4 font-bold text-xl text-indigo-100">
-                        Database Management
-                    </div>
-                    <div class="space-y-3">
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">PostgreSQL</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/postgresql.svg"
-                                alt="PostgreSQL"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">MySQL</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg"
-                                alt="MySQL"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">MongoDB</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mongodb.svg"
-                                alt="MongoDB"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                    </div>
-                </li>
-
-                <!-- DevOps & Cloud -->
-                <li
-                    class="skill-item p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-indigo-500/10 transition-all duration-300 border-l-4 border-indigo-400 hover:border-cyan-400"
-                >
-                    <div class="mb-4 font-bold text-xl text-indigo-100">
-                        DevOps & Cloud
-                    </div>
-                    <div class="space-y-3">
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">Docker</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/docker.svg"
-                                alt="Docker"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">Kubernetes</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/kubernetes.svg"
-                                alt="Kubernetes"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">AWS</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/amazonaws.svg"
-                                alt="AWS"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Version Control -->
-                <li
-                    class="skill-item p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-indigo-500/10 transition-all duration-300 border-l-4 border-indigo-400 hover:border-cyan-400"
-                >
-                    <div class="mb-4 font-bold text-xl text-indigo-100">
-                        Version Control
-                    </div>
-                    <div class="space-y-3">
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">Git</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/git.svg"
-                                alt="Git"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">GitHub</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg"
-                                alt="GitHub"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">GitLab</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/gitlab.svg"
-                                alt="GitLab"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Security -->
-                <li
-                    class="skill-item p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-indigo-500/10 transition-all duration-300 border-l-4 border-indigo-400 hover:border-cyan-400"
-                >
-                    <div class="mb-4 font-bold text-xl text-indigo-100">
-                        Security
-                    </div>
-                    <div class="space-y-3">
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">Spring Security</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/springsecurity.svg"
-                                alt="Spring Security"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">OAuth2</span>
-                            <img
-                                src="https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png"
-                                alt="OAuth2"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">JWT</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/jsonwebtokens.svg"
-                                alt="JWT"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Additional Skills -->
-                <li
-                    class="skill-item p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-indigo-500/10 transition-all duration-300 border-l-4 border-indigo-400 hover:border-cyan-400"
-                >
-                    <div class="mb-4 font-bold text-xl text-indigo-100">
-                        Additional Skills
-                    </div>
-                    <div class="space-y-3">
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">REST APIs</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/json.svg"
-                                alt="REST"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                        <div
-                            class="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors"
-                        >
-                            <span class="text-gray-200">Microservices</span>
-                            <img
-                                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/microgenetics.svg"
-                                alt="Microservices"
-                                class="w-6 h-6 invert opacity-80"
-                            />
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <EducationComponent />
         </section>
-
-        <EducationComponent />
     </main>
 </MainLayout>
