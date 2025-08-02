@@ -9,40 +9,50 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/fav.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"
+    />
+    <link rel="icon" type="image/png" href="./src/assets/favicon.png" />
     <title>Portfolio - Juan Guerrero</title>
   </head>
-  <body class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 font-sans flex flex-col">
+  <body
+    class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-gray-100 font-sans flex flex-col"
+  >
     <Header />
-    
+
     <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8 mt-16">
       <slot />
-      
+
       <!-- Navegación móvil sobre el footer -->
-      <div class="md:hidden mt-12 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700">
+      <div
+        class="md:hidden mt-12 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700"
+      >
         <div class="flex divide-x divide-gray-700">
-          <a 
-            href="/projects" 
+          <a
+            href="/projects"
             class="flex-1 flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-indigo-400 transition-colors"
             aria-label="Projects"
           >
             <span class="i-ph-code-duotone text-xl"></span>
             <span class="text-xs mt-1">Projects</span>
           </a>
-          
-          <a 
-            href="/experience" 
+
+          <a
+            href="/experience"
             class="flex-1 flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-indigo-400 transition-colors"
             aria-label="Experience"
           >
             <span class="i-ph-briefcase-duotone text-xl"></span>
             <span class="text-xs mt-1 text-orange-400">Experience</span>
           </a>
-          
-          <a 
-            href="/contact" 
+
+          <a
+            href="/contact"
             class="flex-1 flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-indigo-400 transition-colors"
             aria-label="Contact"
           >
@@ -52,7 +62,7 @@ import "../styles/global.css";
         </div>
       </div>
     </main>
-    
+
     <Footer />
   </body>
 </html>
