@@ -1,127 +1,130 @@
 ---
-// src/components/Projects/AppSecurityJwt.astro
+import "../../styles/global.css";
 ---
 
 <article class="flex flex-col items-center p-5 justify-center w-full max-w-3xl mx-auto text-center">
-    <!-- Spring Security Project Section -->
-    <div class="border-4 border-yellow-500 rounded-xl p-8 flex flex-col items-center w-full mb-8 bg-gray-800/50 backdrop-blur-sm">
-      <div class="flex flex-col items-center w-full md:flex-row md:justify-center gap-8">
-        <div class="text-container w-full md:w-1/2">
-  
-          <h3 class="text-2xl font-bold mb-4 text-yellow-400">Spring Security Project</h3>
-          <ul class="flex flex-wrap justify-center gap-2 mb-6">
-            <li class="px-3 py-1 bg-gray-700 rounded-full text-gray-200">Java 21</li>
-            <li class="px-3 py-1 bg-gray-700 rounded-full text-gray-200">Maven 4.0.0</li>
-            <li class="px-3 py-1 bg-gray-700 rounded-full text-gray-200">Spring 3.4.2</li>
-            <li class="px-3 py-1 bg-gray-700 rounded-full text-gray-200">PostgreSQL 17</li>
-          </ul>
-  
-          <div class="space-y-4">
-            <div>
-<h6 class="text-1xl font-semibold mb-2 text-gray-300">
-  Continue with <span class="inline-flex">
-    <span class="text-[#4285F4]">G</span>
-    <span class="text-[#EA4335]">o</span>
-    <span class="text-[#FBBC05]">o</span>
-    <span class="text-[#4285F4]">g</span>
-    <span class="text-[#34A853]">l</span>
-    <span class="text-[#EA4335]">e</span>
-  </span> added
-</h6>
-              <h3 class="text-xl font-semibold mb-2 text-gray-300">Register Endpoint</h3>
-   
-              <h4 class="mb-2 text-gray-400 text-sm">POST /auth/register</h4>
-              <div class="relative">
-                <textarea 
-                  id="jsonTextRegister" 
-                  rows="6" 
-                  readonly 
-                  class="w-full p-3 rounded-lg bg-gray-900/80 text-gray-300 font-mono text-sm border border-gray-700 focus:outline-none"
-                >           {`{"username":"user007",
-                "password":"pass1234",
-                "email":"user007@gmail.com"}`}</textarea>
-                <button 
-                  id="copyButtonRegister" 
-                  class="absolute bottom-3 right-3 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition-colors"
-                >
-                  Copy
-                </button>
-              </div>
+  <div class="border-4 border-orange-500 rounded-xl p-8 flex flex-col items-center w-full mb-8 bg-gray-800/50 backdrop-blur-sm">
+    <div class="flex flex-col items-center w-full md:flex-row md:justify-center gap-8">
+      <div class="text-container w-full md:w-1/2">
+        <h3 class="text-2xl font-bold mb-4 text-orange-400">Spring Security Project</h3>
+        <ul class="flex flex-wrap justify-center gap-2 mb-6">
+          <li class="px-3 py-1 bg-gray-700 rounded-full text-gray-200">Java 21</li>
+          <li class="px-3 py-1 bg-gray-700 rounded-full text-gray-200">Maven 4.0.0</li>
+          <li class="px-3 py-1 bg-gray-700 rounded-full text-gray-200">Spring 3.4.2</li>
+          <li class="px-3 py-1 bg-gray-700 rounded-full text-gray-200">PostgreSQL 17</li>
+        </ul>
+
+        <div class="space-y-8">
+          <!-- Register -->
+          <div>
+            <h6 class="text-xl font-semibold text-gray-300 mb-2">
+              Continue with 
+              <span class="inline-flex font-bold">
+                <span class="text-[#4285F4]">G</span>
+                <span class="text-[#EA4335]">o</span>
+                <span class="text-[#FBBC05]">o</span>
+                <span class="text-[#4285F4]">g</span>
+                <span class="text-[#34A853]">l</span>
+                <span class="text-[#EA4335]">e</span>
+              </span> added
+            </h6>
+
+            <h3 class="text-xl font-semibold text-gray-300 mb-1">Register Endpoint</h3>
+            <h4 class="text-gray-400 text-sm mb-2">POST /auth/register</h4>
+
+            <div class="relative">
+              <textarea 
+                data-json-copy 
+                rows="6"
+                readonly
+                class="w-full p-3 rounded-lg bg-gray-900/80 text-gray-300 font-mono text-sm border border-gray-700 focus:outline-none"
+              >{`{
+  "username": "user007",
+  "password": "pass1234",
+  "email": "user007@gmail.com"
+}`}</textarea>
+
+              <button 
+                data-copy-btn 
+                class="absolute bottom-3 right-3 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition"
+                aria-label="Copy register JSON"
+              >
+                Copy
+              </button>
             </div>
-  
-            <div>
-              <h3 class="text-xl font-semibold mb-2 text-gray-300">Login Endpoint</h3>
-              <h4 class="mb-2 text-gray-400 text-sm">POST /auth/login</h4>
-              <div class="relative">
-                <textarea 
-                  id="jsonTextLogin" 
-                  rows="5" 
-                  readonly 
-                  class="w-full p-3 rounded-lg bg-gray-900/80 text-gray-300 font-mono text-sm border border-gray-700 focus:outline-none"
-                >           {`{"username":"user007",
-                "password":"pass1234"
-                `}</textarea>
-                <button 
-                  id="copyButtonLogin" 
-                  class="absolute bottom-3 right-3 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition-colors"
-                >
-                  Copy
-                </button>
-              </div>
+          </div>
+
+          <!-- Login -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-300 mb-1">Login Endpoint</h3>
+            <h4 class="text-gray-400 text-sm mb-2">POST /auth/login</h4>
+
+            <div class="relative">
+              <textarea 
+                data-json-copy 
+                rows="5" 
+                readonly
+                class="w-full p-3 rounded-lg bg-gray-900/80 text-gray-300 font-mono text-sm border border-gray-700 focus:outline-none"
+              >{`{
+  "username": "user007",
+  "password": "pass1234"
+}`}</textarea>
+
+              <button 
+                data-copy-btn 
+                class="absolute bottom-3 right-3 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition"
+                aria-label="Copy login JSON"
+              >
+                Copy
+              </button>
             </div>
           </div>
         </div>
+
+        <div class="flex flex-wrap justify-center items-center gap-4 my-6">
+          <img class="w-8 h-8 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/spring.svg" alt="spring">        
+          <img class="w-8 h-8 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/postgresql.svg" alt="postgresql">   
+          <img class="w-8 h-8 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/jsonwebtokens.svg" alt="jwt">         
+          <img class="w-8 h-8 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/google.svg" alt="google">         
+        </div>
+
+        <a 
+          href="https://github.com/gjohnn/app-security-jwt" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white hover:bg-gray-100 text-black font-medium px-6 py-3 rounded-lg border border-black transition"
+        >
+          REPOSITORY LINK
+        </a>
       </div>
-      
-      <div class="flex flex-wrap justify-center items-center gap-4 my-6">
-        <img class="w-8 h-8 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/spring.svg" alt="spring">        
-        <img class="w-8 h-8 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/postgresql.svg" alt="postgresql">   
-        <img class="w-8 h-8 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/jsonwebtokens.svg" alt="jsonwebtokens">         
-        <img class="w-8 h-8 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/google.svg" alt="google">         
-      </div>
-      
-      <a 
-        href="https://github.com/gjohnn/app-security-jwt" 
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-white hover:bg-gray-100 text-black font-medium px-6 py-3 rounded-lg border border-black transition-colors inline-block"
-      >
-        REPOSITORY LINK
-      </a>
     </div>
-  
+  </div>
 
   <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
-      const copyButtonRegister = document.getElementById("copyButtonRegister");
-      const jsonTextRegister = document.getElementById("jsonTextRegister");
-      const copyButtonLogin = document.getElementById("copyButtonLogin");
-      const jsonTextLogin = document.getElementById("jsonTextLogin");
-  
-      function copyJson(textarea, button) {
-        textarea.select();
-        textarea.setSelectionRange(0, 99999);
-        document.execCommand("copy");
-        
-        // Feedback visual
-        const originalText = button.textContent;
-        button.textContent = "Copied!";
-        button.classList.add("bg-green-600");
-        button.classList.remove("bg-blue-600", "hover:bg-blue-700");
-        
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.classList.remove("bg-green-600");
-          button.classList.add("bg-blue-600", "hover:bg-blue-700");
-        }, 2000);
-      }
-  
-      copyButtonRegister.addEventListener("click", () => {
-        copyJson(jsonTextRegister, copyButtonRegister);
-      });
-  
-      copyButtonLogin.addEventListener("click", () => {
-        copyJson(jsonTextLogin, copyButtonLogin);
+      const buttons = document.querySelectorAll("[data-copy-btn]");
+      const textareas = document.querySelectorAll("[data-json-copy]");
+
+      buttons.forEach((btn, index) => {
+        btn.addEventListener("click", async () => {
+          try {
+            const content = textareas[index].value;
+            await navigator.clipboard.writeText(content);
+            const originalText = btn.textContent;
+            btn.textContent = "Copied!";
+            btn.classList.replace("bg-blue-600", "bg-green-600");
+
+            setTimeout(() => {
+              btn.textContent = originalText;
+              btn.classList.replace("bg-green-600", "bg-blue-600");
+            }, 2000);
+          } catch (err) {
+            console.error("Clipboard error:", err);
+            btn.textContent = "Error";
+            btn.classList.replace("bg-blue-600", "bg-red-600");
+          }
+        });
       });
     });
   </script>
+</article>
