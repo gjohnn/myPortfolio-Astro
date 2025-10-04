@@ -4,60 +4,173 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-  <section class="max-w-2xl mx-auto py-16 px-6 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-      Let's Connect
-    </h1>
-    
-    <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
-      I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
-      Feel free to reach out for collaborations, job opportunities, or just a chat about technology.
-    </p>
+  <div class="relative">
+    <!-- Page Header -->
+    <section class="text-center mb-16 animate-on-scroll">
+      <div class="relative inline-block">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 gradient-text">
+          Let's Connect
+        </h1>
+        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
+      </div>
+      <p class="text-xl text-gray-400 mt-8 max-w-3xl mx-auto leading-relaxed">
+        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+        Let's start a conversation about how we can work together.
+      </p>
+    </section>
 
-    <div class="flex flex-col items-center gap-4 w-full max-w-xs mx-auto">
-      <!-- Email Section -->
-      <div class="w-full">
-        <!-- Email Link -->
-        <a 
-          href="mailto:juansgb316@outlook.com" 
-          class="flex items-center justify-center gap-3 w-full p-4 bg-gray-800 hover:bg-yellow-500 text-yellow-400 hover:text-gray-900 rounded-lg transition-all duration-300 border border-yellow-500/30 hover:border-yellow-500 mb-2"
-        >
-        <svg class="w-6 h-6 invert opacity-80" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Mail.Ru</title><path d="M15.61 12c0 1.99-1.62 3.61-3.61 3.61-1.99 0-3.61-1.62-3.61-3.61 0-1.99 1.62-3.61 3.61-3.61 1.99 0 3.61 1.62 3.61 3.61M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12c2.424 0 4.761-.722 6.76-2.087l.034-.024-1.617-1.879-.027.017A9.494 9.494 0 0 1 12 21.54c-5.26 0-9.54-4.28-9.54-9.54 0-5.26 4.28-9.54 9.54-9.54 5.26 0 9.54 4.28 9.54 9.54a9.63 9.63 0 0 1-.225 2.05c-.301 1.239-1.169 1.618-1.82 1.568-.654-.053-1.42-.52-1.426-1.661V12A6.076 6.076 0 0 0 12 5.93 6.076 6.076 0 0 0 5.93 12 6.076 6.076 0 0 0 12 18.07a6.02 6.02 0 0 0 4.3-1.792 3.9 3.9 0 0 0 3.32 1.805c.874 0 1.74-.292 2.437-.821.719-.547 1.256-1.336 1.553-2.285.047-.154.135-.504.135-.507l.002-.013c.175-.76.253-1.52.253-2.457 0-6.617-5.383-12-12-12"/></svg>          <span class="font-medium">Email</span>
-        </a>
-        
-        <!-- Copy Email Button -->
-        <button 
-          id="copyEmailBtn"
-          class="flex items-center justify-center gap-2 w-full p-3 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-all duration-300 text-sm"
-          onclick="copyEmailToClipboard()"
-        >
-          <span id="copyEmailText">Copy Email Address</span>
-          <span id="copyEmailIcon">📋</span>
-        </button>
+    <!-- Contact Methods -->
+    <section class="max-w-4xl mx-auto animate-on-scroll">
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <!-- Quick Contact -->
+        <div class="card card-hover p-8">
+          <h2 class="text-2xl font-bold mb-6 text-white flex items-center">
+            <i class="fas fa-paper-plane text-red-400 mr-3"></i>
+            Quick Contact
+          </h2>
+          
+          <div class="space-y-4">
+            <!-- Email -->
+            <div class="group">
+              <a 
+                href="mailto:juansgb316@outlook.com" 
+                class="flex items-center gap-4 p-4 rounded-lg bg-gray-700/50 hover:bg-red-500/20 text-gray-300 hover:text-white transition-all duration-300 border border-gray-600/50 hover:border-red-500/50"
+              >
+                <div class="flex-shrink-0 w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center group-hover:bg-red-500/30 transition-colors">
+                  <i class="fas fa-envelope text-red-400 text-lg"></i>
+                </div>
+                <div>
+                  <div class="font-medium">Email</div>
+                  <div class="text-sm text-gray-400 group-hover:text-gray-300">juansgb316@outlook.com</div>
+                </div>
+              </a>
+              
+              <!-- Copy Email Button -->
+              <button 
+                id="copyEmailBtn"
+                class="w-full mt-2 p-3 bg-gray-700/50 hover:bg-gray-600/70 text-gray-300 hover:text-white rounded-lg transition-all duration-300 text-sm border border-gray-600/50 hover:border-gray-500/50 group"
+                onclick="copyEmailToClipboard()"
+              >
+                <i id="copyEmailIcon" class="fas fa-copy mr-2 group-hover:scale-110 transition-transform"></i>
+                <span id="copyEmailText">Copy Email Address</span>
+              </button>
+            </div>
+
+            <!-- LinkedIn -->
+            <a 
+              href="https://www.linkedin.com/in/juan-guerre3168" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-4 p-4 rounded-lg bg-gray-700/50 hover:bg-blue-500/20 text-gray-300 hover:text-white transition-all duration-300 border border-gray-600/50 hover:border-blue-500/50 group"
+            >
+              <div class="flex-shrink-0 w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
+                <i class="fab fa-linkedin text-blue-400 text-lg"></i>
+              </div>
+              <div>
+                <div class="font-medium">LinkedIn</div>
+                <div class="text-sm text-gray-400 group-hover:text-gray-300">Professional Profile</div>
+              </div>
+              <i class="fas fa-external-link-alt text-gray-500 ml-auto group-hover:text-blue-400 transition-colors"></i>
+            </a>
+
+            <!-- GitHub -->
+            <a 
+              href="https://github.com/gjohnn" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-4 p-4 rounded-lg bg-gray-700/50 hover:bg-gray-600/70 text-gray-300 hover:text-white transition-all duration-300 border border-gray-600/50 hover:border-gray-500/50 group"
+            >
+              <div class="flex-shrink-0 w-12 h-12 bg-gray-600/50 rounded-lg flex items-center justify-center group-hover:bg-gray-600/70 transition-colors">
+                <i class="fab fa-github text-gray-300 text-lg"></i>
+              </div>
+              <div>
+                <div class="font-medium">GitHub</div>
+                <div class="text-sm text-gray-400 group-hover:text-gray-300">View My Code</div>
+              </div>
+              <i class="fas fa-external-link-alt text-gray-500 ml-auto group-hover:text-gray-300 transition-colors"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="card card-hover p-8">
+          <h2 class="text-2xl font-bold mb-6 text-white flex items-center">
+            <i class="fas fa-info-circle text-indigo-400 mr-3"></i>
+            Let's Discuss
+          </h2>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mt-1">
+                <i class="fas fa-handshake text-green-400 text-sm"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-2">Project Collaboration</h3>
+                <p class="text-gray-400 text-sm">Looking for a backend developer for your next project? Let's talk about how I can help bring your ideas to life.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center mt-1">
+                <i class="fas fa-briefcase text-blue-400 text-sm"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-2">Job Opportunities</h3>
+                <p class="text-gray-400 text-sm">Interested in full-time or freelance opportunities in backend development, APIs, and cloud solutions.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center mt-1">
+                <i class="fas fa-comments text-purple-400 text-sm"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-2">Technical Discussion</h3>
+                <p class="text-gray-400 text-sm">Always excited to discuss technology, share knowledge, and learn from fellow developers.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-gray-700/50">
+            <p class="text-sm text-gray-400 text-center">
+              <i class="fas fa-clock mr-2"></i>
+              Usually responds within 24 hours
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- LinkedIn -->
-      <a 
-        href="https://www.linkedin.com/in/juan-guerre3168" 
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center justify-center gap-3 w-full p-4 bg-gray-800 hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white rounded-lg transition-all duration-300 border border-[#0A66C2]/30 hover:border-[#0A66C2]"
-      >
-      <img class="w-6 h-6 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn">        <span class="font-medium">LinkedIn</span>
-      </a>
-
-      <!-- GitHub -->
-      <a 
-        href="https://github.com/gjohnn" 
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center justify-center gap-3 w-full p-4 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition-all duration-300 border border-gray-600/30 hover:border-gray-500"
-      >
-      <img class="w-6 h-6 invert opacity-80" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="Linux" srcset="">
-        <span class="font-medium">GitHub</span>
-      </a>
-    </div>
-  </section>
+      <!-- Call to Action -->
+      <div class="text-center animate-on-scroll">
+        <div class="card p-8 max-w-2xl mx-auto">
+          <h2 class="text-2xl font-bold mb-4 text-white">
+            Ready to Start Something Great?
+          </h2>
+          <p class="text-gray-400 mb-6">
+            Whether you have a specific project in mind or just want to explore possibilities, 
+            I'm here to help turn your vision into reality.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:juansgb316@outlook.com"
+              class="btn btn-primary group"
+            >
+              <i class="fas fa-envelope mr-2 group-hover:animate-bounce"></i>
+              Send me an Email
+            </a>
+            <a
+              href="/Juan_Sebastián_Guerrero_Britos.pdf"
+              download="Juan_Sebastián_Guerrero_Britos_CV.pdf"
+              class="btn btn-secondary group"
+            >
+              <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <script is:inline>
     function copyEmailToClipboard() {
@@ -67,21 +180,27 @@ import MainLayout from "../layouts/MainLayout.astro";
         const text = document.getElementById('copyEmailText');
         const icon = document.getElementById('copyEmailIcon');
         
-        // Feedback visual
-        text.textContent = 'Copied!';
-        icon.textContent = '✓';
-        btn.classList.add('bg-green-600', 'text-white');
-        btn.classList.remove('bg-gray-700', 'hover:bg-gray-600', 'text-gray-300');
+        // Visual feedback
+        text.textContent = 'Email Copied!';
+        icon.className = 'fas fa-check mr-2 text-green-400';
+        btn.classList.add('bg-green-600/20', 'border-green-500/50', 'text-green-400');
+        btn.classList.remove('bg-gray-700/50', 'border-gray-600/50', 'text-gray-300');
         
-        // Reset after 2 seconds
+        // Reset after 3 seconds
         setTimeout(() => {
           text.textContent = 'Copy Email Address';
-          icon.textContent = '📋';
-          btn.classList.remove('bg-green-600', 'text-white');
-          btn.classList.add('bg-gray-700', 'hover:bg-gray-600', 'text-gray-300');
-        }, 2000);
+          icon.className = 'fas fa-copy mr-2 group-hover:scale-110 transition-transform';
+          btn.classList.remove('bg-green-600/20', 'border-green-500/50', 'text-green-400');
+          btn.classList.add('bg-gray-700/50', 'border-gray-600/50', 'text-gray-300');
+        }, 3000);
       }).catch(err => {
         console.error('Failed to copy email: ', err);
+        // Fallback feedback
+        const text = document.getElementById('copyEmailText');
+        text.textContent = 'Copy failed - try again';
+        setTimeout(() => {
+          text.textContent = 'Copy Email Address';
+        }, 2000);
       });
     }
   </script>

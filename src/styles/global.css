@@ -1,5 +1,162 @@
 @import "tailwindcss";
 
+/* =========================================
+   VARIABLES CSS PERSONALIZADAS
+   ======================================== */
+:root {
+  /* Colores principales */
+  --primary-500: #ef4444;
+  --primary-400: #f87171;
+  --primary-300: #fca5a5;
+  --primary-600: #dc2626;
+  --primary-700: #b91c1c;
+  
+  /* Colores secundarios */
+  --secondary-500: #6366f1;
+  --secondary-400: #818cf8;
+  --secondary-300: #a5b4fc;
+  --secondary-600: #4f46e5;
+  
+  /* Grises */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+  
+  /* Espaciado */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  
+  /* Radio de bordes */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  
+  /* Tipografía */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+  
+  /* Duraciones de transición */
+  --duration-150: 150ms;
+  --duration-200: 200ms;
+  --duration-300: 300ms;
+  --duration-500: 500ms;
+}
+
+/* =========================================
+   TIPOGRAFÍA MEJORADA
+   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+/* =========================================
+   UTILIDADES PERSONALIZADAS
+   ======================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgb(17 24 39), 0 0 0 4px rgb(239 68 68 / 0.5);
+}
+
+.btn-primary {
+  background: linear-gradient(to right, rgb(239 68 68), rgb(220 38 38));
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, rgb(220 38 38), rgb(185 28 28));
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: rgb(55 65 81);
+  color: rgb(243 244 246);
+  border: 1px solid rgb(75 85 99);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(75 85 99);
+  border-color: rgb(107 114 128);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.card {
+  background: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(55, 65, 81, 0.5);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.card-hover:hover {
+  background: rgba(31, 41, 55, 0.7);
+  border-color: rgba(75, 85, 99, 0.5);
+  transform: scale(1.02);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, rgb(248 113 113), rgb(220 38 38));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(rgb(31 41 55), rgb(31 41 55)) padding-box,
+              linear-gradient(135deg, rgb(239 68 68), rgb(99 102 241)) border-box;
+  border: 2px solid transparent;
+}
+
+/* =========================================
+   ANIMACIONES MEJORADAS
+   ======================================== */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -9,10 +166,56 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgb(239 68 68 / 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgb(239 68 68 / 0.8), 0 0 30px rgb(239 68 68 / 0.4);
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.6s ease-out forwards;
+}
+
+/* =========================================
+   COMPONENTES MARQUEE
+   ======================================== */
 .marquee-wrapper {
   overflow: hidden;
   width: 100%;
   position: relative;
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 }
 
 .marquee-content {
@@ -24,6 +227,56 @@
 .marquee-item {
   display: inline-flex;
   align-items: center;
-  padding: 0 1rem; /* Espaciado interno entre ítems */
-  flex-shrink: 0;   /* Evita que se achiquen */
+  padding: 0 var(--space-lg);
+  flex-shrink: 0;
+}
+
+/* =========================================
+   EFECTOS GLASS MORPHISM
+   ======================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+   ESTILOS RESPONSIVOS
+   ======================================== */
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+/* =========================================
+   MEJORAS DE SCROLL
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-700);
+  border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-600);
 }

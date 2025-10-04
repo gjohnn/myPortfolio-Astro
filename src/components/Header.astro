@@ -3,176 +3,315 @@ import "../styles/global.css";
 ---
 
 <header
-  class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md text-red-400 py-4 shadow-lg z-50 border-b border-indigo-500/30"
+  class="fixed top-0 w-full glass-dark text-white py-4 shadow-2xl z-50 border-b border-white/10"
 >
   <nav class="flex justify-between items-center px-6 max-w-7xl mx-auto">
-    <!-- Logo/Brand -->
+    <!-- Enhanced Logo/Brand -->
     <div class="flex items-center">
       <a
         href="/"
-        class="text-2xl font-bold bg-gradient-to-r from-red-400 to-red-400 bg-clip-text text-transparent hover:from-red-300 hover:to-red-300 transition-all duration-300"
+        class="group relative flex items-center space-x-2"
       >
-        JG
+        <div class="relative">
+          <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-red-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+          <div class="relative flex items-center justify-center w-10 h-10 bg-gray-900 rounded-lg">
+            <span class="text-xl font-bold gradient-text">JG</span>
+          </div>
+        </div>
+        <div class="hidden sm:block">
+          <span class="text-lg font-semibold text-white group-hover:text-red-400 transition-colors">
+            Juan Sebastián Guerrero Britos
+          </span>
+          <p class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
+            Software Developer
+          </p>
+        </div>
       </a>
     </div>
 
-    <!-- Desktop Navigation -->
+    <!-- Enhanced Desktop Navigation -->
     <div class="hidden lg:flex">
-      <ul class="flex justify-center flex-wrap gap-8 list-none p-0 m-0">
+      <ul class="flex justify-center items-center gap-8 list-none p-0 m-0">
         <li>
           <a
-            class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 px-2 py-1 rounded"
+            class="nav-link relative px-4 py-2 font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-lg hover:bg-white/5"
             href="/"
           >
+            <i class="fas fa-home mr-2"></i>
             Home
+            <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
           <a
-            class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 px-2 py-1 rounded"
+            class="nav-link relative px-4 py-2 font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-lg hover:bg-white/5"
             href="/experience"
           >
+            <i class="fas fa-briefcase mr-2"></i>
             Experience
+            <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
           <a
-            class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 px-2 py-1 rounded"
+            class="nav-link relative px-4 py-2 font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-lg hover:bg-white/5"
             href="/projects"
           >
+            <i class="fas fa-code mr-2"></i>
             Projects
+            <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
           <a
-            href="../../Juan_Sebastián_Guerrero_Britos.pdf"
+            href="/Juan_Sebastián_Guerrero_Britos.pdf"
             download="Juan_Sebastián_Guerrero_Britos_CV.pdf"
-            class="btn btn-primary"
+            class="btn btn-primary group"
           >
+            <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
             Download CV
           </a>
         </li>
         <li>
           <a
-            class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 px-2 py-1 rounded"
+            class="nav-link relative px-4 py-2 font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-lg hover:bg-white/5"
             href="/contact"
           >
+            <i class="fas fa-envelope mr-2"></i>
             Contact
+            <span class="nav-indicator"></span>
           </a>
         </li>
       </ul>
     </div>
 
-    <!-- Mobile Menu Button -->
-    <div class="flex lg:hidden items-center gap-4 text-red-400">
+    <!-- Enhanced Mobile Menu Button -->
+    <div class="flex lg:hidden items-center gap-4">
       <button
         id="hamburger"
-        class="text-indigo-200 hover:text-white focus:outline-none transition-colors duration-200 p-1 rounded-md hover:bg-gray-700/50"
+        class="relative p-3 text-gray-300 hover:text-white focus:outline-none transition-all duration-300 rounded-lg hover:bg-white/10 group"
+        aria-label="Toggle mobile menu"
       >
-        <svg
-          id="hamburgerIcon"
-          class="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            id="hamburgerPath"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
+        <div class="w-6 h-6 flex flex-col justify-center items-center">
+          <span
+            id="hamburgerLine1"
+            class="block w-6 h-0.5 bg-current transition-all duration-300 group-hover:bg-red-400"
+          ></span>
+          <span
+            id="hamburgerLine2"
+            class="block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5 group-hover:bg-red-400"
+          ></span>
+          <span
+            id="hamburgerLine3"
+            class="block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5 group-hover:bg-red-400"
+          ></span>
+        </div>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile Dropdown Menu -->
+  <!-- Enhanced Mobile Dropdown Menu -->
   <div
     id="dropdownMenu"
-    class="lg:hidden hidden bg-gray-800 text-red-400 py-4 absolute w-full left-0 top-full border-t border-indigo-500/30 shadow-xl"
+    class="lg:hidden hidden absolute w-full left-0 top-full glass-dark border-t border-white/10 shadow-2xl"
   >
-    <ul class="flex flex-col items-center gap-5 py-2">
-      <li class="w-full text-center">
-        <a
-          class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 block py-3 hover:bg-gray-700/50"
-          href="/"
-        >
-          Home
-        </a>
-      </li>
-      <li class="w-full text-center">
-        <a
-          class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 block py-3 hover:bg-gray-700/50"
-          href="/experience"
-        >
-          Experience
-        </a>
-      </li>
-
-      <li class="w-full text-center">
-        <a
-          class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 block py-3 hover:bg-gray-700/50"
-          href="/projects"
-        >
-          Projects
-        </a>
-      </li>
-      <li>
-        <a
-          href="../../Juan_Sebastián_Guerrero_Britos.pdf"
-          download="Juan_Sebastián_Guerrero_Britos.pdf"
-          class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 block py-3 hover:bg-gray-700/50"
-        >
-          Download CV
-        </a>
-      </li>
-
-      <li class="w-full text-center">
-        <a
-          class="font-medium text-lg hover:text-indigo-300 transition-colors duration-200 block py-3 hover:bg-gray-700/50"
-          href="/contact"
-        >
-          Contact
-        </a>
-      </li>
-    </ul>
+    <div class="max-w-7xl mx-auto px-6 py-6">
+      <ul class="flex flex-col gap-2">
+        <li>
+          <a
+            class="mobile-nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+            href="/"
+          >
+            <i class="fas fa-home mr-3 w-5"></i>
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            class="mobile-nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+            href="/experience"
+          >
+            <i class="fas fa-briefcase mr-3 w-5"></i>
+            Experience
+          </a>
+        </li>
+        <li>
+          <a
+            class="mobile-nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+            href="/projects"
+          >
+            <i class="fas fa-code mr-3 w-5"></i>
+            Projects
+          </a>
+        </li>
+        <li class="mt-4 pt-4 border-t border-white/10">
+          <a
+            href="/Juan_Sebastián_Guerrero_Britos.pdf"
+            download="Juan_Sebastián_Guerrero_Britos.pdf"
+            class="btn btn-primary w-full justify-center"
+          >
+            <i class="fas fa-download mr-2"></i>
+            Download CV
+          </a>
+        </li>
+        <li class="mt-2">
+          <a
+            class="mobile-nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+            href="/contact"
+          >
+            <i class="fas fa-envelope mr-3 w-5"></i>
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </header>
 
-<script>
-  const hamburgerButton = document.getElementById("hamburger");
-  const dropdownMenu = document.getElementById("dropdownMenu");
-  const hamburgerPath = document.getElementById("hamburgerPath");
+<style>
+  .nav-indicator {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, rgb(239 68 68), rgb(220 38 38));
+    transition: width 0.3s ease;
+    border-radius: 1px;
+  }
 
-  hamburgerButton.addEventListener("click", () => {
-    dropdownMenu.classList.toggle("hidden");
+  .nav-link:hover .nav-indicator {
+    width: 100%;
+  }
 
-    // Toggle hamburger and X icon
-    if (dropdownMenu.classList.contains("hidden")) {
-      hamburgerPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16"); // Hamburger
-    } else {
-      hamburgerPath.setAttribute("d", "M6 18L18 6M6 6l12 12"); // X
+  .mobile-nav-link {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mobile-nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .mobile-nav-link:hover::before {
+    left: 100%;
+  }
+
+  #hamburgerLine1.active {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #hamburgerLine2.active {
+    opacity: 0;
+  }
+
+  #hamburgerLine3.active {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburgerButton = document.getElementById("hamburger");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    const hamburgerLine1 = document.getElementById("hamburgerLine1");
+    const hamburgerLine2 = document.getElementById("hamburgerLine2");
+    const hamburgerLine3 = document.getElementById("hamburgerLine3");
+
+    if (!hamburgerButton || !dropdownMenu || !hamburgerLine1 || !hamburgerLine2 || !hamburgerLine3) {
+      return;
     }
-  });
 
-  // Close menu when clicking on a link (mobile)
-  document.querySelectorAll("#dropdownMenu a").forEach((link) => {
-    link.addEventListener("click", () => {
-      dropdownMenu.classList.add("hidden");
-      hamburgerPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
+    function toggleMenu() {
+      const isMenuOpen = !dropdownMenu.classList.contains("hidden");
+      
+      if (isMenuOpen) {
+        // Close menu
+        dropdownMenu.classList.add("hidden");
+        hamburgerLine1.classList.remove("active");
+        hamburgerLine2.classList.remove("active");
+        hamburgerLine3.classList.remove("active");
+      } else {
+        // Open menu with animation
+        dropdownMenu.classList.remove("hidden");
+        hamburgerLine1.classList.add("active");
+        hamburgerLine2.classList.add("active");
+        hamburgerLine3.classList.add("active");
+      }
+    }
+
+    function closeMenu() {
+      if (dropdownMenu && !dropdownMenu.classList.contains("hidden")) {
+        dropdownMenu.classList.add("hidden");
+        hamburgerLine1.classList.remove("active");
+        hamburgerLine2.classList.remove("active");
+        hamburgerLine3.classList.remove("active");
+      }
+    }
+
+    // Toggle menu on hamburger click
+    hamburgerButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
-  });
 
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (
-      !dropdownMenu.contains(e.target) &&
-      !hamburgerButton.contains(e.target)
-    ) {
-      dropdownMenu.classList.add("hidden");
-      hamburgerPath.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
-    }
+    // Close menu when clicking on a mobile nav link
+    document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target && dropdownMenu && hamburgerButton) {
+        const isInsideMenu = dropdownMenu.contains(target);
+        const isHamburgerButton = hamburgerButton.contains(target);
+        
+        if (!isInsideMenu && !isHamburgerButton) {
+          closeMenu();
+        }
+      }
+    });
+
+    // Close menu on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    // Add active state to current page navigation
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav-link, .mobile-nav-link");
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPath || (currentPath === "/" && href === "/")) {
+        link.classList.add("text-red-400");
+        const indicator = link.querySelector(".nav-indicator");
+        if (indicator) {
+          indicator.style.width = "100%";
+        }
+      }
+    });
+
+    // Handle window resize - close menu if switching to desktop
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (window.innerWidth >= 1024) { // lg breakpoint
+          closeMenu();
+        }
+      }, 100);
+    });
   });
 </script>
