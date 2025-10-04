@@ -2,49 +2,49 @@
 import "../../styles/global.css";
 ---
 
-<article class="card card-hover p-8 mb-8 animate-on-scroll">
+<article class="card card-hover p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 animate-on-scroll overflow-visible">
   <!-- Project Header -->
-  <div class="flex flex-col lg:flex-row gap-8 items-start">
+  <div class="flex flex-col xl:flex-row gap-6 sm:gap-8 items-start">
     <!-- Project Info -->
-    <div class="flex-1">
-      <div class="flex items-center gap-4 mb-4">
-        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-          <i class="fab fa-microsoft text-white text-xl"></i>
+    <div class="flex-1 w-full">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="fab fa-microsoft text-white text-lg sm:text-xl"></i>
         </div>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-1">.NET Core API Project</h3>
-          <p class="text-gray-400 text-sm">Enterprise-grade Backend Template</p>
+        <div class="flex-1">
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">.NET Core API Project</h3>
+          <p class="text-gray-400 text-xs sm:text-sm">Enterprise-grade Backend Template</p>
         </div>
       </div>
 
       <!-- Description -->
-      <p class="text-gray-300 mb-6 leading-relaxed">
+      <p class="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">
         A comprehensive .NET 8 API template featuring clean architecture, Entity Framework Core, 
         JWT authentication, and PostgreSQL integration. Built with modern practices and 
         enterprise-level patterns for scalable backend development.
       </p>
 
       <!-- Technologies -->
-      <div class="mb-6">
-        <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Technology Stack</h4>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-lg border border-purple-500/30 text-sm font-medium">
+      <div class="mb-4 sm:mb-6">
+        <h4 class="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2 sm:mb-3">Technology Stack</h4>
+        <div class="flex flex-wrap gap-1 sm:gap-2">
+          <span class="px-2 sm:px-3 py-1 bg-purple-500/20 text-purple-400 rounded-lg border border-purple-500/30 text-xs sm:text-sm font-medium">
             <i class="fab fa-microsoft mr-1"></i>
             C# 12
           </span>
-          <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-lg border border-blue-500/30 text-sm font-medium">
+          <span class="px-2 sm:px-3 py-1 bg-blue-500/20 text-blue-400 rounded-lg border border-blue-500/30 text-xs sm:text-sm font-medium">
             <i class="fas fa-code mr-1"></i>
             .NET 8
           </span>
-          <span class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-lg border border-orange-500/30 text-sm font-medium">
+          <span class="px-2 sm:px-3 py-1 bg-orange-500/20 text-orange-400 rounded-lg border border-orange-500/30 text-xs sm:text-sm font-medium">
             <i class="fas fa-database mr-1"></i>
             Entity Framework Core
           </span>
-          <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-lg border border-blue-600/30 text-sm font-medium">
+          <span class="px-2 sm:px-3 py-1 bg-blue-600/20 text-blue-300 rounded-lg border border-blue-600/30 text-xs sm:text-sm font-medium">
             <i class="fas fa-server mr-1"></i>
             PostgreSQL 17
           </span>
-          <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-lg border border-green-500/30 text-sm font-medium">
+          <span class="px-2 sm:px-3 py-1 bg-green-500/20 text-green-400 rounded-lg border border-green-500/30 text-xs sm:text-sm font-medium">
             <i class="fas fa-shield-alt mr-1"></i>
             JWT Auth
           </span>
@@ -52,50 +52,50 @@ import "../../styles/global.css";
       </div>
 
       <!-- Architecture Features -->
-      <div class="mb-6">
-        <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Architecture Features</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div class="mb-4 sm:mb-6">
+        <h4 class="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2 sm:mb-3">Architecture Features</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
           <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-sm"></i>
-            <span class="text-sm">Clean Architecture</span>
+            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
+            <span class="text-xs sm:text-sm">Clean Architecture</span>
           </div>
           <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-sm"></i>
-            <span class="text-sm">CQRS Pattern</span>
+            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
+            <span class="text-xs sm:text-sm">CQRS Pattern</span>
           </div>
           <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-sm"></i>
-            <span class="text-sm">Repository Pattern</span>
+            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
+            <span class="text-xs sm:text-sm">Repository Pattern</span>
           </div>
           <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-sm"></i>
-            <span class="text-sm">Dependency Injection</span>
+            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
+            <span class="text-xs sm:text-sm">Dependency Injection</span>
           </div>
           <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-sm"></i>
-            <span class="text-sm">Global Error Handling</span>
+            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
+            <span class="text-xs sm:text-sm">Global Error Handling</span>
           </div>
           <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-sm"></i>
-            <span class="text-sm">API Versioning</span>
+            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
+            <span class="text-xs sm:text-sm">API Versioning</span>
           </div>
         </div>
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row gap-3">
+      <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
         <a
           href="https://github.com/gjohnn/base_projects_dotnet8.git"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-primary group flex-1 sm:flex-none"
+          class="btn btn-primary group w-full sm:w-auto sm:flex-1 lg:flex-none text-sm"
         >
           <i class="fab fa-github mr-2 group-hover:animate-bounce"></i>
           View on GitHub
         </a>
         <button 
           id="copyCloneBtn"
-          class="btn btn-secondary group flex-1 sm:flex-none"
+          class="btn btn-secondary group w-full sm:w-auto sm:flex-1 lg:flex-none text-sm"
           onclick="copyCloneCommand()"
         >
           <i id="cloneIcon" class="fas fa-code-branch mr-2 group-hover:animate-bounce"></i>
@@ -105,22 +105,22 @@ import "../../styles/global.css";
     </div>
 
     <!-- Code Preview -->
-    <div class="w-full lg:w-96 flex-shrink-0">
-      <div class="relative">
+    <div class="w-full xl:w-96 flex-shrink-0 mt-4 xl:mt-0">
+      <div class="relative container-with-floating">
         <!-- Code Window -->
         <div class="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden">
           <!-- Window Header -->
-          <div class="bg-gray-800 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+          <div class="bg-gray-800 px-3 sm:px-4 py-2 flex items-center gap-2 border-b border-gray-700">
             <div class="flex gap-1">
-              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+              <div class="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
+              <div class="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
+              <div class="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
             </div>
-            <span class="text-gray-400 text-sm ml-2">Program.cs</span>
+            <span class="text-gray-400 text-xs sm:text-sm ml-2">Program.cs</span>
           </div>
           
           <!-- Code Content -->
-          <div class="p-4 font-mono text-xs overflow-x-auto">
+          <div class="p-3 sm:p-4 font-mono text-xs sm:text-sm overflow-x-auto">
             <div class="text-purple-400">var <span class="text-white">builder</span> = <span class="text-blue-400">WebApplication</span>.<span class="text-yellow-400">CreateBuilder</span>(<span class="text-orange-400">args</span>);</div>
             <div class="text-gray-500 mt-2">// Add services</div>
             <div class="text-white">builder.Services.<span class="text-yellow-400">AddControllers</span>();</div>
@@ -131,12 +131,12 @@ import "../../styles/global.css";
           </div>
         </div>
 
-        <!-- Floating Tech Icons -->
-        <div class="absolute -top-4 -right-4 w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center animate-float">
-          <i class="fab fa-microsoft text-blue-400"></i>
+        <!-- Floating Tech Icons - Hide on very small screens -->
+        <div class="hidden sm:block absolute -top-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-blue-500/20 rounded-lg flex items-center justify-center animate-float">
+          <i class="fab fa-microsoft text-blue-400 text-sm sm:text-base"></i>
         </div>
-        <div class="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center animate-float" style="animation-delay: -1s;">
-          <i class="fas fa-database text-purple-400"></i>
+        <div class="hidden sm:block absolute -bottom-2 -left-2 w-6 h-6 sm:w-8 sm:h-8 bg-purple-500/20 rounded-lg flex items-center justify-center animate-float" style="animation-delay: -1s;">
+          <i class="fas fa-database text-purple-400 text-sm sm:text-base"></i>
         </div>
       </div>
     </div>
