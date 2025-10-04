@@ -128,6 +128,8 @@ html {
   border: 1px solid rgba(55, 65, 81, 0.5);
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
 }
 
 .card:hover {
@@ -248,17 +250,315 @@ html {
 }
 
 /* =========================================
+   UTILIDADES ADICIONALES PARA PROYECTOS
+   ======================================== */
+
+/* Project cards specific responsive utilities */
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-code-preview {
+  min-height: 200px;
+}
+
+@media (max-width: 767px) {
+  .project-code-preview {
+    min-height: 150px;
+  }
+}
+
+/* Mejoras para elementos flotantes */
+.container-with-floating {
+  position: relative;
+  overflow: visible;
+}
+
+@media (max-width: 479px) {
+  .container-with-floating .absolute {
+    display: none !important;
+  }
+}
+
+/* Texto responsivo específico para proyectos */
+.project-title {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+  .project-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* =========================================
    ESTILOS RESPONSIVOS
    ======================================== */
-@media (max-width: 768px) {
+
+/* Mobile First - Base styles for mobile */
+.btn {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  min-height: 44px; /* Minimum touch target */
+}
+
+.card {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 1rem;
+}
+
+/* Small Mobile (320px - 479px) */
+@media (max-width: 479px) {
   .btn {
-    padding: 0.5rem 0.75rem;
+    width: 100%;
+    padding: 0.875rem 1rem;
     font-size: 0.875rem;
   }
   
   .card {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    padding: 0.875rem;
+    /* Ensure floating elements don't clip on small screens */
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Hide floating decorative elements on very small screens to prevent clipping */
+  .card .absolute {
+    display: none;
+  }
+  
+  /* Typography adjustments for very small screens */
+  h1 {
+    font-size: 2.5rem !important; /* Override other sizes */
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  /* Adjust hero section for tiny screens */
+  .hero-title {
+    font-size: 3rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Mobile (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .card {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    padding: 1.25rem;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .card {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2rem;
+  }
+}
+
+/* High DPI / Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .btn {
+    border-width: 0.5px; /* Thinner borders on high DPI */
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 767px) and (orientation: landscape) {
+  .hero-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .mobile-nav {
+    bottom: 1rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover,
+  .card-hover:hover,
+  .nav-link:hover {
+    transform: none; /* Disable hover transforms on touch devices */
+  }
+  
+  .btn:active,
+  .card-hover:active {
+    transform: scale(0.98);
+  }
+}
+
+/* =========================================
+   CLASES UTILITY RESPONSIVAS
+   ======================================== */
+
+/* Spacing utilities for mobile */
+.mobile-spacing {
+  padding: 1rem 0.5rem;
+}
+
+.mobile-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.mobile-text-base {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.mobile-text-lg {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+/* Container utilities */
+.container-mobile {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container-with-floating {
+  position: relative;
+  padding: 1rem;
+  margin: 0.5rem;
+  overflow: visible;
+}
+
+@media (min-width: 640px) {
+  .container-mobile {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .container-with-floating {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-mobile {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .container-with-floating {
+    padding: 2rem;
+    margin: 1.5rem;
+  }
+}
+
+/* Grid utilities for responsive layouts */
+.grid-responsive {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-responsive {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Text sizing for hero sections */
+.hero-title-responsive {
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+@media (min-width: 480px) {
+  .hero-title-responsive {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-title-responsive {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title-responsive {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title-responsive {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-title-responsive {
+    font-size: 7rem;
   }
 }
 

@@ -7,17 +7,17 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout>
   <div class="relative">
     <!-- Page Header -->
-    <section class="text-center mb-16 animate-on-scroll">
-      <div class="relative inline-block ">
-        <h1 class="text-5xl md:text-6xl font-bold mb- gradient-text pb-4 pt-4">
+    <section class="text-center mb-8 sm:mb-12 lg:mb-16 animate-on-scroll px-4">
+      <div class="relative inline-block">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 gradient-text pb-4 pt-4">
           My Projects
         </h1>
         <div
-          class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mt-2"
+          class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mt-2"
         >
         </div>
       </div>
-      <p class="text-xl text-gray-400 mt-8 max-w-3xl mx-auto leading-relaxed">
+      <p class="text-base sm:text-lg md:text-xl text-gray-400 mt-6 sm:mt-8 max-w-3xl mx-auto leading-relaxed px-4">
         A showcase of my technical skills through real-world applications,
         demonstrating expertise in backend development, APIs, and modern
         technologies.
@@ -25,8 +25,8 @@ import MainLayout from "../layouts/MainLayout.astro";
     </section>
 
     <!-- Featured Projects -->
-    <section class="space-y-12 animate-on-scroll">
-      <div class="grid gap-8">
+    <section class="space-y-6 sm:space-y-8 lg:space-y-12 animate-on-scroll px-4">
+      <div class="grid gap-6 sm:gap-8">
         <BaseProject />
         <AppInstaller />
         <!-- Add more project components here -->
@@ -34,39 +34,39 @@ import MainLayout from "../layouts/MainLayout.astro";
     </section>
 
     <!-- Skills Highlight -->
-    <section class="mt-16 animate-on-scroll">
-      <div class="card p-8 text-center">
-        <h2 class="text-2xl font-bold mb-6 text-white">
+    <section class="mt-8 sm:mt-12 lg:mt-16 animate-on-scroll px-4">
+      <div class="card p-4 sm:p-6 lg:p-8 text-center">
+        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white">
           Technologies Used Across Projects
         </h2>
-        <div class="flex flex-wrap justify-center gap-4">
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
           <span
-            class="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30"
+            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30 text-xs sm:text-sm"
           >
             C# / .NET
           </span>
           <span
-            class="px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 text-yellow-400 rounded-lg border border-yellow-500/30"
+            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 text-yellow-400 rounded-lg border border-yellow-500/30 text-xs sm:text-sm"
           >
             JavaScript / TypeScript
           </span>
           <span
-            class="px-4 py-2 bg-gradient-to-r from-blue-400/20 to-blue-500/20 text-blue-300 rounded-lg border border-blue-400/30"
+            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-blue-400/20 to-blue-500/20 text-blue-300 rounded-lg border border-blue-400/30 text-xs sm:text-sm"
           >
             Docker
           </span>
           <span
-            class="px-4 py-2 bg-gradient-to-r from-green-500/20 to-green-600/20 text-green-400 rounded-lg border border-green-500/30"
+            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-green-500/20 to-green-600/20 text-green-400 rounded-lg border border-green-500/30 text-xs sm:text-sm"
           >
             REST APIs
           </span>
           <span
-            class="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-purple-600/20 text-purple-400 rounded-lg border border-purple-500/30"
+            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-purple-500/20 to-purple-600/20 text-purple-400 rounded-lg border border-purple-500/30 text-xs sm:text-sm"
           >
             Microservices
           </span>
           <span
-            class="px-4 py-2 bg-gradient-to-r from-red-500/20 to-red-600/20 text-red-400 rounded-lg border border-red-500/30"
+            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-red-500/20 to-red-600/20 text-red-400 rounded-lg border border-red-500/30 text-xs sm:text-sm"
           >
             Cloud Technologies
           </span>
@@ -75,14 +75,14 @@ import MainLayout from "../layouts/MainLayout.astro";
     </section>
 
     <!-- Call to Action -->
-    <section class="text-center mt-16 animate-on-scroll">
-      <div class="card p-8 max-w-2xl mx-auto">
-        <h2 class="text-2xl font-bold mb-4 text-white">Want to See More?</h2>
-        <p class="text-gray-400 mb-6">
+    <section class="text-center mt-8 sm:mt-12 lg:mt-16 animate-on-scroll px-4">
+      <div class="card p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto">
+        <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Want to See More?</h2>
+        <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6">
           These are just a few examples of my work. I'm always working on new
           projects and exploring cutting-edge technologies.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <a
             href="https://github.com/gjohnn"
             target="_blank"
