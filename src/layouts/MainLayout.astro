@@ -9,60 +9,150 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Juan Sebastián Guerrero Britos - Software Developer specialized in C#, JS/TS and Docker. Backend development, APIs and cloud solutions." />
+    <meta name="keywords" content="software developer, backend, C#, JavaScript, TypeScript, Docker, APIs, Juan Sebastián Guerrero Britos" />
+    <meta name="author" content="Juan Sebastián Guerrero Britos" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    
+    <!-- Fonts and Icons -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link
       rel="stylesheet"
       href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"
     />
-    <link rel="icon" type="image/png" href="public/favicon.png" />
-    <title>Portfolio - Juan Guerrero</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    
+    <title>Portfolio - Juan Sebastián Guerrero Britos</title>
   </head>
   <body
-    class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-gray-100 font-sans flex flex-col"
+    class="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-gray-100 font-sans flex flex-col relative overflow-x-hidden"
   >
+    <!-- Background decorative elements -->
+    <div class="fixed inset-0 pointer-events-none">
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/5 via-transparent to-indigo-500/5"></div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
+    </div>
+
     <Header />
 
-    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8 mt-16">
-      <slot />
-
-      <!-- Navegación móvil sobre el footer -->
-      <div
-        class="md:hidden mt-12 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700"
-      >
-        <div class="flex divide-x divide-gray-700">
-          <a
-            href="/projects"
-            class="flex-1 flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-indigo-400 transition-colors"
-            aria-label="Projects"
-          >
-            <span class="i-ph-code-duotone text-xl"></span>
-            <span class="text-xs mt-1">Projects</span>
-          </a>
-
-          <a
-            href="/experience"
-            class="flex-1 flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-indigo-400 transition-colors"
-            aria-label="Experience"
-          >
-            <span class="i-ph-briefcase-duotone text-xl"></span>
-            <span class="text-xs mt-1 text-orange-400">Experience</span>
-          </a>
-
-          <a
-            href="/contact"
-            class="flex-1 flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-indigo-400 transition-colors"
-            aria-label="Contact"
-          >
-            <span class="i-ph-envelope-duotone text-xl"></span>
-            <span class="text-xs mt-1">Contact</span>
-          </a>
-        </div>
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-20 relative z-10">
+      <!-- Content Container with subtle background -->
+      <div class="min-h-full">
+        <slot />
       </div>
+
+      <!-- Enhanced Mobile Navigation -->
+      <nav
+        class="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50"
+        aria-label="Mobile Navigation"
+      >
+        <div class="glass-dark rounded-2xl shadow-2xl border border-white/10 p-2">
+          <div class="flex items-center gap-1">
+            <a
+              href="/"
+              class="flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-red-400 transition-all duration-200 rounded-xl hover:bg-white/5 group"
+              aria-label="Home"
+            >
+              <i class="fas fa-home text-lg group-hover:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1 font-medium">Home</span>
+            </a>
+
+            <a
+              href="/experience"
+              class="flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-red-400 transition-all duration-200 rounded-xl hover:bg-white/5 group"
+              aria-label="Experience"
+            >
+              <i class="fas fa-briefcase text-lg group-hover:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1 font-medium">Experience</span>
+            </a>
+
+            <a
+              href="/projects"
+              class="flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-red-400 transition-all duration-200 rounded-xl hover:bg-white/5 group"
+              aria-label="Projects"
+            >
+              <i class="fas fa-code text-lg group-hover:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1 font-medium">Projects</span>
+            </a>
+
+            <a
+              href="/contact"
+              class="flex flex-col items-center justify-center px-4 py-3 text-gray-300 hover:text-red-400 transition-all duration-200 rounded-xl hover:bg-white/5 group"
+              aria-label="Contact"
+            >
+              <i class="fas fa-envelope text-lg group-hover:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1 font-medium">Contact</span>
+            </a>
+          </div>
+        </div>
+      </nav>
     </main>
 
     <Footer />
+
+    <!-- Enhanced scroll to top button -->
+    <button
+      id="scrollToTop"
+      class="hidden fixed bottom-6 right-6 z-40 btn-primary rounded-full p-3 shadow-2xl animate-pulse-glow"
+      aria-label="Scroll to top"
+    >
+      <i class="fas fa-arrow-up text-lg"></i>
+    </button>
+
+    <script>
+      // Scroll to top functionality
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn?.classList.remove('hidden');
+        } else {
+          scrollToTopBtn?.classList.add('hidden');
+        }
+      });
+      
+      scrollToTopBtn?.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Add loading animation for page transitions
+      document.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('animate-slide-in-up');
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-slide-in-up');
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements with animation class
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>

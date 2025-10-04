@@ -1,14 +1,106 @@
-<footer class="bg-gray-900/50 backdrop-blur-sm py-6 border-t border-yellow-500/20">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col justify-center items-center gap-4"> 
-      <p class="text-gray-400 text-sm md:text-base text-center"> 
-        &copy; 2025 <span class="text-yellow-400 font-medium">g__john</span>. All rights reserved.
-      </p>
+<footer class="glass-dark border-t border-white/10 py-8 mt-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Brand Section -->
+      <div class="flex flex-col items-center md:items-start">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-red-600 rounded-lg blur opacity-60"></div>
+            <div class="relative flex items-center justify-center w-8 h-8 bg-gray-900 rounded-lg">
+              <span class="text-sm font-bold gradient-text">JG</span>
+            </div>
+          </div>
+          <span class="text-lg font-semibold text-white">Juan Sebastián Guerrero Britos</span>
+        </div>
+        <p class="text-gray-400 text-sm text-center md:text-left max-w-xs">
+          Software Developer specialized in backend development with C#, JS/TS, and cloud technologies.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col items-center md:items-start">
+        <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+        <nav class="flex flex-col space-y-2">
+          <a href="/" class="text-gray-400 hover:text-red-400 transition-colors text-sm">
+            Home
+          </a>
+          <a href="/experience" class="text-gray-400 hover:text-red-400 transition-colors text-sm">
+            Experience
+          </a>
+          <a href="/projects" class="text-gray-400 hover:text-red-400 transition-colors text-sm">
+            Projects
+          </a>
+          <a href="/contact" class="text-gray-400 hover:text-red-400 transition-colors text-sm">
+            Contact
+          </a>
+        </nav>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex flex-col items-center md:items-start">
+        <h3 class="text-white font-semibold mb-4">Connect</h3>
+        <div class="flex space-x-4">
+          <a 
+            href="https://github.com/gjohnn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 group"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github text-lg group-hover:scale-110 transition-transform"></i>
+          </a>
+          <a 
+            href="https://linkedin.com/in/juan-guerrero" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 group"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin text-lg group-hover:scale-110 transition-transform"></i>
+          </a>
+          <a 
+            href="mailto:contact@juanguerrero.dev" 
+            class="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 group"
+            aria-label="Email"
+          >
+            <i class="fas fa-envelope text-lg group-hover:scale-110 transition-transform"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    
-    <div class="mt-4 text-center">
-      <p class="text-gray-500 text-xs">
-        Built with Astro and Tailwind CSS
+
+    <!-- Divider -->
+    <div class="border-t border-white/10 pt-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <!-- Copyright -->
+        <div class="flex items-center space-x-2 text-center md:text-left">
+          <p class="text-gray-400 text-sm">
+            &copy; 2025 
+            <span class="text-red-400 font-medium">Juan Sebastián Guerrero Britos</span>. 
+            All rights reserved.
+          </p>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="flex items-center space-x-2 text-center md:text-right">
+          <span class="text-gray-500 text-xs">Built with</span>
+          <div class="flex items-center space-x-2">
+            <i class="fab fa-react text-blue-400" title="Astro"></i>
+            <span class="text-gray-500 text-xs">Astro</span>
+            <span class="text-gray-600">•</span>
+            <i class="fab fa-css3-alt text-blue-500" title="Tailwind CSS"></i>
+            <span class="text-gray-500 text-xs">Tailwind</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to top hint -->
+    <div class="hidden md:block text-center mt-6">
+      <p class="text-gray-600 text-xs">
+        <i class="fas fa-arrow-up mr-1"></i>
+        Scroll to top or use the floating button
       </p>
     </div>
   </div>
