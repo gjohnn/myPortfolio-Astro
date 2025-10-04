@@ -2,143 +2,155 @@
 import "../../styles/global.css";
 ---
 
-<article class="card card-hover p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 animate-on-scroll overflow-visible">
-  <!-- Project Header -->
-  <div class="flex flex-col xl:flex-row gap-6 sm:gap-8 items-start">
-    <!-- Project Info -->
-    <div class="flex-1 w-full">
-      <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-          <i class="fab fa-microsoft text-white text-lg sm:text-xl"></i>
+<article class="relative bg-gradient-to-br from-gray-900/80 via-gray-800/90 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 mb-8 hover:border-blue-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 group overflow-hidden animate-on-scroll">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-transparent to-purple-600/20"></div>
+    <div class="absolute top-0 left-0 w-32 h-32 bg-blue-500/10 rounded-full -translate-x-16 -translate-y-16"></div>
+    <div class="absolute bottom-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full translate-x-12 translate-y-12"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10">
+    <!-- Header with enhanced design -->
+    <div class="flex items-start gap-6 mb-6">
+      <div class="relative">
+        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-all duration-500">
+          <i class="fab fa-microsoft text-white text-2xl"></i>
         </div>
-        <div class="flex-1">
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">.NET Core API Project</h3>
-          <p class="text-gray-400 text-xs sm:text-sm">Enterprise-grade Backend Template</p>
-        </div>
+        <div class="absolute -inset-1 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl opacity-20 blur-sm group-hover:opacity-40 transition-all duration-500"></div>
       </div>
-
-      <!-- Description -->
-      <p class="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">
-        A comprehensive .NET 8 API template featuring clean architecture, Entity Framework Core, 
-        JWT authentication, and PostgreSQL integration. Built with modern practices and 
-        enterprise-level patterns for scalable backend development.
-      </p>
-
-      <!-- Technologies -->
-      <div class="mb-4 sm:mb-6">
-        <h4 class="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2 sm:mb-3">Technology Stack</h4>
-        <div class="flex flex-wrap gap-1 sm:gap-2">
-          <span class="px-2 sm:px-3 py-1 bg-purple-500/20 text-purple-400 rounded-lg border border-purple-500/30 text-xs sm:text-sm font-medium">
-            <i class="fab fa-microsoft mr-1"></i>
-            C# 12
-          </span>
-          <span class="px-2 sm:px-3 py-1 bg-blue-500/20 text-blue-400 rounded-lg border border-blue-500/30 text-xs sm:text-sm font-medium">
-            <i class="fas fa-code mr-1"></i>
-            .NET 8
-          </span>
-          <span class="px-2 sm:px-3 py-1 bg-orange-500/20 text-orange-400 rounded-lg border border-orange-500/30 text-xs sm:text-sm font-medium">
-            <i class="fas fa-database mr-1"></i>
-            Entity Framework Core
-          </span>
-          <span class="px-2 sm:px-3 py-1 bg-blue-600/20 text-blue-300 rounded-lg border border-blue-600/30 text-xs sm:text-sm font-medium">
-            <i class="fas fa-server mr-1"></i>
-            PostgreSQL 17
-          </span>
-          <span class="px-2 sm:px-3 py-1 bg-green-500/20 text-green-400 rounded-lg border border-green-500/30 text-xs sm:text-sm font-medium">
-            <i class="fas fa-shield-alt mr-1"></i>
-            JWT Auth
-          </span>
+      <div class="flex-1">
+        <h3 class="text-2xl font-bold bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent mb-2">.NET Core API Project</h3>
+        <p class="text-gray-400 font-medium">Enterprise-grade Backend Template</p>
+        <div class="flex items-center gap-2 mt-2">
+          <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <span class="text-green-400 text-sm font-medium">Production Ready</span>
         </div>
-      </div>
-
-      <!-- Architecture Features -->
-      <div class="mb-4 sm:mb-6">
-        <h4 class="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2 sm:mb-3">Architecture Features</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-          <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
-            <span class="text-xs sm:text-sm">Clean Architecture</span>
-          </div>
-          <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
-            <span class="text-xs sm:text-sm">CQRS Pattern</span>
-          </div>
-          <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
-            <span class="text-xs sm:text-sm">Repository Pattern</span>
-          </div>
-          <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
-            <span class="text-xs sm:text-sm">Dependency Injection</span>
-          </div>
-          <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
-            <span class="text-xs sm:text-sm">Global Error Handling</span>
-          </div>
-          <div class="flex items-center gap-2 text-gray-300">
-            <i class="fas fa-check-circle text-blue-400 text-xs sm:text-sm"></i>
-            <span class="text-xs sm:text-sm">API Versioning</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
-        <a
-          href="https://github.com/gjohnn/base_projects_dotnet8.git"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary group w-full sm:w-auto sm:flex-1 lg:flex-none text-sm"
-        >
-          <i class="fab fa-github mr-2 group-hover:animate-bounce"></i>
-          View on GitHub
-        </a>
-        <button 
-          id="copyCloneBtn"
-          class="btn btn-secondary group w-full sm:w-auto sm:flex-1 lg:flex-none text-sm"
-          onclick="copyCloneCommand()"
-        >
-          <i id="cloneIcon" class="fas fa-code-branch mr-2 group-hover:animate-bounce"></i>
-          <span id="cloneText">Copy Clone Command</span>
-        </button>
       </div>
     </div>
 
-    <!-- Code Preview -->
-    <div class="w-full xl:w-96 flex-shrink-0 mt-4 xl:mt-0">
-      <div class="relative container-with-floating">
-        <!-- Code Window -->
-        <div class="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden">
-          <!-- Window Header -->
-          <div class="bg-gray-800 px-3 sm:px-4 py-2 flex items-center gap-2 border-b border-gray-700">
-            <div class="flex gap-1">
-              <div class="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
-              <div class="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
-              <div class="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
-            </div>
-            <span class="text-gray-400 text-xs sm:text-sm ml-2">Program.cs</span>
-          </div>
-          
-          <!-- Code Content -->
-          <div class="p-3 sm:p-4 font-mono text-xs sm:text-sm overflow-x-auto">
-            <div class="text-purple-400">var <span class="text-white">builder</span> = <span class="text-blue-400">WebApplication</span>.<span class="text-yellow-400">CreateBuilder</span>(<span class="text-orange-400">args</span>);</div>
-            <div class="text-gray-500 mt-2">// Add services</div>
-            <div class="text-white">builder.Services.<span class="text-yellow-400">AddControllers</span>();</div>
-            <div class="text-white">builder.Services.<span class="text-yellow-400">AddDbContext</span>&lt;<span class="text-green-400">ApiContext</span>&gt;();</div>
-            <div class="text-white">builder.Services.<span class="text-yellow-400">AddAuthentication</span>(<span class="text-orange-400">JwtBearer</span>);</div>
-            <div class="text-gray-500 mt-2">// Configure pipeline</div>
-            <div class="text-purple-400 mt-1">var <span class="text-white">app</span> = <span class="text-white">builder</span>.<span class="text-yellow-400">Build</span>();</div>
-          </div>
-        </div>
+    <!-- Enhanced Description -->
+    <div class="bg-gray-800/30 rounded-xl p-4 mb-6 border border-gray-700/30">
+      <p class="text-gray-300 leading-relaxed">
+        A comprehensive .NET 8 API template featuring <span class="text-blue-400 font-semibold">clean architecture</span>, 
+        <span class="text-orange-400 font-semibold">Entity Framework Core</span>, 
+        <span class="text-green-400 font-semibold">JWT authentication</span>, and 
+        <span class="text-purple-400 font-semibold">PostgreSQL integration</span>. Built with modern practices and 
+        enterprise-level patterns for scalable backend development.
+      </p>
+    </div>
 
-        <!-- Floating Tech Icons - Hide on very small screens -->
-        <div class="hidden sm:block absolute -top-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-blue-500/20 rounded-lg flex items-center justify-center animate-float">
-          <i class="fab fa-microsoft text-blue-400 text-sm sm:text-base"></i>
+    <!-- Modern Tech Stack -->
+    <div class="mb-6">
+      <h4 class="text-sm font-bold text-gray-300 mb-3 flex items-center gap-2">
+        <div class="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-500 rounded"></div>
+        Technology Stack
+      </h4>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        <div class="bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fab fa-microsoft text-purple-400 text-xl mb-2 block"></i>
+          <span class="text-purple-300 text-xs font-medium">C# 12</span>
         </div>
-        <div class="hidden sm:block absolute -bottom-2 -left-2 w-6 h-6 sm:w-8 sm:h-8 bg-purple-500/20 rounded-lg flex items-center justify-center animate-float" style="animation-delay: -1s;">
-          <i class="fas fa-database text-purple-400 text-sm sm:text-base"></i>
+        <div class="bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fas fa-code text-blue-400 text-xl mb-2 block"></i>
+          <span class="text-blue-300 text-xs font-medium">.NET 8</span>
+        </div>
+        <div class="bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fas fa-database text-orange-400 text-xl mb-2 block"></i>
+          <span class="text-orange-300 text-xs font-medium">EF Core</span>
+        </div>
+        <div class="bg-blue-600/10 hover:bg-blue-600/20 border border-blue-600/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fas fa-server text-blue-300 text-xl mb-2 block"></i>
+          <span class="text-blue-200 text-xs font-medium">PostgreSQL</span>
+        </div>
+        <div class="bg-green-500/10 hover:bg-green-500/20 border border-green-500/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fas fa-shield-alt text-green-400 text-xl mb-2 block"></i>
+          <span class="text-green-300 text-xs font-medium">JWT Auth</span>
         </div>
       </div>
+    </div>
+
+    <!-- Architecture Features Grid -->
+    <div class="mb-6">
+      <h4 class="text-sm font-bold text-gray-300 mb-3 flex items-center gap-2">
+        <div class="w-1 h-4 bg-gradient-to-b from-green-500 to-blue-500 rounded"></div>
+        Architecture Features
+      </h4>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-blue-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-blue-400"></i>
+          <span class="text-gray-300 text-sm">Clean Architecture</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-blue-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-blue-400"></i>
+          <span class="text-gray-300 text-sm">CQRS Pattern</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-blue-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-blue-400"></i>
+          <span class="text-gray-300 text-sm">Repository Pattern</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-blue-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-blue-400"></i>
+          <span class="text-gray-300 text-sm">Dependency Injection</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-blue-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-blue-400"></i>
+          <span class="text-gray-300 text-sm">Error Handling</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-blue-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-blue-400"></i>
+          <span class="text-gray-300 text-sm">API Versioning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced Code Preview -->
+    <div class="bg-gray-900/50 rounded-xl border border-gray-700/50 overflow-hidden mb-6">
+      <div class="bg-gray-800/70 px-4 py-3 border-b border-gray-700/50 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="flex gap-1">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div>
+          <span class="text-gray-400 text-sm font-mono">Program.cs</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fab fa-microsoft text-blue-400"></i>
+          <span class="text-xs text-gray-500">.NET 8</span>
+        </div>
+      </div>
+      <div class="p-4 font-mono text-sm">
+        <div class="text-purple-400">var <span class="text-white">builder</span> = <span class="text-blue-400">WebApplication</span>.<span class="text-yellow-400">CreateBuilder</span>(<span class="text-orange-400">args</span>);</div>
+        <div class="text-gray-500 mt-2">// Configure services</div>
+        <div class="text-white">builder.Services.<span class="text-yellow-400">AddControllers</span>();</div>
+        <div class="text-white">builder.Services.<span class="text-yellow-400">AddDbContext</span>&lt;<span class="text-green-400">ApiContext</span>&gt;();</div>
+        <div class="text-white">builder.Services.<span class="text-yellow-400">AddAuthentication</span>(<span class="text-orange-400">JwtBearer</span>);</div>
+        <div class="text-gray-500 mt-2">// Build and configure app</div>
+        <div class="text-purple-400">var <span class="text-white">app</span> = <span class="text-white">builder</span>.<span class="text-yellow-400">Build</span>();</div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a
+        href="https://github.com/gjohnn/base_projects_dotnet8.git"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2 group"
+      >
+        <i class="fab fa-github group-hover:animate-bounce"></i>
+        View on GitHub
+      </a>
+      <button 
+        id="copyCloneBtn"
+        class="flex-1 bg-gray-700/50 hover:bg-gray-600/50 border border-gray-600 hover:border-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+        onclick="copyCloneCommand()"
+      >
+        <i id="cloneIcon" class="fas fa-code-branch group-hover:animate-bounce"></i>
+        <span id="cloneText">Copy Clone Command</span>
+      </button>
     </div>
   </div>
 
