@@ -3,34 +3,35 @@ import Icon from "astro-iconify";
 import { skillsCarousels } from "../data/skills";
 ---
 
+<div class="page-container">
 {
     skillsCarousels.map((section) => (
         <div class="w-full overflow-hidden py-6">
-            <h2 class="text-2xl font-bold mb-4 text-center text-white">
+            <h2 class="text-xl sm:text-2xl font-bold mb-4 text-center text-white px-4">
                 {section.title}
             </h2>
 
             <div class="relative w-full overflow-hidden">
                 <div class="marquee-wrapper">
                     <div class="marquee-content">
-                        {[...Array(2)].flatMap(() =>
-                            section.skills.map((skill) => (
-                                <div class="marquee-item text-lg text-gray-300">
+                        {[...Array(6)].flatMap(() =>
+                            section.skills.map((skill, index) => (
+                                <div class="marquee-item text-sm sm:text-base lg:text-lg text-gray-300">
                                     {skill.icon.startsWith("http") ? (
                                         <img
                                             src={skill.icon}
                                             alt={skill.name}
-                                            class="w-5 h-5"
+                                            class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0"
                                             loading="lazy"
                                         />
                                     ) : (
                                         <Icon
                                             name={skill.icon}
-                                            class={`${skill.colorClass} w-5 h-5`}
+                                            class={`${skill.colorClass} w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0`}
                                         />
                                     )}
                                     <span
-                                        class={`ml-2 ${skill.colorClass} font-semibold`}
+                                        class={`ml-2 ${skill.colorClass} font-semibold whitespace-nowrap`}
                                     >
                                         {skill.name}
                                     </span>
@@ -43,3 +44,4 @@ import { skillsCarousels } from "../data/skills";
         </div>
     ))
 }
+</div>
