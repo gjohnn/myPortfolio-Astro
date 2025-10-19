@@ -1,110 +1,107 @@
 ---
-// src/components/Education.astro
+import { educationData } from '../../data/my-education.ts';
 ---
 
-<section class="max-w-4xl mx-auto py-12 px-6">
-  <h2
-    class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent"
-  >
-    Education & Certifications
-  </h2>
-
-  <ul class="space-y-8">
-    <!-- Associate Degree -->
-    <li
-      class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border-l-4 border-indigo-400"
+<section class="max-w-5xl mx-auto py-16 px-6">
+  <div class="text-center mb-16">
+    <h2
+      class="text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
     >
-      <div
-        class="flex flex-col md:flex-row md:justify-between md:items-start gap-4"
+      Education & Certifications
+    </h2>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+      My academic journey and professional certifications that shape my expertise
+    </p>
+  </div>
+
+  <!-- Mobile: Vertical layout, Desktop: Horizontal layout -->
+  <div class="flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-2 gap-6 lg:gap-8">
+    {educationData.map((item) => (
+      <article
+        class={`group relative bg-gray-800/40 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border-l-4 lg:border-l-0 lg:border-t-4 ${item.color.border} 
+        hover:bg-gray-800/60 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 
+        hover:scale-[1.02] hover:-translate-y-1 min-h-[280px] lg:min-h-[320px] flex flex-col justify-between`}
       >
-        <div>
-          <h3 class="text-2xl font-bold text-indigo-300">
-            Associate of Computer Science
-          </h3>
-          <p class="text-gray-400 mt-1">Current Student at UTN</p>
-        </div>
-        <span
-          class="px-4 py-1 bg-indigo-900/30 text-indigo-300 rounded-full text-sm"
-          >2023 - Present</span
-        >
-      </div>
-    </li>
-
-    <!-- Certifications -->
-    <li
-      class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border-l-4 border-yellow-400"
-    >
-      <h3 class="text-2xl font-bold text-yellow-400 mb-4">Certifications</h3>
-      <ul class="space-y-4">
-        <li>
-          <div class="flex flex-col md:flex-row md:justify-between">
-            <p class="text-gray-300 font-medium">
-              Java Spring Developer (IT Hotbed)
-            </p>
-            <span
-              class="px-4 py-1 bg-orange-900/30 text-orange-300 rounded-full text-sm"
-              >2024</span
-            >
-          </div>
-        </li>
-        <li>
-          <div class="flex flex-col md:flex-row md:justify-between">
-            <div class="flex items-center gap-2">
-              <!-- Contenedor flex para alinear texto + ícono -->
-              <p class="text-gray-300 font-medium">GNU/Linux Manager</p>
-              <img
-                class="w-6 h-6 invert opacity-80"
-                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linux.svg"
-                alt="Linux"
-              />
+        <div class="flex-1">
+          <div class="flex flex-col gap-4 mb-4">
+            <!-- Title and Icon -->
+            <div class="flex items-center gap-3 flex-wrap">
+              <h3 class={`text-xl lg:text-2xl font-bold ${item.color.text} group-hover:scale-105 transition-transform leading-tight`}>
+                {item.title}
+              </h3>
+              {item.icon && (
+                <img
+                  class="w-6 h-6 lg:w-7 lg:h-7 invert opacity-80 group-hover:opacity-100 transition-opacity flex-shrink-0"
+                  src={item.icon}
+                  alt={item.title}
+                />
+              )}
             </div>
-            <span
-              class="px-4 py-1 bg-orange-900/30 text-orange-300 rounded-full text-sm"
-              >2024</span
-            >
+            
+            <!-- Date Section - Prominent Display -->
+            <div class="flex flex-wrap items-center gap-3">
+              <!-- Calendar Icon + Date -->
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 lg:w-6 lg:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class={`text-base lg:text-xl font-bold ${item.color.text} tracking-wide`}>
+                  {item.period}
+                </span>
+              </div>
+              
+              <!-- Status Badges -->
+              {item.status === 'current' && (
+                <span class="px-4 py-1.5 lg:px-5 lg:py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs lg:text-sm font-bold rounded-full animate-pulse shadow-lg shadow-green-500/50 flex items-center gap-2 relative">
+                  <span class="w-2 h-2 bg-white rounded-full animate-ping absolute"></span>
+                  <span class="relative">● ACTIVE NOW</span>
+                </span>
+              )}
+              
+              {item.status === 'completed' && (
+                <div class="flex items-center gap-2 text-green-400 bg-green-900/30 px-4 py-1.5 lg:px-5 lg:py-2 rounded-full border-2 border-green-500/40 shadow-md">
+                  <svg class="w-4 h-4 lg:w-5 lg:h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-xs lg:text-sm font-bold">COMPLETED</span>
+                </div>
+              )}
+            </div>
           </div>
-        </li>
-      </ul>
-    </li>
-
-    <!-- IT Orientation School -->
-    <li
-      class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border-l-4 border-green-400"
-    >
-      <div
-        class="flex flex-col md:flex-row md:justify-between md:items-start gap-4"
-      >
-        <div>
-          <h3 class="text-2xl font-bold text-green-400">
-            IT Orientation School
-          </h3>
-          <p class="text-gray-300 mt-1">Escuela de Comercio Martin Zapata</p>
+          
+          <p class="text-gray-300 font-medium text-base lg:text-lg mb-3">
+            {item.institution}
+          </p>
+          
+          {item.description && (
+            <p class="text-gray-400 leading-relaxed text-sm lg:text-base line-clamp-3 lg:line-clamp-4">
+              {item.description}
+            </p>
+          )}
         </div>
-        <span
-          class="px-4 py-1 bg-green-900/30 text-green-300 rounded-full text-sm"
-          >2017 - 2021</span
-        >
-      </div>
-    </li>
-
-    <!-- English Certification -->
-    <li
-      class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border-l-4 border-blue-400"
-    >
-      <div
-        class="flex flex-col md:flex-row md:justify-between md:items-start gap-4"
-      >
-        <div>
-          <h3 class="text-2xl font-bold text-blue-400">
-            B2 English Certification
-          </h3>
-          <p class="text-gray-300 mt-1">Colegio de Lenguas Extranjeras</p>
+        
+        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-700/50">
+          <div class="flex items-center gap-2">
+            <div class={`w-3 h-3 rounded-full ${item.color.bg} ${item.color.border} border-2`}></div>
+            <span class="text-xs lg:text-sm text-gray-500 uppercase tracking-wide font-medium">
+              {item.type.replace('-', ' ')}
+            </span>
+          </div>
+          
+          <!-- Progress indicator for current studies -->
+          {item.status === 'current' && (
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span class="text-xs text-green-400 font-medium">In Progress</span>
+            </div>
+          )}
         </div>
-        <span
-          class="px-4 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm"
-          >2016 - 2020</span
-        >
-      </div>
-    </li>
-  </ul>
+        
+        <!-- Decorative gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </article>
+    ))}
+  </div>
+  
+
 </section>
