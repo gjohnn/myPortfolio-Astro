@@ -5,142 +5,196 @@ import Carrusel from "../components/Carrusel.astro";
 ---
 
 <MainLayout>
-    <main class="relative">
-        <!-- Enhanced Hero Section -->
-        <section class="relative w-full mb-8 sm:mb-12 lg:mb-16 text-center animate-on-scroll hero-section">
-            <!-- Decorative background -->
-            <div class="absolute inset-0 -z-10">
-                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full bg-gradient-to-b from-red-500/5 to-transparent rounded-full blur-3xl"></div>
+  <main class="relative">
+    <!-- Enhanced Hero Section -->
+    <section
+      class="relative w-full mb-8 sm:mb-12 lg:mb-16 text-center animate-on-scroll hero-section"
+    >
+      <!-- Decorative background -->
+      <div class="absolute inset-0 -z-10">
+        <div
+          class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full bg-gradient-to-b from-red-500/5 to-transparent rounded-full blur-3xl"
+        >
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="relative z-10 max-w-4xl mx-auto px-4">
+        <!-- Hero Title with enhanced typography -->
+        <div class="mb-6 sm:mb-8">
+          <h1
+            class="hero-title-responsive font-black mb-4 leading-tight pb-2 sm:pb-4 pt-2 sm:pt-4 mt-6 sm:mt-10"
+          >
+            <span class="block gradient-text animate-float">Juan</span>
+            <span class="block gradient-text" style="animation-delay: 0.5s;"
+              >Guerrero</span
+            >
+          </h1>
+
+          <div class="relative inline-block">
+            <h2
+              class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-gray-300 mb-4 sm:mb-6"
+            >
+              Software Developer
+            </h2>
+            <div
+              class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"
+            >
             </div>
+          </div>
+        </div>
 
-            <!-- Main Content -->
-            <div class="relative z-10 max-w-4xl mx-auto px-4">
-                <!-- Hero Title with enhanced typography -->
-                <div class="mb-6 sm:mb-8">
-                    <h1 class="hero-title-responsive font-black mb-4 leading-tight pb-2 sm:pb-4 pt-2 sm:pt-4 mt-6 sm:mt-10">
-                        <span class="block gradient-text animate-float">Juan</span>
-                        <span class="block gradient-text" style="animation-delay: 0.5s;">Guerrero</span>
-                    </h1>
-                    
-                    <div class="relative inline-block">
-                        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-gray-300 mb-4 sm:mb-6">
-                            Software Developer
-                        </h2>
-                        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
-                    </div>
-                </div>
+        <!-- Enhanced Description -->
+        <div class="space-y-4 sm:space-y-6 mb-8 sm:mb-12 max-w-3xl mx-auto">
+          <div class="card card-hover p-4 sm:p-6 md:p-8">
+            <p
+              class="mobile-text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed"
+            >
+              Hi, I'm <strong class="text-red-400 font-semibold"
+                >Juan Sebastián Guerrero Britos</strong
+              > — a <strong class="text-red-400 font-semibold"
+                >backend developer</strong
+              > driven by curiosity, precision, and a constant desire to build things
+              that truly work. I enjoy turning complex ideas into scalable systems,
+              blending
+              <strong class="text-red-400 font-semibold"
+                >C#, JavaScript/TypeScript</strong
+              > and
+              <strong class="text-red-400 font-semibold">Docker</strong> to create
+              efficient, well-structured solutions.
+            </p>
+          </div>
 
-                <!-- Enhanced Description -->
-                <div class="space-y-4 sm:space-y-6 mb-8 sm:mb-12 max-w-3xl mx-auto">
-                    <div class="card card-hover p-4 sm:p-6 md:p-8">
-                        <p class="mobile-text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
-                            Hi, I'm <strong class="text-red-400 font-semibold">Juan Sebastián Guerrero Britos</strong>, 
-                            a passionate backend developer specialized in 
-                            <strong class="text-red-400 font-semibold">C#, JS/TS,</strong> and 
-                            <strong class="text-red-400 font-semibold">Docker</strong> 
-                            to build scalable systems.
-                        </p>
-                    </div>
-                    
-                    <div class="card card-hover p-4 sm:p-6 md:p-8">
-                        <p class="mobile-text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
-                            I design server-side solutions with expertise in
-                            <span class="text-indigo-400 font-semibold">microservices</span>, 
-                            <span class="text-indigo-400 font-semibold">REST APIs</span>, and 
-                            <span class="text-indigo-400 font-semibold">cloud technologies</span>,
-                            focused on security and performance.
-                        </p>
-                    </div>
-                </div>
+          <div class="card card-hover p-4 sm:p-6 md:p-8">
+            <p
+              class="mobile-text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed"
+            >
+              I value <span class="text-indigo-400 font-semibold">clarity</span
+              >,
+              <span class="text-indigo-400 font-semibold">consistency</span>,
+              and
+              <span class="text-indigo-400 font-semibold">teamwork</span>. My
+              approach to development is guided by clean architecture,
+              thoughtful design, and a mindset focused on continuous learning
+              and improvement. I see code not just as instructions — but as a
+              way to express logic elegantly.
+            </p>
+          </div>
 
-                <!-- Call to Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
-                    <a
-                        href="/projects"
-                        class="btn btn-primary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg"
-                    >
-                        <i class="fas fa-code mr-2 group-hover:animate-bounce"></i>
-                        View My Work
-                    </a>
-                    <a
-                        href="/contact"
-                        class="btn btn-secondary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg"
-                    >
-                        <i class="fas fa-envelope mr-2 group-hover:animate-bounce"></i>
-                        Get In Touch
-                    </a>
-                </div>
+        </div>
 
-                <!-- Quick Stats -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16 px-4">
-                    <div class="card card-hover p-4 sm:p-6 text-center">
-                        <div class="text-2xl sm:text-3xl font-bold text-red-400 mb-2">3+</div>
-                        <div class="text-gray-400 text-xs sm:text-sm uppercase tracking-wider">Years Experience</div>
-                    </div>
-                    <div class="card card-hover p-4 sm:p-6 text-center">
-                        <div class="text-2xl sm:text-3xl font-bold text-red-400 mb-2">10+</div>
-                        <div class="text-gray-400 text-xs sm:text-sm uppercase tracking-wider">Projects Completed</div>
-                    </div>
-                    <div class="card card-hover p-4 sm:p-6 text-center">
-                        <div class="text-2xl sm:text-3xl font-bold text-red-400 mb-2">5+</div>
-                        <div class="text-gray-400 text-xs sm:text-sm uppercase tracking-wider">Technologies Mastered</div>
-                    </div>
-                </div>
+        <!-- Call to Action Buttons -->
+        <div
+          class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
+        >
+          <a
+            href="/projects"
+            class="btn btn-primary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg"
+          >
+            <i class="fas fa-code mr-2 group-hover:animate-bounce"></i>
+            View My Work
+          </a>
+          <a
+            href="/contact"
+            class="btn btn-secondary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg"
+          >
+            <i class="fas fa-envelope mr-2 group-hover:animate-bounce"></i>
+            Get In Touch
+          </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16 px-4"
+        >
+          <div class="card card-hover p-4 sm:p-6 text-center">
+            <div class="text-2xl sm:text-3xl font-bold text-red-400 mb-2">
+              3+
             </div>
-        </section>
-
-        <!-- Enhanced Skills Section -->
-        <section class="relative w-full animate-on-scroll">
-            <!-- Section Header -->
-            <div class="text-center mb-8 sm:mb-12 px-4">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">My Skills</span>
-                </h2>
-                <p class="mobile-text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
-                    Technologies and tools I use to build exceptional software solutions
-                </p>
-                <div class="mt-4 sm:mt-6 w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto"></div>
+            <div
+              class="text-gray-400 text-xs sm:text-sm uppercase tracking-wider"
+            >
+              Years Experience
             </div>
-
-            <!-- Skills Carousel -->
-            <div class="mb-12 sm:mb-16">
-                <Carrusel />
+          </div>
+          <div class="card card-hover p-4 sm:p-6 text-center">
+            <div class="text-2xl sm:text-3xl font-bold text-red-400 mb-2">
+              10+
             </div>
-
-            <!-- Education Component -->
-            <div class="animate-on-scroll">
-                <EducationComponent />
+            <div
+              class="text-gray-400 text-xs sm:text-sm uppercase tracking-wider"
+            >
+              Projects Completed
             </div>
-        </section>
-
-        <!-- Enhanced Additional Sections -->
-        <section class="relative w-full mt-12 sm:mt-16 animate-on-scroll">
-            <div class="text-center px-4">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">
-                    <span class="gradient-text">Ready to Work Together?</span>
-                </h2>
-                <p class="mobile-text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto">
-                    I'm always interested in new opportunities and exciting projects. 
-                    Let's discuss how we can bring your ideas to life.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                    <a
-                        href="/contact"
-                        class="btn btn-primary group px-6 sm:px-8 py-3"
-                    >
-                        <i class="fas fa-handshake mr-2 group-hover:animate-bounce"></i>
-                        Start a Project
-                    </a>
-                    <a
-                        href="/Juan_Sebastián_Guerrero_Britos.pdf"
-                        download="Juan_Sebastián_Guerrero_Britos_CV.pdf"
-                        class="btn btn-secondary group px-6 sm:px-8 py-3"
-                    >
-                        <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
-                        Download Resume
-                    </a>
-                </div>
+          </div>
+          <div class="card card-hover p-4 sm:p-6 text-center">
+            <div class="text-2xl sm:text-3xl font-bold text-red-400 mb-2">
+              5+
             </div>
-        </section>
-    </main>
+            <div
+              class="text-gray-400 text-xs sm:text-sm uppercase tracking-wider"
+            >
+              Technologies Mastered
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Skills Section -->
+    <section class="relative w-full animate-on-scroll">
+      <!-- Section Header -->
+      <div class="text-center mb-8 sm:mb-12 px-4">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <span class="gradient-text">My Skills</span>
+        </h2>
+        <p class="mobile-text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
+          Technologies and tools I use to build exceptional software solutions
+        </p>
+        <div
+          class="mt-4 sm:mt-6 w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto"
+        >
+        </div>
+      </div>
+
+      <!-- Skills Carousel -->
+      <div class="mb-12 sm:mb-16">
+        <Carrusel />
+      </div>
+
+      <!-- Education Component -->
+      <div class="animate-on-scroll">
+        <EducationComponent />
+      </div>
+    </section>
+
+    <!-- Enhanced Additional Sections -->
+    <section class="relative w-full mt-12 sm:mt-16 animate-on-scroll">
+      <div class="text-center px-4">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">
+          <span class="gradient-text">Ready to Work Together?</span>
+        </h2>
+        <p
+          class="mobile-text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto"
+        >
+          I'm always interested in new opportunities and exciting projects.
+          Let's discuss how we can bring your ideas to life.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <a href="/contact" class="btn btn-primary group px-6 sm:px-8 py-3">
+            <i class="fas fa-handshake mr-2 group-hover:animate-bounce"></i>
+            Start a Project
+          </a>
+          <a
+            href="/Juan_Sebastián_Guerrero_Britos.pdf"
+            download="Juan_Sebastián_Guerrero_Britos_CV.pdf"
+            class="btn btn-secondary group px-6 sm:px-8 py-3"
+          >
+            <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 </MainLayout>
