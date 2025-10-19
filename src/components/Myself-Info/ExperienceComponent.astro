@@ -2,92 +2,174 @@
 import experiences from "../../data/experiences";
 ---
 
-<section class="max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-  <h2
-    class="text-4xl sm:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-red-900 to-red-400 bg-clip-text text-transparent tracking-tight"
-  >
-    My Career Journey
-  </h2>
+<section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
 
-  <div class="relative" client:load>
-    <div
-      class="absolute left-4 sm:left-8 h-full w-1 bg-gradient-to-b from-indigo-500/30 to-cyan-500/30 -z-10"
-    >
-    </div>
+  <!-- Desktop: Zigzag Timeline, Mobile: Vertical -->
+  <div class="relative">
+    <!-- Central line for mobile -->
+    <div class="lg:hidden absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500/50 via-purple-500/50 to-pink-500/50"></div>
 
-    <div class="space-y-16">
+    <div class="space-y-12 lg:space-y-20">
       {
-        experiences.map((exp, index) => (
-          <article
-            class="relative group opacity-0 translate-y-4 animate-fadeInUp"
-            style={{ animationDelay: `${index * 100}ms` }}
-          >
-            <div class="absolute left-0 sm:left-4 h-5 w-5 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 border-4 border-gray-900 -translate-x-1/2" />
+        experiences.map((exp, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <article
+              class="relative group opacity-0 translate-y-4 animate-fadeInUp"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              {/* Mobile timeline dot */}
+              <div class="lg:hidden absolute left-8 top-6 h-4 w-4 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400 border-4 border-gray-900 -translate-x-1/2 z-10 group-hover:scale-125 transition-transform duration-300" />
 
-            <div class="ml-10 sm:ml-16">
-              <div class="bg-gray-900/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-2xl border border-gray-800 hover:border-cyan-400/30 transition-all duration-500 group-hover:scale-[1.015]">
-                <header class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-                  <div>
-                    <h3 class="text-2xl font-semibold text-indigo-300 leading-snug">
-                      {exp.company}
-                      {exp.project && (
-                        <span class="block sm:inline text-lg text-cyan-200 font-normal ml-1">
-                          ({exp.project})
+              {/* Desktop: Zigzag layout */}
+              <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+                {/* Content card */}
+                <div class={`${isEven ? 'lg:col-start-1' : 'lg:col-start-2'}`}>
+                {/* Content card */}
+                <div class={`${isEven ? 'lg:col-start-1' : 'lg:col-start-2'}`}>
+                  <div
+                    class={`ml-16 lg:ml-0 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 
+                    shadow-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 
+                    group-hover:scale-[1.02] group-hover:shadow-purple-500/20 relative overflow-hidden`}
+                  >
+                    {/* Decorative corner gradient */}
+                    <div class={`absolute top-0 ${isEven ? 'right-0' : 'left-0'} w-32 h-32 bg-gradient-to-br from-purple-500/20 to-transparent blur-2xl`}></div>
+                    
+                    <header class="relative z-10 mb-6">
+                      <div class={`flex items-center gap-3 mb-3 flex-wrap ${isEven ? 'lg:flex-row-reverse lg:justify-end' : ''}`}>
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg flex-shrink-0">
+                          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <div class={`flex-1 ${isEven ? 'lg:text-right' : ''}`}>
+                          <h3 class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent leading-tight">
+                            {exp.company}
+                          </h3>
+                          {exp.project && (
+                            <p class="text-base text-pink-300 font-medium mt-1">
+                              {exp.project}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      
+                      <p class={`text-xl font-semibold text-cyan-300 mb-2 ${isEven ? 'lg:text-right' : ''}`}>
+                        {exp.role}
+                      </p>
+                      
+                      <div class={`flex items-center gap-2 text-sm text-gray-400 ${isEven ? 'lg:justify-end' : ''}`}>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span class="font-medium">{exp.period}</span>
+                      </div>
+                    </header>
+
+                    {/* Technologies */}
+                    <div class={`mb-6 flex flex-wrap gap-2 ${isEven ? 'lg:justify-end' : ''}`}>
+                      {exp.technologies.map((tech) => (
+                        <span class="px-3 py-1.5 bg-gradient-to-r from-indigo-600/40 to-purple-600/40 text-indigo-100 rounded-full text-xs sm:text-sm font-semibold border border-indigo-500/30 hover:border-indigo-400/60 hover:scale-105 transition-all duration-300 shadow-lg">
+                          {tech}
                         </span>
-                      )}
-                    </h3>
-                    <p class="text-lg font-medium text-cyan-200 mt-1">
-                      {exp.role}
-                    </p>
-                  </div>
-                  <p class="text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full whitespace-nowrap">
-                    {exp.period}
-                  </p>
-                </header>
+                      ))}
+                    </div>
 
-                <div class="mb-6 flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
-                    <span class="px-3 py-1 bg-indigo-800/40 text-indigo-100 rounded-full text-sm font-medium hover:bg-indigo-700/60 transition-colors">
-                      {tech}
-                    </span>
-                  ))}
+                    {/* Responsibilities Toggle */}
+                    <div class="space-y-3">
+                      <button
+                        class={`text-purple-400 text-sm font-semibold flex items-center gap-2 hover:text-purple-300 transition-all duration-300 group/btn ${isEven ? 'lg:ml-auto' : ''}`}
+                        data-toggle-resp={`resp-${index}`}
+                      >
+                        <span>View Responsibilities</span>
+                        <svg
+                          class="w-5 h-5 group-hover/btn:translate-y-0.5 transition-transform"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </button>
+
+                      <div id={`resp-${index}`} class="space-y-3 hidden animate-slideDown">
+                        {exp.responsibilities.map((resp) => (
+                          <div class={`flex items-start gap-3 text-gray-300 text-sm sm:text-base ${isEven ? 'lg:flex-row-reverse lg:text-right' : ''}`}>
+                            <span class="text-purple-400 text-lg flex-shrink-0 mt-0.5">✦</span>
+                            <p class="leading-relaxed">{resp}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Decorative elements */}
+                    <div class="absolute -bottom-2 -right-2 w-24 h-24 bg-gradient-to-tl from-pink-500/10 to-transparent rounded-full blur-xl"></div>
+                  </div>
                 </div>
 
-                <div class="space-y-3">
-                  <button
-                    class="text-cyan-400 text-sm font-medium flex items-center mt-2 hover:text-cyan-300 transition-colors cursor-pointer"
-                    data-toggle-resp={`resp-${index}`}
-                  >
-                    Show Responsibilities
-                    <svg
-                      class="ml-1 w-4 h-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-
-                  <div id={`resp-${index}`} class="space-y-2 hidden">
-                    {exp.responsibilities.map((resp) => (
-                      <p class="flex items-start text-gray-300 text-sm sm:text-base">
-                        <span class="text-indigo-400 mr-2 mt-1">▹</span>
-                        {resp}
-                      </p>
-                    ))}
+                {/* Desktop: Central connector with dot - positioned at row center */}
+                <div class={`hidden lg:flex lg:items-center lg:justify-center ${isEven ? 'lg:col-start-2' : 'lg:col-start-1'} lg:row-start-1`}>
+                  <div class="relative w-full flex items-center justify-center">
+                    {/* Connection line */}
+                    <div class={`absolute ${isEven ? 'left-0' : 'right-0'} w-full h-0.5 bg-gradient-to-r ${
+                      isEven 
+                        ? 'from-gray-700/50 to-transparent' 
+                        : 'from-transparent to-gray-700/50'
+                    }`}></div>
+                    
+                    {/* Central dot with pulse animation */}
+                    <div class="relative z-10 group-hover:scale-110 transition-transform duration-300">
+                      <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                      <div class="relative h-6 w-6 rounded-full bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 border-4 border-gray-900 shadow-xl">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 to-transparent"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </article>
-        ))
+            </article>
+          );
+        })
       }
+    </div>
+
+    {/* Decorative vertical line for desktop zigzag effect */}
+    <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/20 via-purple-500/20 to-pink-500/20 -translate-x-1/2 -z-10"></div>
+  </div>
+
+  {/* Summary Stats */}
+  <div class="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="text-center p-6 bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl backdrop-blur-sm border border-indigo-500/20 hover:border-indigo-400/40 transition-all duration-300 group">
+      <div class="text-4xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
+        {experiences.length}
+      </div>
+      <div class="text-gray-400 text-sm font-medium">Total Experiences</div>
+    </div>
+    
+    <div class="text-center p-6 bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-2xl backdrop-blur-sm border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group">
+      <div class="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
+        {experiences.reduce((acc, exp) => acc + exp.technologies.length, 0)}
+      </div>
+      <div class="text-gray-400 text-sm font-medium">Technologies Used</div>
+    </div>
+    
+    <div class="text-center p-6 bg-gradient-to-br from-pink-900/30 to-red-900/30 rounded-2xl backdrop-blur-sm border border-pink-500/20 hover:border-pink-400/40 transition-all duration-300 group">
+      <div class="text-4xl font-bold bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
+        {new Set(experiences.flatMap(exp => exp.technologies)).size}
+      </div>
+      <div class="text-gray-400 text-sm font-medium">Unique Skills</div>
+    </div>
+    
+    <div class="text-center p-6 bg-gradient-to-br from-red-900/30 to-orange-900/30 rounded-2xl backdrop-blur-sm border border-red-500/20 hover:border-red-400/40 transition-all duration-300 group">
+      <div class="text-4xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
+        {experiences.filter(exp => exp.project).length}
+      </div>
+      <div class="text-gray-400 text-sm font-medium">Projects Completed</div>
     </div>
   </div>
 </section>
@@ -96,7 +178,7 @@ import experiences from "../../data/experiences";
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(12px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -104,8 +186,23 @@ import experiences from "../../data/experiences";
     }
   }
 
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      max-height: 1000px;
+    }
+  }
+
   .animate-fadeInUp {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.4s ease-out forwards;
   }
 </style>
 
@@ -119,6 +216,14 @@ import experiences from "../../data/experiences";
           const el = document.getElementById(id);
           if (el) {
             el.classList.toggle("hidden");
+            
+            // Rotate arrow
+            const svg = btn.querySelector("svg");
+            if (svg) {
+              svg.style.transform = el.classList.contains("hidden") 
+                ? "rotate(0deg)" 
+                : "rotate(180deg)";
+            }
           }
         });
       });
