@@ -2,125 +2,171 @@
 import BaseProject from "../components/Projects/base_project_DotNet8.astro";
 import AppInstaller from "../components/Projects/AppInstaller.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import AppAlquiGes from "../components/Projects/AppAlquiGes.astro";
 ---
 
 <MainLayout>
-  <div class="relative">
-    <!-- Page Header -->
-    <section class="text-center mb-8 sm:mb-12 lg:mb-16 animate-on-scroll px-4">
-      <div class="relative inline-block">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 gradient-text pb-4 pt-4">
-          My Projects
-        </h1>
-        <div
-          class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mt-2"
+    <div class="relative">
+        <!-- Page Header -->
+        <section
+            class="text-center mb-8 sm:mb-12 lg:mb-16 animate-on-scroll px-4"
         >
-        </div>
-      </div>
-      <p class="text-base sm:text-lg md:text-xl text-gray-400 mt-6 sm:mt-8 max-w-3xl mx-auto leading-relaxed px-4">
-        A showcase of my technical skills through real-world applications,
-        demonstrating expertise in backend development, APIs, and modern
-        technologies.
-      </p>
-    </section>
-
-    <!-- Featured Projects -->
-    <section class="space-y-6 sm:space-y-8 lg:space-y-12 animate-on-scroll px-4">
-      <div class="grid gap-6 sm:gap-8">
-        <BaseProject />
-        <AppInstaller />
-        <!-- Add more project components here -->
-      </div>
-    </section>
-
-    <!-- Skills Highlight -->
-    <section class="mt-8 sm:mt-12 lg:mt-16 animate-on-scroll px-4">
-      <div class="card p-4 sm:p-6 lg:p-8 text-center">
-        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white">
-          Technologies Used Across Projects
-        </h2>
-        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
-          <span
-            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30 text-xs sm:text-sm"
-          >
-            C# / .NET
-          </span>
-          <span
-            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 text-yellow-400 rounded-lg border border-yellow-500/30 text-xs sm:text-sm"
-          >
-            JavaScript / TypeScript
-          </span>
-          <span
-            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-blue-400/20 to-blue-500/20 text-blue-300 rounded-lg border border-blue-400/30 text-xs sm:text-sm"
-          >
-            Docker
-          </span>
-          <span
-            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-green-500/20 to-green-600/20 text-green-400 rounded-lg border border-green-500/30 text-xs sm:text-sm"
-          >
-            REST APIs
-          </span>
-          <span
-            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-purple-500/20 to-purple-600/20 text-purple-400 rounded-lg border border-purple-500/30 text-xs sm:text-sm"
-          >
-            Microservices
-          </span>
-          <span
-            class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-red-500/20 to-red-600/20 text-red-400 rounded-lg border border-red-500/30 text-xs sm:text-sm"
-          >
-            Cloud Technologies
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="text-center mt-8 sm:mt-12 lg:mt-16 animate-on-scroll px-4">
-      <div class="relative bg-gradient-to-br from-gray-900/80 via-gray-800/90 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 sm:p-8 lg:p-10 max-w-2xl mx-auto hover:border-purple-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 group overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-          <div class="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-transparent to-blue-600/20"></div>
-          <div class="absolute top-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full -translate-x-16 -translate-y-16"></div>
-          <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full translate-x-12 translate-y-12"></div>
-        </div>
-        
-        <!-- Content -->
-        <div class="relative z-10">
-          <div class="flex items-center justify-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-all duration-500">
-              <i class="fas fa-rocket text-white text-xl"></i>
+            <div class="relative inline-block">
+                <h1
+                    class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 gradient-text pb-4 pt-4"
+                >
+                    My Projects
+                </h1>
+                <div
+                    class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mt-2"
+                >
+                </div>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-white via-purple-100 to-blue-200 bg-clip-text text-transparent">Want to See More?</h2>
-          </div>
-          
-          <div class="bg-gray-800/30 rounded-xl p-4 mb-6 border border-gray-700/30">
-            <p class="text-gray-300 leading-relaxed">
-              These are just a few examples of my work. I'm always working on 
-              <span class="text-purple-400 font-semibold">new projects</span> and exploring 
-              <span class="text-blue-400 font-semibold">cutting-edge technologies</span>.
+            <p
+                class="text-base sm:text-lg md:text-xl text-gray-400 mt-6 sm:mt-8 max-w-3xl mx-auto leading-relaxed px-4"
+            >
+                A showcase of my technical skills through real-world
+                applications, demonstrating expertise in backend development,
+                APIs, and modern technologies.
             </p>
-          </div>
-          
-          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a
-              href="https://github.com/gjohnn"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center justify-center gap-2 group"
+        </section>
+
+        <!-- Featured Projects -->
+        <section
+            class="space-y-6 sm:space-y-8 lg:space-y-12 animate-on-scroll px-4"
+        >
+            <div class="grid gap-6 sm:gap-8">
+                <BaseProject />
+                <AppInstaller />
+                <AppAlquiGes />
+
+                <!-- Add more project components here -->
+            </div>
+        </section>
+
+        <!-- Skills Highlight -->
+        <section class="mt-8 sm:mt-12 lg:mt-16 animate-on-scroll px-4">
+            <div class="card p-4 sm:p-6 lg:p-8 text-center">
+                <h2
+                    class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white"
+                >
+                    Technologies Used Across Projects
+                </h2>
+                <div
+                    class="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4"
+                >
+                    <span
+                        class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30 text-xs sm:text-sm"
+                    >
+                        C# / .NET
+                    </span>
+                    <span
+                        class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 text-yellow-400 rounded-lg border border-yellow-500/30 text-xs sm:text-sm"
+                    >
+                        JavaScript / TypeScript
+                    </span>
+                    <span
+                        class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-blue-400/20 to-blue-500/20 text-blue-300 rounded-lg border border-blue-400/30 text-xs sm:text-sm"
+                    >
+                        Docker
+                    </span>
+                    <span
+                        class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-green-500/20 to-green-600/20 text-green-400 rounded-lg border border-green-500/30 text-xs sm:text-sm"
+                    >
+                        REST APIs
+                    </span>
+                    <span
+                        class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-purple-500/20 to-purple-600/20 text-purple-400 rounded-lg border border-purple-500/30 text-xs sm:text-sm"
+                    >
+                        Microservices
+                    </span>
+                    <span
+                        class="px-2 sm:px-3 lg:px-4 py-1 sm:py-2 bg-gradient-to-r from-red-500/20 to-red-600/20 text-red-400 rounded-lg border border-red-500/30 text-xs sm:text-sm"
+                    >
+                        Cloud Technologies
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section
+            class="text-center mt-8 sm:mt-12 lg:mt-16 animate-on-scroll px-4"
+        >
+            <div
+                class="relative bg-gradient-to-br from-gray-900/80 via-gray-800/90 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 sm:p-8 lg:p-10 max-w-2xl mx-auto hover:border-purple-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 group overflow-hidden"
             >
-              <i class="fab fa-github group-hover:animate-bounce"></i>
-              View on GitHub
-            </a>
-            <a 
-              href="/contact" 
-              class="bg-gray-700/50 hover:bg-gray-600/50 border border-gray-600 hover:border-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
-            >
-              <i class="fas fa-handshake group-hover:animate-bounce"></i>
-              Let's Collaborate
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 opacity-5">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-transparent to-blue-600/20"
+                    >
+                    </div>
+                    <div
+                        class="absolute top-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full -translate-x-16 -translate-y-16"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full translate-x-12 translate-y-12"
+                    >
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="relative z-10">
+                    <div class="flex items-center justify-center gap-3 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-all duration-500"
+                        >
+                            <i class="fas fa-rocket text-white text-xl"></i>
+                        </div>
+                        <h2
+                            class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-white via-purple-100 to-blue-200 bg-clip-text text-transparent"
+                        >
+                            Want to See More?
+                        </h2>
+                    </div>
+
+                    <div
+                        class="bg-gray-800/30 rounded-xl p-4 mb-6 border border-gray-700/30"
+                    >
+                        <p class="text-gray-300 leading-relaxed">
+                            These are just a few examples of my work. I'm always
+                            working on
+                            <span class="text-purple-400 font-semibold"
+                                >new projects</span
+                            > and exploring
+                            <span class="text-blue-400 font-semibold"
+                                >cutting-edge technologies</span
+                            >.
+                        </p>
+                    </div>
+
+                    <div
+                        class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
+                    >
+                        <a
+                            href="https://github.com/gjohnn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center justify-center gap-2 group"
+                        >
+                            <i class="fab fa-github group-hover:animate-bounce"
+                            ></i>
+                            View on GitHub
+                        </a>
+                        <a
+                            href="/contact"
+                            class="bg-gray-700/50 hover:bg-gray-600/50 border border-gray-600 hover:border-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+                        >
+                            <i
+                                class="fas fa-handshake group-hover:animate-bounce"
+                            ></i>
+                            Let's Collaborate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </MainLayout>
