@@ -28,6 +28,7 @@ export const skillsCarousels: CarouselSection[] = [
         skills: [
             { name: "PostgreSQL", icon: "logos:postgresql", colorClass: "text-orange-400" },
             { name: "MySQL", icon: "logos:mysql-icon", colorClass: "text-orange-400" },
+            { name: "Supabase", icon: "logos:supabase-icon", colorClass: "text-orange-400" },
             { name: "Redis", icon: "devicon:redis", colorClass: "text-orange-400" },
             { name: "Logical Decoding", icon: "mdi:database-search", colorClass: "text-orange-400" },
         ],
@@ -40,7 +41,7 @@ export const skillsCarousels: CarouselSection[] = [
             { name: "AWS", icon: "logos:aws", colorClass: "text-cyan-400" },
             { name: "Nginx", icon: "logos:nginx", colorClass: "text-cyan-400" },
             { name: "WSL", icon: "mdi:linux", colorClass: "text-cyan-400" },
-            { name: "Production and Development Deploys", icon: "logos:docker-icon", colorClass: "text-cyan-400" },
+            { name: "GitHub Actions", icon: "logos:github-actions", colorClass: "text-cyan-400" },
         ],
     }
     ,
@@ -52,16 +53,6 @@ export const skillsCarousels: CarouselSection[] = [
             { name: "OAuth2", icon: "cbi:oauth", colorClass: "text-lime-400" },
             { name: "Safe Zones", icon: "mdi:shield-check", colorClass: "text-lime-400" },
             { name: "Session Management", icon: "mdi:account-lock", colorClass: "text-lime-400" },
-        ],
-    },
-    {
-        title: "Development Environments",
-        color: "text-teal-100",
-        skills: [
-            { name: "WSL", icon: "mdi:linux", colorClass: "text-teal-400" },
-            { name: "DevContainers", icon: "mdi:docker", colorClass: "text-teal-400" },
-            { name: "VS Code", icon: "logos:visual-studio-code", colorClass: "text-teal-400" },
-            { name: "Modular Docker", icon: "mdi:docker", colorClass: "text-teal-400" },
         ],
     },
     {
