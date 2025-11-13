@@ -1,7 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import EducationComponent from "../components/Myself-Info/EducationComponent.astro";
-import Carrusel from "../components/Carrusel.astro";
+import Icon from "astro-iconify";
+import { skillsCarousels } from "../data/skills";
 ---
 
 <MainLayout>
@@ -45,42 +46,17 @@ import Carrusel from "../components/Carrusel.astro";
         </div>
 
         <!-- Enhanced Description -->
-        <div class="space-y-4 sm:space-y-6 mb-8 sm:mb-12 max-w-3xl mx-auto">
-          <div class="card card-hover p-4 sm:p-6 md:p-8">
-            <p
-              class="mobile-text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed"
-            >
-              Hi, I'm <strong class="text-red-400 font-semibold"
-                >Juan Sebastián Guerrero Britos</strong
-              > — a <strong class="text-red-400 font-semibold"
-                >backend developer</strong
-              > driven by curiosity, precision, and a constant desire to build things
-              that truly work. I enjoy turning complex ideas into scalable systems,
-              blending
-              <strong class="text-red-400 font-semibold"
-                >C#, JavaScript/TypeScript</strong
-              > and
-              <strong class="text-red-400 font-semibold">Docker</strong> to create
-              efficient, well-structured solutions.
+        <div class="mb-8 sm:mb-12 max-w-3xl mx-auto">
+          <div class="card p-4 sm:p-6">
+            <p class="text-base sm:text-lg text-gray-300 leading-relaxed text-center">
+              <strong class="text-red-400 font-semibold">Backend developer</strong> specializing in
+              <strong class="text-red-400 font-semibold">system design</strong> and
+              <strong class="text-red-400 font-semibold">scalable architectures</strong>.
+              I build clean, maintainable solutions through
+              <span class="text-indigo-400 font-semibold">collaboration</span> and
+              continuous learning.
             </p>
           </div>
-
-          <div class="card card-hover p-4 sm:p-6 md:p-8">
-            <p
-              class="mobile-text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed"
-            >
-              I value <span class="text-indigo-400 font-semibold">clarity</span
-              >,
-              <span class="text-indigo-400 font-semibold">consistency</span>,
-              and
-              <span class="text-indigo-400 font-semibold">teamwork</span>. My
-              approach to development is guided by clean architecture,
-              thoughtful design, and a mindset focused on continuous learning
-              and improvement. I see code not just as instructions — but as a
-              way to express logic elegantly.
-            </p>
-          </div>
-
         </div>
 
         <!-- Call to Action Buttons -->
@@ -157,9 +133,35 @@ import Carrusel from "../components/Carrusel.astro";
         </div>
       </div>
 
-      <!-- Skills Carousel -->
-      <div class="mb-12 sm:mb-16">
-        <Carrusel />
+      <!-- Skills Grid -->
+      <div class="mb-12 sm:mb-16 max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillsCarousels.map((section) => (
+            <div class="card p-6">
+              <h3 class="text-lg font-semibold text-white mb-4">{section.title}</h3>
+              <div class="flex flex-wrap gap-2">
+                {section.skills.map((skill) => (
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-800/50 rounded-lg text-sm text-gray-300">
+                    {skill.icon.startsWith("http") ? (
+                      <img
+                        src={skill.icon}
+                        alt={skill.name}
+                        class="w-4 h-4"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <Icon
+                        name={skill.icon}
+                        class="w-4 h-4"
+                      />
+                    )}
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <!-- Education Component -->

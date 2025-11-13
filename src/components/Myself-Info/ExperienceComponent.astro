@@ -6,8 +6,8 @@ import experiences from "../../data/experiences";
 
   <!-- Desktop: Zigzag Timeline, Mobile: Vertical -->
   <div class="relative">
-    <!-- Central line for mobile -->
-    <div class="lg:hidden absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500/50 via-purple-500/50 to-pink-500/50"></div>
+    <!-- Central line for mobile - Enhanced with glow -->
+    <div class="lg:hidden absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500/50 via-purple-500/50 to-pink-500/50 rounded-full shadow-lg shadow-purple-500/50"></div>
 
     <div class="space-y-12 lg:space-y-20">
       {
@@ -18,8 +18,13 @@ import experiences from "../../data/experiences";
               class="relative group opacity-0 translate-y-4 animate-fadeInUp"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Mobile timeline dot */}
-              <div class="lg:hidden absolute left-8 top-6 h-4 w-4 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400 border-4 border-gray-900 -translate-x-1/2 z-10 group-hover:scale-125 transition-transform duration-300" />
+              {/* Mobile timeline dot - Enhanced with glow and pulse */}
+              <div class="lg:hidden absolute left-8 top-6 -translate-x-1/2 z-10">
+                <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-md opacity-75 animate-pulse"></div>
+                <div class="relative h-5 w-5 rounded-full bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-400 border-4 border-gray-900 group-hover:scale-125 transition-transform duration-300 shadow-xl shadow-purple-500/50">
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 to-transparent"></div>
+                </div>
+              </div>
 
               {/* Desktop: Zigzag layout */}
               <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
@@ -112,21 +117,27 @@ import experiences from "../../data/experiences";
                   </div>
                 </div>
 
-                {/* Desktop: Central connector with dot - positioned at row center */}
+                {/* Desktop: Central connector with enhanced dot */}
                 <div class={`hidden lg:flex lg:items-center lg:justify-center ${isEven ? 'lg:col-start-2' : 'lg:col-start-1'} lg:row-start-1`}>
                   <div class="relative w-full flex items-center justify-center">
-                    {/* Connection line */}
-                    <div class={`absolute ${isEven ? 'left-0' : 'right-0'} w-full h-0.5 bg-gradient-to-r ${
-                      isEven 
-                        ? 'from-gray-700/50 to-transparent' 
-                        : 'from-transparent to-gray-700/50'
+                    {/* Connection line with gradient glow */}
+                    <div class={`absolute ${isEven ? 'left-0' : 'right-0'} w-full h-1 rounded-full ${
+                      isEven
+                        ? 'bg-gradient-to-r from-purple-500/30 via-purple-500/50 to-transparent shadow-lg shadow-purple-500/30'
+                        : 'bg-gradient-to-l from-purple-500/30 via-purple-500/50 to-transparent shadow-lg shadow-purple-500/30'
                     }`}></div>
-                    
-                    {/* Central dot with pulse animation */}
-                    <div class="relative z-10 group-hover:scale-110 transition-transform duration-300">
-                      <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
-                      <div class="relative h-6 w-6 rounded-full bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 border-4 border-gray-900 shadow-xl">
-                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 to-transparent"></div>
+
+                    {/* Central dot with enhanced pulse and glow */}
+                    <div class="relative z-10 group-hover:scale-125 transition-all duration-500">
+                      {/* Outer glow ring */}
+                      <div class="absolute -inset-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-40 group-hover:opacity-70 animate-pulse transition-opacity"></div>
+                      {/* Middle glow */}
+                      <div class="absolute -inset-1 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full blur-md opacity-60 group-hover:opacity-90 transition-opacity"></div>
+                      {/* Main dot */}
+                      <div class="relative h-7 w-7 rounded-full bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 border-4 border-gray-900 shadow-2xl shadow-purple-500/50 group-hover:shadow-purple-500/80 transition-shadow">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-white/50 to-transparent"></div>
+                        {/* Inner shine */}
+                        <div class="absolute inset-1 rounded-full bg-gradient-to-br from-white/20 to-transparent"></div>
                       </div>
                     </div>
                   </div>
@@ -138,8 +149,13 @@ import experiences from "../../data/experiences";
       }
     </div>
 
-    {/* Decorative vertical line for desktop zigzag effect */}
-    <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/20 via-purple-500/20 to-pink-500/20 -translate-x-1/2 -z-10"></div>
+    {/* Decorative vertical line for desktop zigzag effect - Enhanced */}
+    <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 -z-10">
+      {/* Glow layer */}
+      <div class="absolute inset-0 w-2 -translate-x-1/2 bg-gradient-to-b from-indigo-500/30 via-purple-500/30 to-pink-500/30 blur-sm"></div>
+      {/* Main line */}
+      <div class="absolute inset-0 w-1 -translate-x-1/2 bg-gradient-to-b from-indigo-500/40 via-purple-500/40 to-pink-500/40 rounded-full shadow-lg shadow-purple-500/30"></div>
+    </div>
   </div>
 
   {/* Summary Stats */}
