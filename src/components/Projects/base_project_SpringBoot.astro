@@ -1,0 +1,198 @@
+---
+import "../../styles/global.css";
+---
+
+<article class="relative bg-gradient-to-br from-gray-900/80 via-gray-800/90 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 mb-8 hover:border-green-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-500/10 group overflow-hidden animate-on-scroll">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 bg-gradient-to-r from-green-600/20 via-transparent to-emerald-600/20"></div>
+    <div class="absolute top-0 left-0 w-32 h-32 bg-green-500/10 rounded-full -translate-x-16 -translate-y-16"></div>
+    <div class="absolute bottom-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full translate-x-12 translate-y-12"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10">
+    <!-- Header with enhanced design -->
+    <div class="flex items-start gap-6 mb-6">
+      <div class="relative">
+        <div class="w-16 h-16 bg-gradient-to-br from-green-500 via-green-600 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-green-500/25 group-hover:shadow-green-500/40 transition-all duration-500">
+          <i class="fab fa-java text-white text-2xl"></i>
+        </div>
+        <div class="absolute -inset-1 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl opacity-20 blur-sm group-hover:opacity-40 transition-all duration-500"></div>
+      </div>
+      <div class="flex-1">
+        <h3 class="text-2xl font-bold bg-gradient-to-r from-white via-green-100 to-emerald-200 bg-clip-text text-transparent mb-2">Spring Boot API Project</h3>
+        <p class="text-gray-400 font-medium">Enterprise-grade Backend Template</p>
+        <div class="flex items-center gap-2 mt-2">
+          <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <span class="text-green-400 text-sm font-medium">Production Ready</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced Description -->
+    <div class="bg-gray-800/30 rounded-xl p-4 mb-6 border border-gray-700/30">
+      <p class="text-gray-300 leading-relaxed">
+        A comprehensive Spring Boot 3 API template featuring <span class="text-green-400 font-semibold">clean architecture</span>,
+        <span class="text-orange-400 font-semibold">Spring Data JPA</span>,
+        <span class="text-emerald-400 font-semibold">JWT authentication</span>, and
+        <span class="text-blue-400 font-semibold">PostgreSQL integration</span>. Built with modern practices and
+        enterprise-level patterns for scalable backend development.
+      </p>
+    </div>
+
+    <!-- Modern Tech Stack -->
+    <div class="mb-6">
+      <h4 class="text-sm font-bold text-gray-300 mb-3 flex items-center gap-2">
+        <div class="w-1 h-4 bg-gradient-to-b from-green-500 to-emerald-500 rounded"></div>
+        Technology Stack
+      </h4>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        <div class="bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fab fa-java text-orange-400 text-xl mb-2 block"></i>
+          <span class="text-orange-300 text-xs font-medium">Java 17</span>
+        </div>
+        <div class="bg-green-500/10 hover:bg-green-500/20 border border-green-500/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fas fa-leaf text-green-400 text-xl mb-2 block"></i>
+          <span class="text-green-300 text-xs font-medium">Spring Boot 3</span>
+        </div>
+        <div class="bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fas fa-database text-emerald-400 text-xl mb-2 block"></i>
+          <span class="text-emerald-300 text-xs font-medium">Spring Data JPA</span>
+        </div>
+        <div class="bg-blue-600/10 hover:bg-blue-600/20 border border-blue-600/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fas fa-server text-blue-300 text-xl mb-2 block"></i>
+          <span class="text-blue-200 text-xs font-medium">PostgreSQL</span>
+        </div>
+        <div class="bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 rounded-lg p-3 text-center transition-all duration-300 hover:scale-105">
+          <i class="fas fa-shield-alt text-teal-400 text-xl mb-2 block"></i>
+          <span class="text-teal-300 text-xs font-medium">JWT Auth</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture Features Grid -->
+    <div class="mb-6">
+      <h4 class="text-sm font-bold text-gray-300 mb-3 flex items-center gap-2">
+        <div class="w-1 h-4 bg-gradient-to-b from-green-500 to-blue-500 rounded"></div>
+        Architecture Features
+      </h4>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-green-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300 text-sm">Clean Architecture</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-green-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300 text-sm">RESTful APIs</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-green-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300 text-sm">Repository Pattern</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-green-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300 text-sm">Dependency Injection</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-green-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300 text-sm">Exception Handling</span>
+        </div>
+        <div class="flex items-center gap-2 bg-gray-800/40 rounded-lg p-2 border border-gray-700/30 hover:border-green-500/30 transition-all duration-300">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300 text-sm">API Versioning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced Code Preview -->
+    <div class="bg-gray-900/50 rounded-xl border border-gray-700/50 overflow-hidden mb-6">
+      <div class="bg-gray-800/70 px-4 py-3 border-b border-gray-700/50 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="flex gap-1">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div>
+          <span class="text-gray-400 text-sm font-mono">Application.java</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fab fa-java text-orange-400"></i>
+          <span class="text-xs text-gray-500">Java 17</span>
+        </div>
+      </div>
+      <div class="p-4 font-mono text-sm">
+        <div class="text-purple-400">@SpringBootApplication</div>
+        <div class="text-purple-400">public class <span class="text-yellow-400">Application</span> {</div>
+        <div class="text-gray-500 mt-2 ml-4">// Application entry point</div>
+        <div class="text-white ml-4">public static void <span class="text-yellow-400">main</span>(<span class="text-blue-400">String</span>[] <span class="text-orange-400">args</span>) {</div>
+        <div class="text-white ml-8"><span class="text-blue-400">SpringApplication</span>.<span class="text-yellow-400">run</span>(<span class="text-green-400">Application</span>.class, <span class="text-orange-400">args</span>);</div>
+        <div class="text-white ml-4">}</div>
+        <div class="text-white">}</div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a
+        href="https://github.com/gjohnn/base_projects_springboot"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 flex items-center justify-center gap-2 group"
+      >
+        <i class="fab fa-github group-hover:animate-bounce"></i>
+        View on GitHub
+      </a>
+      <button
+        id="copyCloneBtn"
+        class="flex-1 bg-gray-700/50 hover:bg-gray-600/50 border border-gray-600 hover:border-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+        onclick="copyCloneCommand()"
+      >
+        <i id="cloneIcon" class="fas fa-code-branch group-hover:animate-bounce"></i>
+        <span id="cloneText">Copy Clone Command</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hidden content for copying -->
+  <textarea
+    id="cloneCommand"
+    class="sr-only"
+    readonly
+  >git clone https://github.com/gjohnn/base_projects_springboot.git</textarea>
+</article>
+
+<script is:inline>
+  function copyCloneCommand() {
+    const command = document.getElementById('cloneCommand').value;
+    const btn = document.getElementById('copyCloneBtn');
+    const icon = document.getElementById('cloneIcon');
+    const text = document.getElementById('cloneText');
+
+    navigator.clipboard.writeText(command).then(() => {
+      // Success feedback
+      icon.className = 'fas fa-check mr-2 text-green-400';
+      text.textContent = 'Copied!';
+      btn.classList.add('bg-green-600/20', 'border-green-500/50', 'text-green-400');
+      btn.classList.remove('bg-gray-700', 'border-gray-600');
+
+      // Reset after 3 seconds
+      setTimeout(() => {
+        icon.className = 'fas fa-code-branch mr-2 group-hover:animate-bounce';
+        text.textContent = 'Copy Clone Command';
+        btn.classList.remove('bg-green-600/20', 'border-green-500/50', 'text-green-400');
+        btn.classList.add('bg-gray-700', 'border-gray-600');
+      }, 3000);
+    }).catch(() => {
+      // Error feedback
+      icon.className = 'fas fa-exclamation-triangle mr-2 text-red-400';
+      text.textContent = 'Copy failed';
+
+      // Reset after 2 seconds
+      setTimeout(() => {
+        icon.className = 'fas fa-code-branch mr-2 group-hover:animate-bounce';
+        text.textContent = 'Copy Clone Command';
+      }, 2000);
+    });
+  }
+</script>
