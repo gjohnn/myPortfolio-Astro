@@ -52,7 +52,7 @@ const experiences: Experience[] = [
     company: "Alquileres Costeros",
     role: "Solo Developer (Discontinued Project)",
     period: "2024",
-    technologies: ["C#", ".NET 8", "WPF", "SQLite"],
+    technologies: ["Java", "Spring Boot", "JavaFX", "SQLite"],
     responsibilities: [
       "Designed and developed a desktop app for managing short-term rental properties",
       "Implemented booking flow, customer records, and availability calendar",
