@@ -14,8 +14,8 @@ export const skillsCarousels: CarouselSection[] = [
         title: "Backend Development",
         color: "text-red-100",
         skills: [
-            { name: "Java", icon: "logos:java", colorClass: "text-red-400" },
-            { name: "Spring Boot", icon: "logos:spring-icon", colorClass: "text-red-400" },
+            { name: "C#", icon: "https://www.svgrepo.com/show/452184/csharp.svg", colorClass: "text-red-400" },
+            { name: "ASP.NET", icon: "logos:dotnet", colorClass: "text-red-400" },
             { name: "Node.js", icon: "logos:nodejs-icon", colorClass: "text-red-400" },
             { name: "Express", icon: "simple-icons:express", colorClass: "text-red-400" },
             { name: "TypeScript", icon: "skill-icons:typescript", colorClass: "text-red-400" },

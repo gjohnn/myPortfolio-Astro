@@ -83,7 +83,7 @@ src/
 
 - **Home**: Introduction and overview
 - **Projects**: Featured development projects including:
-  - Java Spring applications
+  - .NET applications
   - Security implementations
   - Mobile and web applications
 - **Experience**: Professional timeline and achievements
