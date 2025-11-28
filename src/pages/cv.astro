@@ -1,0 +1,107 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <main class="relative">
+    <!-- CV Header Section -->
+    <section
+      class="relative w-full mb-8 text-center animate-on-scroll"
+    >
+      <div class="relative z-10 max-w-4xl mx-auto px-4">
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl font-black mb-4 leading-tight pb-4 pt-4 mt-6"
+        >
+          <span class="gradient-text">My Resume</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-gray-300 mb-6">
+          View or download my complete professional CV
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8">
+          <a
+            href="/JuanGuerreroCv_Public.pdf"
+            download="Juan_Sebastián_Guerrero_Britos_CV.pdf"
+            class="btn btn-primary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg"
+          >
+            <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
+            Download CV
+          </a>
+          <a
+            href="/contact"
+            class="btn btn-secondary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg"
+          >
+            <i class="fas fa-envelope mr-2 group-hover:animate-bounce"></i>
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PDF Viewer Section -->
+    <section class="relative w-full animate-on-scroll">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="card p-4 sm:p-6">
+          <div class="relative w-full" style="min-height: 80vh;">
+            <!-- PDF Embed for Desktop -->
+            <div class="hidden md:block w-full h-full">
+              <iframe
+                src="/JuanGuerreroCv_Public.pdf"
+                class="w-full rounded-lg shadow-2xl"
+                style="height: 85vh; border: none;"
+                title="Juan Sebastián Guerrero Britos - CV"
+              ></iframe>
+            </div>
+
+            <!-- Mobile Fallback -->
+            <div class="md:hidden">
+              <div class="text-center p-8 bg-gray-800/50 rounded-lg">
+                <i class="fas fa-file-pdf text-6xl text-red-400 mb-4"></i>
+                <h3 class="text-xl font-semibold text-white mb-4">
+                  View CV on Mobile
+                </h3>
+                <p class="text-gray-300 mb-6">
+                  For the best viewing experience on mobile devices, please download the PDF.
+                </p>
+                <a
+                  href="/JuanGuerreroCv_Public.pdf"
+                  target="_blank"
+                  class="btn btn-primary inline-flex items-center gap-2 px-6 py-3"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  Open PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-8 text-center">
+          <p class="text-gray-400 text-sm">
+            Last updated: <span class="text-red-400">November 2025</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>
+
+<style>
+  /* Additional styles for CV page */
+  .gradient-text {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  iframe {
+    transition: all 0.3s ease;
+  }
+
+  iframe:hover {
+    box-shadow: 0 25px 50px -12px rgba(239, 68, 68, 0.25);
+  }
+</style>
