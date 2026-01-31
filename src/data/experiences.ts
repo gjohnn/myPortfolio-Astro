@@ -2,7 +2,9 @@
 
 interface Experience {
   company: string;
+  companyUrl?: string;
   project?: string;
+  projectUrl?: string;
   role: string;
   period: string;
   technologies: string[];
@@ -11,8 +13,29 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    company: "Idus software",
+    companyUrl: "https://idus.com.ar",
+    role: "Back End Developer",
+    period: "Dec 2025 – Present",
+    technologies: [
+      "PHP",
+      "Ecosystem Integrations",
+      "Legacy Refactoring",
+      "AI Agents",
+      "Business-Driven Architecture",
+    ],
+    responsibilities: [
+      "Integracion de Ecosistemas: Desarrollo y mantenimiento de conexiones criticas entre plataformas externas y sistemas internos mediante PHP moderno.",
+      "Modernizacion y Refactorizacion: Optimizacion de codigo legacy, priorizando siempre la logica de negocio y el rendimiento del sistema.",
+      "Productividad con IA: Implementacion y ajuste de Agentes de IA personalizados para automatizar flujos de trabajo tecnicos y acelerar el velocity del equipo.",
+      "Arquitectura Orientada a Negocio: Traduccion de requerimientos comerciales en soluciones tecnicas escalables y faciles de mantener.",
+    ],
+  },
+  {
     company: "Apequa",
+    companyUrl: "https://apequa.com",
     project: "Estoy Acá – Mobile App",
+    projectUrl: "https://estoyaca.com.ar",
     role: "Tech Lead Manager",
     period: "Aug 2024 – Present",
     technologies: [
