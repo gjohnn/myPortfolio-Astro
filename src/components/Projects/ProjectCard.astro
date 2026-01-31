@@ -6,17 +6,32 @@ interface Props {
   iconColor: string;
   technologies: Array<{ name: string; color: string }>;
   githubUrl?: string;
+  liveUrl?: string;
   features?: string[];
+  featured?: boolean;
+  logoUrl?: string;
 }
 
-const { title, description, icon, iconColor, technologies, githubUrl, features } = Astro.props;
+const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, features, featured, logoUrl } = Astro.props;
 ---
 
-<article class="card p-4 sm:p-6 hover:shadow-xl transition-all duration-300 group">
+<article class={`card p-4 sm:p-6 hover:shadow-xl transition-all duration-300 group ${featured ? 'ring-2 ring-emerald-500/50 shadow-emerald-500/10' : ''}`}>
+  <!-- Featured Badge -->
+  {featured && (
+    <div class="absolute top-0 right-0 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+      <i class="fas fa-star mr-1"></i>
+      Featured
+    </div>
+  )}
+  
   <!-- Header -->
   <div class="flex items-start gap-4 mb-4">
-    <div class={`w-12 h-12 ${iconColor} rounded-lg flex items-center justify-center flex-shrink-0`}>
-      <i class={`${icon} text-white text-xl`}></i>
+    <div class={`w-12 h-12 ${iconColor} rounded-lg flex items-center justify-center flex-shrink-0 ${logoUrl ? 'p-2' : ''}`}>
+      {logoUrl ? (
+        <img src={logoUrl} alt={`${title} logo`} class="w-full h-full object-contain" />
+      ) : (
+        <i class={`${icon} text-white text-xl`}></i>
+      )}
     </div>
     <div class="flex-1 min-w-0">
       <h3 class="text-lg sm:text-xl font-bold text-white mb-1">{title}</h3>
@@ -45,20 +60,34 @@ const { title, description, icon, iconColor, technologies, githubUrl, features }
     </div>
   )}
 
-  <!-- Action -->
-  {githubUrl ? (
-    <a
-      href={githubUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn btn-primary w-full justify-center text-sm"
-    >
-      <i class="fab fa-github mr-2"></i>
-      View on GitHub
-    </a>
-  ) : (
-    <div class="text-center py-2 text-gray-500 text-sm italic">
-      Private Project
-    </div>
-  )}
+  <!-- Actions -->
+  <div class="flex gap-2">
+    {githubUrl && (
+      <a
+        href={githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`btn btn-primary flex-1 justify-center text-sm ${liveUrl ? '' : 'w-full'}`}
+      >
+        <i class="fab fa-github mr-2"></i>
+        GitHub
+      </a>
+    )}
+    {liveUrl && (
+      <a
+        href={liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`btn flex-1 justify-center text-sm ${featured ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0' : 'btn-secondary'}`}
+      >
+        <i class="fas fa-external-link-alt mr-2"></i>
+        Live Demo
+      </a>
+    )}
+    {!githubUrl && !liveUrl && (
+      <div class="text-center py-2 text-gray-500 text-sm italic w-full">
+        Private Project
+      </div>
+    )}
+  </div>
 </article>
