@@ -1,5 +1,14 @@
 ---
 import { educationData } from '../../data/my-education';
+import { t } from '../../i18n/utils';
+import { defaultLang, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const data = educationData[lang] ?? educationData[defaultLang];
 
 const typeIcons: Record<string, string> = {
   degree: 'fas fa-graduation-cap',
@@ -15,7 +24,7 @@ const typeColors: Record<string, string> = {
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-  {educationData.map((edu, index) => (
+  {data.map((edu, index) => (
     <article class="card p-5 sm:p-6 relative group animate-on-scroll"
              style={`border-left: 5px solid ${typeColors[edu.type]};`}>
       
@@ -27,14 +36,14 @@ const typeColors: Record<string, string> = {
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style="background: white;"></span>
             <span class="relative inline-flex rounded-full h-2 w-2" style="background: white;"></span>
           </span>
-          ACTIVE NOW
+          {t('education.activeNow', lang)}
         </div>
       )}
       {edu.status === 'completed' && (
         <div class="absolute -top-2 -right-2 comic-badge flex items-center gap-1"
              style="background: var(--comic-blue); color: white; font-size: 0.65rem;">
           <i class="fas fa-check text-xs"></i>
-          COMPLETED
+          {t('education.completed', lang)}
         </div>
       )}
 

@@ -1,3 +1,14 @@
+---
+import { t, localePath } from "../i18n/utils";
+import { defaultLang, type Lang } from "../i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+---
+
 <footer style="background: var(--comic-black); border-top: 4px solid var(--comic-black);">
   <!-- Comic diagonal stripe divider -->
   <div class="comic-divider"></div>
@@ -17,32 +28,32 @@
           </span>
         </div>
         <p class="text-sm text-center md:text-left max-w-xs" style="color: var(--comic-yellow-light); font-family: var(--font-body);">
-          Software Developer specialized in backend development with C#, JS/TS, and cloud technologies.
+          {t('footer.description', lang)}
         </p>
       </div>
 
       <!-- Quick Links -->
       <div class="flex flex-col items-center md:items-start">
-        <h3 class="text-white mb-4" style="font-family: var(--font-comic); letter-spacing: 1px; font-size: 1.2rem;">Quick Links</h3>
+        <h3 class="text-white mb-4" style="font-family: var(--font-comic); letter-spacing: 1px; font-size: 1.2rem;">{t('footer.quickLinks', lang)}</h3>
         <nav class="flex flex-col space-y-2">
-          <a href="/" class="text-sm transition-all duration-200 hover:translate-x-1" style="color: var(--comic-yellow-light); font-family: var(--font-body); font-weight: 700;">
-            <i class="fas fa-chevron-right mr-1 text-xs" style="color: var(--comic-red);"></i> Home
+          <a href={localePath('/', lang)} class="text-sm transition-all duration-200 hover:translate-x-1" style="color: var(--comic-yellow-light); font-family: var(--font-body); font-weight: 700;">
+            <i class="fas fa-chevron-right mr-1 text-xs" style="color: var(--comic-red);"></i> {t('nav.home', lang)}
           </a>
-          <a href="/experience" class="text-sm transition-all duration-200 hover:translate-x-1" style="color: var(--comic-yellow-light); font-family: var(--font-body); font-weight: 700;">
-            <i class="fas fa-chevron-right mr-1 text-xs" style="color: var(--comic-red);"></i> Experience
+          <a href={localePath('/experience', lang)} class="text-sm transition-all duration-200 hover:translate-x-1" style="color: var(--comic-yellow-light); font-family: var(--font-body); font-weight: 700;">
+            <i class="fas fa-chevron-right mr-1 text-xs" style="color: var(--comic-red);"></i> {t('nav.experience', lang)}
           </a>
-          <a href="/projects" class="text-sm transition-all duration-200 hover:translate-x-1" style="color: var(--comic-yellow-light); font-family: var(--font-body); font-weight: 700;">
-            <i class="fas fa-chevron-right mr-1 text-xs" style="color: var(--comic-red);"></i> Projects
+          <a href={localePath('/projects', lang)} class="text-sm transition-all duration-200 hover:translate-x-1" style="color: var(--comic-yellow-light); font-family: var(--font-body); font-weight: 700;">
+            <i class="fas fa-chevron-right mr-1 text-xs" style="color: var(--comic-red);"></i> {t('nav.projects', lang)}
           </a>
-          <a href="/contact" class="text-sm transition-all duration-200 hover:translate-x-1" style="color: var(--comic-yellow-light); font-family: var(--font-body); font-weight: 700;">
-            <i class="fas fa-chevron-right mr-1 text-xs" style="color: var(--comic-red);"></i> Contact
+          <a href={localePath('/contact', lang)} class="text-sm transition-all duration-200 hover:translate-x-1" style="color: var(--comic-yellow-light); font-family: var(--font-body); font-weight: 700;">
+            <i class="fas fa-chevron-right mr-1 text-xs" style="color: var(--comic-red);"></i> {t('nav.contact', lang)}
           </a>
         </nav>
       </div>
 
       <!-- Social -->
       <div class="flex flex-col items-center md:items-start">
-        <h3 class="text-white mb-4" style="font-family: var(--font-comic); letter-spacing: 1px; font-size: 1.2rem;">Connect</h3>
+        <h3 class="text-white mb-4" style="font-family: var(--font-comic); letter-spacing: 1px; font-size: 1.2rem;">{t('footer.connect', lang)}</h3>
         <div class="flex space-x-3">
           <a href="https://github.com/gjohnn" target="_blank" rel="noopener noreferrer"
              class="p-2 rounded-lg transition-all duration-200 hover:translate-y-[-2px]"
@@ -73,11 +84,11 @@
           <p class="text-sm" style="color: rgba(255,255,255,0.6); font-family: var(--font-body);">
             &copy; 2025 
             <span style="color: var(--comic-yellow); font-weight: 700;">Juan Sebastián Guerrero Britos</span>. 
-            All rights reserved.
+            {t('footer.allRights', lang)}
           </p>
         </div>
         <div class="flex items-center space-x-2 text-center md:text-right">
-          <span class="text-xs" style="color: rgba(255,255,255,0.4); font-family: var(--font-accent);">Built with</span>
+          <span class="text-xs" style="color: rgba(255,255,255,0.4); font-family: var(--font-accent);">{t('footer.builtWith', lang)}</span>
           <div class="flex items-center space-x-2">
             <span class="text-xs" style="color: var(--comic-orange);">Astro</span>
             <span style="color: rgba(255,255,255,0.3);">+</span>

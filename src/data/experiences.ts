@@ -187,6 +187,4 @@ const en: Experience[] = [
 ];
 
 export const experiences: Record<Lang, Experience[]> = { es, en };
-export default es;
-
 export default experiences;

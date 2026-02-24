@@ -1,5 +1,23 @@
 ---
 import "../styles/global.css";
+import { t, localePath, getAlternateLang } from "../i18n/utils";
+import { defaultLang, type Lang } from "../i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const altLang = getAlternateLang(lang);
+
+// Build alternate URL for language toggle
+const currentPath = Astro.url.pathname;
+// Strip the lang prefix to get the base path
+let basePath = currentPath;
+if (lang !== defaultLang) {
+  basePath = currentPath.replace(`/${lang}`, '') || '/';
+}
+const altUrl = localePath(basePath, altLang);
 ---
 
 <header
@@ -9,7 +27,7 @@ import "../styles/global.css";
   <nav class="flex justify-between items-center px-6 max-w-7xl mx-auto">
     <!-- Comic Logo -->
     <div class="flex items-center">
-      <a href="/" class="group relative flex items-center space-x-3">
+      <a href={localePath('/', lang)} class="group relative flex items-center space-x-3">
         <div class="relative flex items-center justify-center w-12 h-12 rounded-lg transform rotate-[-3deg] group-hover:rotate-[3deg] transition-transform duration-300"
              style="background: var(--comic-red); border: 3px solid var(--comic-black); box-shadow: 3px 3px 0 var(--comic-black);">
           <span class="text-xl text-white" style="font-family: var(--font-comic); letter-spacing: 1px;">JG</span>
@@ -20,62 +38,80 @@ import "../styles/global.css";
             Juan S. Guerrero
           </span>
           <p class="text-xs font-bold" style="font-family: var(--font-accent); color: var(--comic-blue);">
-            Software Developer
+            {t('header.role', lang)}
           </p>
         </div>
       </a>
     </div>
 
     <!-- Desktop Nav -->
-    <div class="hidden lg:flex">
+    <div class="hidden lg:flex items-center gap-3">
       <ul class="flex justify-center items-center gap-2 list-none p-0 m-0">
         <li>
           <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
              style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
-             href="/">
+             href={localePath('/', lang)}>
             <i class="fas fa-home mr-1" style="color: var(--comic-red);"></i>
-            Home
+            {t('nav.home', lang)}
             <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
           <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
              style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
-             href="/experience">
+             href={localePath('/experience', lang)}>
             <i class="fas fa-briefcase mr-1" style="color: var(--comic-blue);"></i>
-            Experience
+            {t('nav.experience', lang)}
             <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
           <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
              style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
-             href="/projects">
+             href={localePath('/projects', lang)}>
             <i class="fas fa-code mr-1" style="color: var(--comic-orange);"></i>
-            Projects
+            {t('nav.projects', lang)}
             <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
-          <a href="/cv" class="btn btn-primary group">
+          <a href={localePath('/cv', lang)} class="btn btn-primary group">
             <i class="fas fa-file-alt mr-2 group-hover:animate-bounce"></i>
-            View CV
+            {t('nav.viewCv', lang)}
           </a>
         </li>
         <li>
           <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
              style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
-             href="/contact">
+             href={localePath('/contact', lang)}>
             <i class="fas fa-envelope mr-1" style="color: var(--comic-green);"></i>
-            Contact
+            {t('nav.contact', lang)}
             <span class="nav-indicator"></span>
           </a>
         </li>
       </ul>
+      
+      <!-- Language Toggle (Desktop) -->
+      <a href={altUrl}
+         class="lang-toggle flex items-center gap-1 px-3 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm"
+         style="font-family: var(--font-comic); background: var(--comic-cream); border: 2px solid var(--comic-black); box-shadow: 2px 2px 0 var(--comic-black); color: var(--comic-black); letter-spacing: 1px;"
+         aria-label={`Switch to ${altLang === 'es' ? 'Spanish' : 'English'}`}>
+        <i class="fas fa-globe" style="color: var(--comic-blue);"></i>
+        {altLang.toUpperCase()}
+      </a>
     </div>
 
-    <!-- Mobile Hamburger -->
-    <div class="flex lg:hidden items-center gap-4">
+    <!-- Mobile: Language Toggle + Hamburger -->
+    <div class="flex lg:hidden items-center gap-3">
+      <!-- Language Toggle (Mobile) -->
+      <a href={altUrl}
+         class="lang-toggle flex items-center gap-1 px-2.5 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm"
+         style="font-family: var(--font-comic); background: var(--comic-cream); border: 2px solid var(--comic-black); box-shadow: 2px 2px 0 var(--comic-black); color: var(--comic-black); letter-spacing: 1px;"
+         aria-label={`Switch to ${altLang === 'es' ? 'Spanish' : 'English'}`}>
+        <i class="fas fa-globe text-xs" style="color: var(--comic-blue);"></i>
+        {altLang.toUpperCase()}
+      </a>
+      
       <button
         id="hamburger"
         class="relative p-3 focus:outline-none transition-all duration-300 rounded-lg group"
@@ -102,39 +138,39 @@ import "../styles/global.css";
         <li>
           <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
              style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
-             href="/">
+             href={localePath('/', lang)}>
             <i class="fas fa-home mr-3 w-5" style="color: var(--comic-red);"></i>
-            Home
+            {t('nav.home', lang)}
           </a>
         </li>
         <li>
           <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
              style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
-             href="/experience">
+             href={localePath('/experience', lang)}>
             <i class="fas fa-briefcase mr-3 w-5" style="color: var(--comic-blue);"></i>
-            Experience
+            {t('nav.experience', lang)}
           </a>
         </li>
         <li>
           <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
              style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
-             href="/projects">
+             href={localePath('/projects', lang)}>
             <i class="fas fa-code mr-3 w-5" style="color: var(--comic-orange);"></i>
-            Projects
+            {t('nav.projects', lang)}
           </a>
         </li>
         <li class="mt-4 pt-4" style="border-top: 3px dashed var(--comic-black);">
-          <a href="/cv" class="btn btn-primary w-full justify-center">
+          <a href={localePath('/cv', lang)} class="btn btn-primary w-full justify-center">
             <i class="fas fa-file-alt mr-2"></i>
-            View CV
+            {t('nav.viewCv', lang)}
           </a>
         </li>
         <li class="mt-2">
           <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
              style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
-             href="/contact">
+             href={localePath('/contact', lang)}>
             <i class="fas fa-envelope mr-3 w-5" style="color: var(--comic-green);"></i>
-            Contact
+            {t('nav.contact', lang)}
           </a>
         </li>
       </ul>
@@ -167,6 +203,17 @@ import "../styles/global.css";
   .mobile-nav-link:hover {
     background: var(--comic-yellow-light);
     transform: translateX(4px);
+  }
+
+  .lang-toggle:hover {
+    background: var(--comic-yellow-light);
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0 var(--comic-black);
+  }
+
+  .lang-toggle:active {
+    transform: translateY(1px);
+    box-shadow: 1px 1px 0 var(--comic-black);
   }
 
   #hamburgerLine1.active {
@@ -231,7 +278,11 @@ import "../styles/global.css";
     const navLinks = document.querySelectorAll(".nav-link, .mobile-nav-link");
     navLinks.forEach(link => {
       const href = link.getAttribute("href");
-      if (href === currentPath || (currentPath === "/" && href === "/")) {
+      if (!href) return;
+      // Normalize both paths for comparison
+      const normCurrent = currentPath.replace(/\/$/, '') || '/';
+      const normHref = href.replace(/\/$/, '') || '/';
+      if (normHref === normCurrent) {
         link.style.background = 'var(--comic-yellow-light)';
       }
     });

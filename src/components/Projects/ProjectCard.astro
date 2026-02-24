@@ -1,4 +1,7 @@
 ---
+import { t } from '../../i18n/utils';
+import { defaultLang, type Lang } from '../../i18n/ui';
+
 interface Props {
   title: string;
   description: string;
@@ -10,9 +13,10 @@ interface Props {
   features?: string[];
   featured?: boolean;
   logoUrl?: string;
+  lang?: Lang;
 }
 
-const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, features, featured, logoUrl } = Astro.props;
+const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, features, featured, logoUrl, lang = defaultLang } = Astro.props;
 ---
 
 <article class="card p-4 sm:p-6 group animate-comic-shake" 
@@ -23,7 +27,7 @@ const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, f
     <div class="absolute -top-3 -right-3 z-10 comic-badge" 
          style="background: var(--comic-yellow); color: var(--comic-black); font-size: 0.75rem; transform: rotate(5deg);">
       <i class="fas fa-star mr-1"></i>
-      Featured!
+      {t('proj.featured', lang)}
     </div>
   )}
   
@@ -73,19 +77,19 @@ const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, f
       <a href={githubUrl} target="_blank" rel="noopener noreferrer"
          class={`btn btn-primary flex-1 justify-center text-sm ${liveUrl ? '' : 'w-full'}`}>
         <i class="fab fa-github mr-2"></i>
-        GitHub
+        {t('proj.github', lang)}
       </a>
     )}
     {liveUrl && (
       <a href={liveUrl} target="_blank" rel="noopener noreferrer"
          class={`btn flex-1 justify-center text-sm ${featured ? 'btn-secondary' : 'btn-secondary'}`}>
         <i class="fas fa-external-link-alt mr-2"></i>
-        Live Demo
+        {t('proj.liveDemo', lang)}
       </a>
     )}
     {!githubUrl && !liveUrl && (
       <div class="text-center py-2 text-sm italic w-full" style="color: var(--gray-500); font-family: var(--font-accent);">
-        Private Project
+        {t('proj.privateProject', lang)}
       </div>
     )}
   </div>

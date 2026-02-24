@@ -1,9 +1,18 @@
 ---
-import experiences from '../../data/experiences';
+import { experiences } from '../../data/experiences';
+import { t } from '../../i18n/utils';
+import { defaultLang, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const data = experiences[lang] ?? experiences[defaultLang];
 
 // Summary stats
-const totalExperiences = experiences.length;
-const allTechs = [...new Set(experiences.flatMap(e => e.technologies))];
+const totalExperiences = data.length;
+const allTechs = [...new Set(data.flatMap(e => e.technologies))];
 const totalTechs = allTechs.length;
 ---
 
@@ -33,7 +42,7 @@ const totalTechs = allTechs.length;
   <div class="md:hidden absolute left-6 top-0 bottom-0 w-1" 
        style="background: var(--comic-black); border-radius: 2px;"></div>
 
-  {experiences.map((exp, index) => {
+  {data.map((exp, index) => {
     const isEven = index % 2 === 0;
     const colors = [
       'var(--comic-red)', 'var(--comic-blue)', 'var(--comic-orange)', 
@@ -102,7 +111,7 @@ const totalTechs = allTechs.length;
               <summary class="cursor-pointer text-sm flex items-center gap-2 select-none"
                        style={`font-family: var(--font-accent); color: ${color}; letter-spacing: 0.5px;`}>
                 <i class="fas fa-chevron-right text-xs exp-chevron transition-transform"></i>
-                RESPONSIBILITIES ({exp.responsibilities.length})
+                {t('exp.responsibilities', lang)} ({exp.responsibilities.length})
               </summary>
               <div class="mt-3 space-y-2 pl-2" style="border-left: 3px solid var(--comic-cream);">
                 {exp.responsibilities.map(resp => (
