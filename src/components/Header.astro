@@ -3,80 +3,70 @@ import "../styles/global.css";
 ---
 
 <header
-  class="fixed top-0 w-full glass-dark text-white py-4 shadow-2xl z-50 border-b border-white/10"
+  class="fixed top-0 w-full py-3 z-50"
+  style="background: var(--comic-white); border-bottom: 4px solid var(--comic-black); box-shadow: 0 4px 0 var(--comic-black);"
 >
   <nav class="flex justify-between items-center px-6 max-w-7xl mx-auto">
-    <!-- Enhanced Logo/Brand -->
+    <!-- Comic Logo -->
     <div class="flex items-center">
-      <a
-        href="/"
-        class="group relative flex items-center space-x-2"
-      >
-        <div class="relative">
-          <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-red-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-          <div class="relative flex items-center justify-center w-10 h-10 bg-gray-900 rounded-lg">
-            <span class="text-xl font-bold gradient-text">JG</span>
-          </div>
+      <a href="/" class="group relative flex items-center space-x-3">
+        <div class="relative flex items-center justify-center w-12 h-12 rounded-lg transform rotate-[-3deg] group-hover:rotate-[3deg] transition-transform duration-300"
+             style="background: var(--comic-red); border: 3px solid var(--comic-black); box-shadow: 3px 3px 0 var(--comic-black);">
+          <span class="text-xl text-white" style="font-family: var(--font-comic); letter-spacing: 1px;">JG</span>
         </div>
         <div class="hidden sm:block">
-          <span class="text-lg font-semibold text-white group-hover:text-red-400 transition-colors">
-            Juan Sebastián Guerrero Britos
+          <span class="text-lg font-bold transition-colors" 
+                style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;">
+            Juan S. Guerrero
           </span>
-          <p class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
+          <p class="text-xs font-bold" style="font-family: var(--font-accent); color: var(--comic-blue);">
             Software Developer
           </p>
         </div>
       </a>
     </div>
 
-    <!-- Enhanced Desktop Navigation -->
+    <!-- Desktop Nav -->
     <div class="hidden lg:flex">
-      <ul class="flex justify-center items-center gap-8 list-none p-0 m-0">
+      <ul class="flex justify-center items-center gap-2 list-none p-0 m-0">
         <li>
-          <a
-            class="nav-link relative px-4 py-2 font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-lg hover:bg-white/5"
-            href="/"
-          >
-            <i class="fas fa-home mr-2"></i>
+          <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
+             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
+             href="/">
+            <i class="fas fa-home mr-1" style="color: var(--comic-red);"></i>
             Home
             <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
-          <a
-            class="nav-link relative px-4 py-2 font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-lg hover:bg-white/5"
-            href="/experience"
-          >
-            <i class="fas fa-briefcase mr-2"></i>
+          <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
+             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
+             href="/experience">
+            <i class="fas fa-briefcase mr-1" style="color: var(--comic-blue);"></i>
             Experience
             <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
-          <a
-            class="nav-link relative px-4 py-2 font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-lg hover:bg-white/5"
-            href="/projects"
-          >
-            <i class="fas fa-code mr-2"></i>
+          <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
+             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
+             href="/projects">
+            <i class="fas fa-code mr-1" style="color: var(--comic-orange);"></i>
             Projects
             <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
-          <a
-            href="/cv"
-            class="btn btn-primary group"
-          >
+          <a href="/cv" class="btn btn-primary group">
             <i class="fas fa-file-alt mr-2 group-hover:animate-bounce"></i>
             View CV
           </a>
         </li>
         <li>
-          <a
-            class="nav-link relative px-4 py-2 font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-lg hover:bg-white/5"
-            href="/contact"
-          >
-            <i class="fas fa-envelope mr-2"></i>
+          <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
+             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
+             href="/contact">
+            <i class="fas fa-envelope mr-1" style="color: var(--comic-green);"></i>
             Contact
             <span class="nav-indicator"></span>
           </a>
@@ -84,80 +74,66 @@ import "../styles/global.css";
       </ul>
     </div>
 
-    <!-- Enhanced Mobile Menu Button -->
+    <!-- Mobile Hamburger -->
     <div class="flex lg:hidden items-center gap-4">
       <button
         id="hamburger"
-        class="relative p-3 text-gray-300 hover:text-white focus:outline-none transition-all duration-300 rounded-lg hover:bg-white/10 group"
+        class="relative p-3 focus:outline-none transition-all duration-300 rounded-lg group"
+        style="color: var(--comic-black);"
         aria-label="Toggle mobile menu"
       >
         <div class="w-6 h-6 flex flex-col justify-center items-center">
-          <span
-            id="hamburgerLine1"
-            class="block w-6 h-0.5 bg-current transition-all duration-300 group-hover:bg-red-400"
-          ></span>
-          <span
-            id="hamburgerLine2"
-            class="block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5 group-hover:bg-red-400"
-          ></span>
-          <span
-            id="hamburgerLine3"
-            class="block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5 group-hover:bg-red-400"
-          ></span>
+          <span id="hamburgerLine1" class="block w-6 h-0.5 bg-current transition-all duration-300" style="background: var(--comic-black);"></span>
+          <span id="hamburgerLine2" class="block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5" style="background: var(--comic-black);"></span>
+          <span id="hamburgerLine3" class="block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5" style="background: var(--comic-black);"></span>
         </div>
       </button>
     </div>
   </nav>
 
-  <!-- Enhanced Mobile Dropdown Menu -->
+  <!-- Mobile Dropdown -->
   <div
     id="dropdownMenu"
-    class="lg:hidden hidden absolute w-full left-0 top-full mobile-menu-blur border-t border-white/10 shadow-2xl"
+    class="lg:hidden hidden absolute w-full left-0 top-full"
+    style="background: var(--comic-cream); border-bottom: 4px solid var(--comic-black); box-shadow: 0 4px 0 var(--comic-black);"
   >
     <div class="max-w-7xl mx-auto px-6 py-6">
       <ul class="flex flex-col gap-2">
         <li>
-          <a
-            class="mobile-nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
-            href="/"
-          >
-            <i class="fas fa-home mr-3 w-5"></i>
+          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
+             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
+             href="/">
+            <i class="fas fa-home mr-3 w-5" style="color: var(--comic-red);"></i>
             Home
           </a>
         </li>
         <li>
-          <a
-            class="mobile-nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
-            href="/experience"
-          >
-            <i class="fas fa-briefcase mr-3 w-5"></i>
+          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
+             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
+             href="/experience">
+            <i class="fas fa-briefcase mr-3 w-5" style="color: var(--comic-blue);"></i>
             Experience
           </a>
         </li>
         <li>
-          <a
-            class="mobile-nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
-            href="/projects"
-          >
-            <i class="fas fa-code mr-3 w-5"></i>
+          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
+             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
+             href="/projects">
+            <i class="fas fa-code mr-3 w-5" style="color: var(--comic-orange);"></i>
             Projects
           </a>
         </li>
-        <li class="mt-4 pt-4 border-t border-white/10">
-          <a
-            href="/cv"
-            class="btn btn-primary w-full justify-center"
-          >
+        <li class="mt-4 pt-4" style="border-top: 3px dashed var(--comic-black);">
+          <a href="/cv" class="btn btn-primary w-full justify-center">
             <i class="fas fa-file-alt mr-2"></i>
             View CV
           </a>
         </li>
         <li class="mt-2">
-          <a
-            class="mobile-nav-link flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
-            href="/contact"
-          >
-            <i class="fas fa-envelope mr-3 w-5"></i>
+          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
+             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
+             href="/contact">
+            <i class="fas fa-envelope mr-3 w-5" style="color: var(--comic-green);"></i>
             Contact
           </a>
         </li>
@@ -173,34 +149,24 @@ import "../styles/global.css";
     left: 50%;
     transform: translateX(-50%);
     width: 0;
-    height: 2px;
-    background: linear-gradient(to right, rgb(239 68 68), rgb(220 38 38));
+    height: 3px;
+    background: var(--comic-red);
     transition: width 0.3s ease;
-    border-radius: 1px;
+    border-radius: 2px;
   }
 
   .nav-link:hover .nav-indicator {
     width: 100%;
   }
 
-  .mobile-nav-link {
-    position: relative;
-    overflow: hidden;
+  .nav-link:hover {
+    transform: skewX(-3deg);
+    background: var(--comic-yellow-light);
   }
 
-  .mobile-nav-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.1), transparent);
-    transition: left 0.5s;
-  }
-
-  .mobile-nav-link:hover::before {
-    left: 100%;
+  .mobile-nav-link:hover {
+    background: var(--comic-yellow-light);
+    transform: translateX(4px);
   }
 
   #hamburgerLine1.active {
@@ -224,21 +190,16 @@ import "../styles/global.css";
     const hamburgerLine2 = document.getElementById("hamburgerLine2");
     const hamburgerLine3 = document.getElementById("hamburgerLine3");
 
-    if (!hamburgerButton || !dropdownMenu || !hamburgerLine1 || !hamburgerLine2 || !hamburgerLine3) {
-      return;
-    }
+    if (!hamburgerButton || !dropdownMenu || !hamburgerLine1 || !hamburgerLine2 || !hamburgerLine3) return;
 
     function toggleMenu() {
       const isMenuOpen = !dropdownMenu.classList.contains("hidden");
-      
       if (isMenuOpen) {
-        // Close menu
         dropdownMenu.classList.add("hidden");
         hamburgerLine1.classList.remove("active");
         hamburgerLine2.classList.remove("active");
         hamburgerLine3.classList.remove("active");
       } else {
-        // Open menu with animation
         dropdownMenu.classList.remove("hidden");
         hamburgerLine1.classList.add("active");
         hamburgerLine2.classList.add("active");
@@ -255,61 +216,30 @@ import "../styles/global.css";
       }
     }
 
-    // Toggle menu on hamburger click
-    hamburgerButton.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleMenu();
-    });
-
-    // Close menu when clicking on a mobile nav link
-    document.querySelectorAll(".mobile-nav-link").forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
-
-    // Close menu when clicking outside
+    hamburgerButton.addEventListener("click", (e) => { e.stopPropagation(); toggleMenu(); });
+    document.querySelectorAll(".mobile-nav-link").forEach((link) => { link.addEventListener("click", closeMenu); });
     document.addEventListener("click", (e) => {
       const target = e.target;
       if (target && dropdownMenu && hamburgerButton) {
-        const isInsideMenu = dropdownMenu.contains(target);
-        const isHamburgerButton = hamburgerButton.contains(target);
-        
-        if (!isInsideMenu && !isHamburgerButton) {
-          closeMenu();
-        }
+        if (!dropdownMenu.contains(target) && !hamburgerButton.contains(target)) closeMenu();
       }
     });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
-    // Close menu on Escape key
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeMenu();
-      }
-    });
-
-    // Add active state to current page navigation
+    // Active page highlighting
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll(".nav-link, .mobile-nav-link");
-    
     navLinks.forEach(link => {
       const href = link.getAttribute("href");
       if (href === currentPath || (currentPath === "/" && href === "/")) {
-        link.classList.add("text-red-400");
-        const indicator = link.querySelector(".nav-indicator");
-        if (indicator) {
-          indicator.style.width = "100%";
-        }
+        link.style.background = 'var(--comic-yellow-light)';
       }
     });
 
-    // Handle window resize - close menu if switching to desktop
     let resizeTimeout;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        if (window.innerWidth >= 1024) { // lg breakpoint
-          closeMenu();
-        }
-      }, 100);
+      resizeTimeout = setTimeout(() => { if (window.innerWidth >= 1024) closeMenu(); }, 100);
     });
   });
 </script>

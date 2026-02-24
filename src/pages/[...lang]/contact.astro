@@ -1,17 +1,28 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getLangFromUrl, t, localePath } from "../../i18n/utils";
+import type { Lang } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: undefined } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const lang = getLangFromUrl(Astro.url) as Lang;
 ---
 
-<MainLayout>
+<MainLayout lang={lang}>
   <div class="relative max-w-5xl mx-auto">
     <!-- Page Header -->
     <section class="text-center mb-12 sm:mb-16 animate-on-scroll px-4">
       <h1 class="comic-title text-4xl mt-12 sm:text-5xl md:text-6xl mb-4" style="color: var(--comic-green);">
-        Let's Connect
+        {t('contact.title', lang)}
       </h1>
       <p class="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed" 
          style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
-        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+        {t('contact.subtitle', lang)}
       </p>
       <div class="mt-4 w-20 h-1.5 rounded-full mx-auto" style="background: var(--comic-green);"></div>
     </section>
@@ -23,7 +34,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         <div class="card p-6 sm:p-8" style="border-top: 4px solid var(--comic-red);">
           <h2 class="comic-title text-xl sm:text-2xl mb-6 flex items-center" style="color: var(--comic-red);">
             <i class="fas fa-paper-plane mr-3" style="color: var(--comic-red);"></i>
-            Quick Contact
+            {t('contact.quickContact', lang)}
           </h2>
           
           <div class="space-y-4">
@@ -36,7 +47,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                 <i class="fas fa-envelope text-white text-lg"></i>
               </div>
               <div>
-                <div style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px;">Email</div>
+                <div style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px;">{t('contact.email', lang)}</div>
                 <div class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">juansgb316@outlook.com</div>
               </div>
             </a>
@@ -45,9 +56,11 @@ import MainLayout from "../layouts/MainLayout.astro";
             <button id="copyEmailBtn" 
                     class="w-full p-3 rounded-lg transition-all duration-200 text-sm cursor-pointer"
                     style="background: var(--comic-cream); border: 2px dashed var(--comic-black); font-family: var(--font-accent); color: var(--comic-black); letter-spacing: 0.5px;"
-                    onclick="copyEmailToClipboard()">
+                    data-copy-label={t('contact.copyEmail', lang)}
+                    data-copied-label={t('contact.emailCopied', lang)}
+                    data-failed-label={t('contact.copyFailed', lang)}>
               <i id="copyEmailIcon" class="fas fa-copy mr-2"></i>
-              <span id="copyEmailText">Copy Email Address</span>
+              <span id="copyEmailText">{t('contact.copyEmail', lang)}</span>
             </button>
 
             <!-- LinkedIn -->
@@ -59,8 +72,8 @@ import MainLayout from "../layouts/MainLayout.astro";
                 <i class="fab fa-linkedin text-white text-lg"></i>
               </div>
               <div class="flex-1">
-                <div style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px;">LinkedIn</div>
-                <div class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">Professional Profile</div>
+                <div style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px;">{t('contact.linkedin', lang)}</div>
+                <div class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">{t('contact.linkedinDesc', lang)}</div>
               </div>
               <i class="fas fa-external-link-alt" style="color: var(--comic-blue);"></i>
             </a>
@@ -74,8 +87,8 @@ import MainLayout from "../layouts/MainLayout.astro";
                 <i class="fab fa-github text-white text-lg"></i>
               </div>
               <div class="flex-1">
-                <div style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px;">GitHub</div>
-                <div class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">View My Code</div>
+                <div style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px;">{t('contact.github', lang)}</div>
+                <div class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">{t('contact.githubDesc', lang)}</div>
               </div>
               <i class="fas fa-external-link-alt" style="color: var(--gray-500);"></i>
             </a>
@@ -86,7 +99,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         <div class="card p-6 sm:p-8" style="border-top: 4px solid var(--comic-purple);">
           <h2 class="comic-title text-xl sm:text-2xl mb-6 flex items-center" style="color: var(--comic-purple);">
             <i class="fas fa-info-circle mr-3" style="color: var(--comic-purple);"></i>
-            Let's Discuss
+            {t('contact.letsDiscuss', lang)}
           </h2>
           
           <div class="space-y-6">
@@ -96,8 +109,8 @@ import MainLayout from "../layouts/MainLayout.astro";
                 <i class="fas fa-handshake text-white text-sm"></i>
               </div>
               <div>
-                <h3 style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px; margin-bottom: 0.25rem;">Project Collaboration</h3>
-                <p class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">Looking for a backend developer for your next project? Let's talk about how I can help bring your ideas to life.</p>
+                <h3 style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px; margin-bottom: 0.25rem;">{t('contact.projectCollab', lang)}</h3>
+                <p class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">{t('contact.projectCollabDesc', lang)}</p>
               </div>
             </div>
 
@@ -107,8 +120,8 @@ import MainLayout from "../layouts/MainLayout.astro";
                 <i class="fas fa-briefcase text-white text-sm"></i>
               </div>
               <div>
-                <h3 style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px; margin-bottom: 0.25rem;">Job Opportunities</h3>
-                <p class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">Interested in full-time or freelance opportunities in backend development, APIs, and cloud solutions.</p>
+                <h3 style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px; margin-bottom: 0.25rem;">{t('contact.jobOpportunities', lang)}</h3>
+                <p class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">{t('contact.jobOpportunitiesDesc', lang)}</p>
               </div>
             </div>
 
@@ -118,8 +131,8 @@ import MainLayout from "../layouts/MainLayout.astro";
                 <i class="fas fa-comments text-white text-sm"></i>
               </div>
               <div>
-                <h3 style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px; margin-bottom: 0.25rem;">Technical Discussion</h3>
-                <p class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">Always excited to discuss technology, share knowledge, and learn from fellow developers.</p>
+                <h3 style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 0.5px; margin-bottom: 0.25rem;">{t('contact.techDiscussion', lang)}</h3>
+                <p class="text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">{t('contact.techDiscussionDesc', lang)}</p>
               </div>
             </div>
           </div>
@@ -127,7 +140,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           <div class="mt-8 pt-4" style="border-top: 2px dashed var(--gray-300);">
             <p class="text-sm text-center" style="font-family: var(--font-accent); color: var(--gray-500);">
               <i class="fas fa-clock mr-2"></i>
-              Usually responds within 24 hours
+              {t('contact.responseTime', lang)}
             </p>
           </div>
         </div>
@@ -136,23 +149,22 @@ import MainLayout from "../layouts/MainLayout.astro";
       <!-- Bottom CTA -->
       <div class="flex justify-center animate-on-scroll">
         <div class="card p-6 sm:p-8 w-full max-w-2xl text-center" style="border-color: var(--comic-green); border-width: 3px;">
-          <div class="comic-action inline-block mb-3" style="font-size: 0.7rem;">Let's go!</div>
+          <div class="comic-action inline-block mb-3" style="font-size: 0.7rem;">{t('contact.letsGo', lang)}</div>
           <h2 class="comic-title text-xl sm:text-2xl mb-4" style="color: var(--comic-green);">
-            Ready to Start Something Great?
+            {t('contact.readyToStart', lang)}
           </h2>
           <p class="mb-6" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
-            Whether you have a specific project in mind or just want to explore possibilities, 
-            I'm here to help turn your vision into reality.
+            {t('contact.readyDesc', lang)}
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:juansgb316@outlook.com" class="btn btn-primary group">
               <i class="fas fa-envelope mr-2"></i>
-              Send me an Email
+              {t('contact.sendEmail', lang)}
             </a>
             <a href="/JuanGuerreroCv_Public.pdf" download="Juan_Sebastián_Guerrero_Britos_CV.pdf"
                class="btn btn-secondary group">
               <i class="fas fa-download mr-2"></i>
-              Download Resume
+              {t('cta.downloadResume', lang)}
             </a>
           </div>
         </div>
@@ -161,27 +173,36 @@ import MainLayout from "../layouts/MainLayout.astro";
   </div>
 
   <script is:inline>
-    function copyEmailToClipboard() {
-      const email = 'juansgb316@outlook.com';
-      navigator.clipboard.writeText(email).then(() => {
-        const text = document.getElementById('copyEmailText');
-        const icon = document.getElementById('copyEmailIcon');
-        
-        text.textContent = 'Email Copied!';
-        icon.className = 'fas fa-check mr-2';
-        
-        setTimeout(() => {
-          text.textContent = 'Copy Email Address';
-          icon.className = 'fas fa-copy mr-2';
-        }, 3000);
-      }).catch(err => {
-        console.error('Failed to copy email: ', err);
-        const text = document.getElementById('copyEmailText');
-        text.textContent = 'Copy failed - try again';
-        setTimeout(() => {
-          text.textContent = 'Copy Email Address';
-        }, 2000);
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('copyEmailBtn');
+      if (!btn) return;
+
+      const copyLabel = btn.getAttribute('data-copy-label');
+      const copiedLabel = btn.getAttribute('data-copied-label');
+      const failedLabel = btn.getAttribute('data-failed-label');
+
+      btn.addEventListener('click', () => {
+        const email = 'juansgb316@outlook.com';
+        navigator.clipboard.writeText(email).then(() => {
+          const text = document.getElementById('copyEmailText');
+          const icon = document.getElementById('copyEmailIcon');
+          
+          text.textContent = copiedLabel;
+          icon.className = 'fas fa-check mr-2';
+          
+          setTimeout(() => {
+            text.textContent = copyLabel;
+            icon.className = 'fas fa-copy mr-2';
+          }, 3000);
+        }).catch(err => {
+          console.error('Failed to copy email: ', err);
+          const text = document.getElementById('copyEmailText');
+          text.textContent = failedLabel;
+          setTimeout(() => {
+            text.textContent = copyLabel;
+          }, 2000);
+        });
       });
-    }
+    });
   </script>
 </MainLayout>

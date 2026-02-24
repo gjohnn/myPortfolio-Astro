@@ -1,12 +1,23 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import EducationComponent from "../components/Myself-Info/EducationComponent.astro";
-import Carrusel from "../components/Carrusel.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import EducationComponent from "../../components/Myself-Info/EducationComponent.astro";
 import Icon from "astro-iconify";
-import { skillsCarousels } from "../data/skills";
+import { skillsCarousels } from "../../data/skills";
+import { getLangFromUrl, t, localePath } from "../../i18n/utils";
+import type { Lang } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: undefined } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const lang = getLangFromUrl(Astro.url) as Lang;
+const skills = skillsCarousels[lang];
 ---
 
-<MainLayout>
+<MainLayout lang={lang}>
   <main class="relative">
     <!-- HERO SECTION -->
     <section class="relative w-full mb-12 sm:mb-16 text-center animate-on-scroll">
@@ -28,7 +39,7 @@ import { skillsCarousels } from "../data/skills";
           <div class="relative inline-block">
             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6"
                 style="font-family: var(--font-accent); color: var(--comic-black); letter-spacing: 1px;">
-              Software Developer
+              {t('hero.role', lang)}
             </h2>
             <div class="mx-auto w-20 sm:w-24 h-1.5 rounded-full" 
                  style="background: var(--comic-red);"></div>
@@ -39,25 +50,25 @@ import { skillsCarousels } from "../data/skills";
         <div class="mb-8 sm:mb-12 max-w-3xl mx-auto">
           <div class="speech-bubble">
             <p class="text-base sm:text-lg leading-relaxed" style="font-family: var(--font-body); color: var(--comic-black); font-weight: 700;">
-              <strong style="color: var(--comic-red);">Backend developer</strong> specializing in
-              <strong style="color: var(--comic-red);">system design</strong> and
-              <strong style="color: var(--comic-red);">scalable architectures</strong>.
-              I build clean, maintainable solutions through
-              <span style="color: var(--comic-blue); font-weight: 800;">collaboration</span> and
-              continuous learning.
+              <strong style="color: var(--comic-red);">{t('hero.description.1', lang)}</strong> {t('hero.description.mid', lang)}
+              <strong style="color: var(--comic-red);">{t('hero.description.2', lang)}</strong> {t('hero.description.and', lang)}
+              <strong style="color: var(--comic-red);">{t('hero.description.3', lang)}</strong>.
+              {t('hero.description.end', lang)}
+              <span style="color: var(--comic-blue); font-weight: 800;">{t('hero.description.collab', lang)}</span>
+              {t('hero.description.end2', lang)}
             </p>
           </div>
         </div>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-10 sm:mb-14 px-4">
-          <a href="/projects" class="btn btn-primary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg">
+          <a href={localePath('/projects', lang)} class="btn btn-primary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg">
             <i class="fas fa-code mr-2"></i>
-            View My Work
+            {t('hero.cta.work', lang)}
           </a>
-          <a href="/contact" class="btn btn-secondary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg">
+          <a href={localePath('/contact', lang)} class="btn btn-secondary group w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg">
             <i class="fas fa-envelope mr-2"></i>
-            Get In Touch
+            {t('hero.cta.contact', lang)}
           </a>
         </div>
 
@@ -68,7 +79,7 @@ import { skillsCarousels } from "../data/skills";
               3+
             </div>
             <div class="text-xs sm:text-sm uppercase" style="font-family: var(--font-accent); color: var(--gray-600); letter-spacing: 1px;">
-              Years Experience
+              {t('hero.stat.years', lang)}
             </div>
           </div>
           <div class="card p-4 sm:p-6 text-center" style="border-color: var(--comic-blue);">
@@ -76,7 +87,7 @@ import { skillsCarousels } from "../data/skills";
               10+
             </div>
             <div class="text-xs sm:text-sm uppercase" style="font-family: var(--font-accent); color: var(--gray-600); letter-spacing: 1px;">
-              Projects Completed
+              {t('hero.stat.projects', lang)}
             </div>
           </div>
           <div class="card p-4 sm:p-6 text-center" style="border-color: var(--comic-yellow-dark);">
@@ -84,7 +95,7 @@ import { skillsCarousels } from "../data/skills";
               5+
             </div>
             <div class="text-xs sm:text-sm uppercase" style="font-family: var(--font-accent); color: var(--gray-600); letter-spacing: 1px;">
-              Technologies Mastered
+              {t('hero.stat.tech', lang)}
             </div>
           </div>
         </div>
@@ -95,10 +106,10 @@ import { skillsCarousels } from "../data/skills";
     <section class="relative w-full animate-on-scroll mb-12 sm:mb-16">
       <div class="text-center mb-8 sm:mb-12 px-4">
         <h2 class="comic-title text-3xl sm:text-4xl md:text-5xl mb-4" style="color: var(--comic-blue);">
-          My Powers
+          {t('skills.title', lang)}
         </h2>
         <p class="text-base sm:text-lg max-w-2xl mx-auto" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
-          Technologies and tools I use to build exceptional software solutions
+          {t('skills.subtitle', lang)}
         </p>
         <div class="mt-4 sm:mt-6 w-20 sm:w-24 h-1.5 rounded-full mx-auto" style="background: var(--comic-blue);"></div>
       </div>
@@ -106,7 +117,7 @@ import { skillsCarousels } from "../data/skills";
       <!-- Skills Grid -->
       <div class="mb-12 sm:mb-16 max-w-6xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillsCarousels.map((section, idx) => {
+          {skills.map((section, idx) => {
             const colors = ['var(--comic-red)', 'var(--comic-orange)', 'var(--comic-blue)', 'var(--comic-green)', 'var(--comic-purple)', 'var(--comic-yellow-dark)'];
             const color = colors[idx % colors.length];
             return (
@@ -138,16 +149,16 @@ import { skillsCarousels } from "../data/skills";
     <section class="relative w-full animate-on-scroll mb-12 sm:mb-16">
       <div class="text-center mb-8 sm:mb-12 px-4">
         <h2 class="comic-title text-3xl sm:text-4xl md:text-5xl mb-4" style="color: var(--comic-green);">
-          Origin Story
+          {t('education.title', lang)}
         </h2>
         <p class="text-base sm:text-lg max-w-2xl mx-auto" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
-          My academic journey and certifications
+          {t('education.subtitle', lang)}
         </p>
         <div class="mt-4 sm:mt-6 w-20 sm:w-24 h-1.5 rounded-full mx-auto" style="background: var(--comic-green);"></div>
       </div>
 
       <div class="max-w-4xl mx-auto px-4">
-        <EducationComponent />
+        <EducationComponent lang={lang} />
       </div>
     </section>
 
@@ -155,23 +166,22 @@ import { skillsCarousels } from "../data/skills";
     <section class="relative w-full mt-12 sm:mt-16 animate-on-scroll">
       <div class="flex justify-center px-4">
         <div class="card p-8 sm:p-12 max-w-2xl w-full text-center" style="border-color: var(--comic-red); border-width: 4px;">
-          <div class="comic-action inline-block mb-4" style="font-size: 0.8rem;">Let's team up!</div>
+          <div class="comic-action inline-block mb-4" style="font-size: 0.8rem;">{t('cta.teamUp', lang)}</div>
           <h2 class="comic-title text-2xl sm:text-3xl md:text-4xl mb-4" style="color: var(--comic-red);">
-            Ready to Work Together?
+            {t('cta.title', lang)}
           </h2>
           <p class="mb-6 sm:mb-8 max-w-xl mx-auto" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
-            I'm always interested in new opportunities and exciting projects.
-            Let's discuss how we can bring your ideas to life.
+            {t('cta.description', lang)}
           </p>
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a href="/contact" class="btn btn-primary group px-6 sm:px-8 py-3">
+            <a href={localePath('/contact', lang)} class="btn btn-primary group px-6 sm:px-8 py-3">
               <i class="fas fa-handshake mr-2"></i>
-              Start a Project
+              {t('cta.startProject', lang)}
             </a>
             <a href="/JuanGuerreroCv_Public.pdf" download="Juan_Sebastián_Guerrero_Britos_CV.pdf"
                class="btn btn-secondary group px-6 sm:px-8 py-3">
               <i class="fas fa-download mr-2"></i>
-              Download Resume
+              {t('cta.downloadResume', lang)}
             </a>
           </div>
         </div>

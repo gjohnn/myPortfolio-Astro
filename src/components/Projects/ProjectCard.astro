@@ -15,46 +15,53 @@ interface Props {
 const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, features, featured, logoUrl } = Astro.props;
 ---
 
-<article class={`card p-4 sm:p-6 hover:shadow-xl transition-all duration-300 group ${featured ? 'ring-2 ring-emerald-500/50 shadow-emerald-500/10' : ''}`}>
-  <!-- Featured Badge -->
+<article class="card p-4 sm:p-6 group animate-comic-shake" 
+  style={featured ? 'border-color: var(--comic-yellow); border-width: 4px;' : ''}>
+  
+  <!-- Featured Badge - Comic style -->
   {featured && (
-    <div class="absolute top-0 right-0 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+    <div class="absolute -top-3 -right-3 z-10 comic-badge" 
+         style="background: var(--comic-yellow); color: var(--comic-black); font-size: 0.75rem; transform: rotate(5deg);">
       <i class="fas fa-star mr-1"></i>
-      Featured
+      Featured!
     </div>
   )}
   
   <!-- Header -->
   <div class="flex items-start gap-4 mb-4">
-    <div class={`w-12 h-12 ${iconColor} rounded-lg flex items-center justify-center flex-shrink-0 ${logoUrl ? 'p-2' : ''}`}>
+    <div class="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
+         style={`background: ${iconColor.includes('bg-') ? '' : iconColor}; border: 3px solid var(--comic-black); box-shadow: 3px 3px 0 var(--comic-black);`}
+         class={iconColor.includes('bg-') ? iconColor : ''}>
       {logoUrl ? (
-        <img src={logoUrl} alt={`${title} logo`} class="w-full h-full object-contain" />
+        <img src={logoUrl} alt={`${title} logo`} class="w-full h-full object-contain p-2" />
       ) : (
         <i class={`${icon} text-white text-xl`}></i>
       )}
     </div>
     <div class="flex-1 min-w-0">
-      <h3 class="text-lg sm:text-xl font-bold text-white mb-1">{title}</h3>
-      <p class="text-sm text-gray-400 leading-relaxed">{description}</p>
+      <h3 class="text-lg sm:text-xl mb-1" style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;">
+        {title}
+      </h3>
+      <p class="text-sm leading-relaxed" style="color: var(--gray-600); font-family: var(--font-body);">{description}</p>
     </div>
   </div>
 
   <!-- Technologies -->
   <div class="flex flex-wrap gap-2 mb-4">
     {technologies.map(tech => (
-      <span class={`px-2 py-1 ${tech.color} rounded text-xs font-medium`}>
+      <span class="tech-badge" style="background: var(--comic-cream);">
         {tech.name}
       </span>
     ))}
   </div>
 
-  <!-- Features (optional) -->
+  <!-- Features -->
   {features && features.length > 0 && (
     <div class="mb-4 space-y-1">
       {features.map(feature => (
-        <div class="flex items-center gap-2 text-sm text-gray-300">
-          <i class="fas fa-check text-green-400 text-xs"></i>
-          <span>{feature}</span>
+        <div class="flex items-center gap-2 text-sm" style="color: var(--gray-700);">
+          <i class="fas fa-bolt text-xs" style="color: var(--comic-yellow-dark);"></i>
+          <span style="font-family: var(--font-body); font-weight: 700;">{feature}</span>
         </div>
       ))}
     </div>
@@ -63,29 +70,21 @@ const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, f
   <!-- Actions -->
   <div class="flex gap-2">
     {githubUrl && (
-      <a
-        href={githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class={`btn btn-primary flex-1 justify-center text-sm ${liveUrl ? '' : 'w-full'}`}
-      >
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer"
+         class={`btn btn-primary flex-1 justify-center text-sm ${liveUrl ? '' : 'w-full'}`}>
         <i class="fab fa-github mr-2"></i>
         GitHub
       </a>
     )}
     {liveUrl && (
-      <a
-        href={liveUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class={`btn flex-1 justify-center text-sm ${featured ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0' : 'btn-secondary'}`}
-      >
+      <a href={liveUrl} target="_blank" rel="noopener noreferrer"
+         class={`btn flex-1 justify-center text-sm ${featured ? 'btn-secondary' : 'btn-secondary'}`}>
         <i class="fas fa-external-link-alt mr-2"></i>
         Live Demo
       </a>
     )}
     {!githubUrl && !liveUrl && (
-      <div class="text-center py-2 text-gray-500 text-sm italic w-full">
+      <div class="text-center py-2 text-sm italic w-full" style="color: var(--gray-500); font-family: var(--font-accent);">
         Private Project
       </div>
     )}

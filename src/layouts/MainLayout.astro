@@ -13,21 +13,15 @@ import "../styles/global.css";
     <meta name="keywords" content="software developer, backend, C#, JavaScript, TypeScript, Docker, APIs, Juan Sebastián Guerrero Britos" />
     <meta name="author" content="Juan Sebastián Guerrero Britos" />
     
-    <!-- Preconnect to external domains -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://unpkg.com" />
     
-    <!-- Fonts and Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"
-    />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -36,64 +30,73 @@ import "../styles/global.css";
     <title>Portfolio - Juan Sebastián Guerrero Britos</title>
   </head>
   <body
-    class="page-container min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-gray-100 font-sans flex flex-col relative overflow-x-hidden"
+    class="page-container min-h-screen text-[var(--comic-black)] flex flex-col relative overflow-x-hidden"
+    style="background-color: var(--comic-cream); font-family: var(--font-body);"
   >
-    <!-- Background decorative elements -->
-    <div class="fixed inset-0 pointer-events-none">
-      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/5 via-transparent to-indigo-500/5"></div>
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-float"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
-    </div>
+    <!-- Comic Background: Ben-Day dots pattern -->
+    <div class="fixed inset-0 pointer-events-none halftone-bg"></div>
+    
+    <!-- Decorative speed lines behind hero -->
+    <div class="fixed inset-0 pointer-events-none speed-lines opacity-50"></div>
+
+    <!-- Decorative corner triangles -->
+    <div class="fixed top-0 right-0 w-0 h-0 pointer-events-none" 
+         style="border-left: 100px solid transparent; border-top: 100px solid var(--comic-red); opacity: 0.08;"></div>
+    <div class="fixed bottom-0 left-0 w-0 h-0 pointer-events-none" 
+         style="border-right: 100px solid transparent; border-bottom: 100px solid var(--comic-blue); opacity: 0.08;"></div>
 
     <Header />
 
     <main class="flex-1 w-full mx-auto container-mobile py-4 sm:py-6 lg:py-8 pt-16 sm:pt-18 lg:pt-20 relative z-10 max-w-7xl">
-      <!-- Content Container with subtle background -->
       <div class="min-h-full">
         <slot />
       </div>
 
-      <!-- Enhanced Mobile Navigation -->
+      <!-- Comic Mobile Navigation -->
       <nav
         class="md:hidden fixed bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-50 mobile-nav"
         aria-label="Mobile Navigation"
       >
-        <div class="glass-dark rounded-2xl shadow-2xl border border-white/10 p-1 sm:p-2">
+        <div class="rounded-xl p-1 sm:p-2" style="background: var(--comic-white); border: 3px solid var(--comic-black); box-shadow: 4px 4px 0 var(--comic-black);">
           <div class="flex items-center gap-0.5 sm:gap-1">
             <a
               href="/"
-              class="flex flex-col items-center justify-center px-2 sm:px-4 py-2 sm:py-3 text-gray-300 hover:text-red-400 transition-all duration-200 rounded-xl hover:bg-white/5 group min-w-[44px]"
+              class="flex flex-col items-center justify-center px-2 sm:px-4 py-2 sm:py-3 transition-all duration-200 rounded-lg group min-w-[44px]"
+              style="color: var(--comic-black);"
               aria-label="Home"
             >
-              <i class="fas fa-home text-base sm:text-lg group-hover:scale-110 transition-transform"></i>
-              <span class="text-xs mt-0.5 sm:mt-1 font-medium hidden xs:block">Home</span>
+              <i class="fas fa-home text-base sm:text-lg group-hover:scale-125 transition-transform" style="color: var(--comic-red);"></i>
+              <span class="text-xs mt-0.5 sm:mt-1 font-bold hidden xs:block" style="font-family: var(--font-comic);">Home</span>
             </a>
 
             <a
               href="/experience"
-              class="flex flex-col items-center justify-center px-2 sm:px-4 py-2 sm:py-3 text-gray-300 hover:text-red-400 transition-all duration-200 rounded-xl hover:bg-white/5 group min-w-[44px]"
+              class="flex flex-col items-center justify-center px-2 sm:px-4 py-2 sm:py-3 transition-all duration-200 rounded-lg group min-w-[44px]"
+              style="color: var(--comic-black);"
               aria-label="Experience"
             >
-              <i class="fas fa-briefcase text-base sm:text-lg group-hover:scale-110 transition-transform"></i>
-              <span class="text-xs mt-0.5 sm:mt-1 font-medium hidden xs:block">Experience</span>
+              <i class="fas fa-briefcase text-base sm:text-lg group-hover:scale-125 transition-transform" style="color: var(--comic-blue);"></i>
+              <span class="text-xs mt-0.5 sm:mt-1 font-bold hidden xs:block" style="font-family: var(--font-comic);">Exp</span>
             </a>
 
             <a
               href="/projects"
-              class="flex flex-col items-center justify-center px-2 sm:px-4 py-2 sm:py-3 text-gray-300 hover:text-red-400 transition-all duration-200 rounded-xl hover:bg-white/5 group min-w-[44px]"
+              class="flex flex-col items-center justify-center px-2 sm:px-4 py-2 sm:py-3 transition-all duration-200 rounded-lg group min-w-[44px]"
+              style="color: var(--comic-black);"
               aria-label="Projects"
             >
-              <i class="fas fa-code text-base sm:text-lg group-hover:scale-110 transition-transform"></i>
-              <span class="text-xs mt-0.5 sm:mt-1 font-medium hidden xs:block">Projects</span>
+              <i class="fas fa-code text-base sm:text-lg group-hover:scale-125 transition-transform" style="color: var(--comic-orange);"></i>
+              <span class="text-xs mt-0.5 sm:mt-1 font-bold hidden xs:block" style="font-family: var(--font-comic);">Code</span>
             </a>
 
             <a
               href="/contact"
-              class="flex flex-col items-center justify-center px-2 sm:px-4 py-2 sm:py-3 text-gray-300 hover:text-red-400 transition-all duration-200 rounded-xl hover:bg-white/5 group min-w-[44px]"
+              class="flex flex-col items-center justify-center px-2 sm:px-4 py-2 sm:py-3 transition-all duration-200 rounded-lg group min-w-[44px]"
+              style="color: var(--comic-black);"
               aria-label="Contact"
             >
-              <i class="fas fa-envelope text-base sm:text-lg group-hover:scale-110 transition-transform"></i>
-              <span class="text-xs mt-0.5 sm:mt-1 font-medium hidden xs:block">Contact</span>
+              <i class="fas fa-envelope text-base sm:text-lg group-hover:scale-125 transition-transform" style="color: var(--comic-green);"></i>
+              <span class="text-xs mt-0.5 sm:mt-1 font-bold hidden xs:block" style="font-family: var(--font-comic);">Mail</span>
             </a>
           </div>
         </div>
@@ -102,17 +105,18 @@ import "../styles/global.css";
 
     <Footer />
 
-    <!-- Enhanced scroll to top button -->
+    <!-- Comic scroll-to-top button -->
     <button
       id="scrollToTop"
-      class="hidden fixed bottom-6 right-6 z-40 btn-primary rounded-full p-3 shadow-2xl animate-pulse-glow"
+      class="hidden fixed bottom-6 right-6 z-40 rounded-lg p-3 cursor-pointer"
+      style="background: var(--comic-red); color: white; border: 3px solid var(--comic-black); box-shadow: var(--comic-shadow-sm);"
       aria-label="Scroll to top"
     >
-      <i class="fas fa-arrow-up text-lg"></i>
+      <i class="fas fa-arrow-up text-lg font-bold"></i>
     </button>
 
     <script>
-      // Scroll to top functionality
+      // Scroll to top
       const scrollToTopBtn = document.getElementById('scrollToTop');
       
       window.addEventListener('scroll', () => {
@@ -124,18 +128,15 @@ import "../styles/global.css";
       });
       
       scrollToTopBtn?.addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // Add loading animation for page transitions
+      // Page load animation
       document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('animate-slide-in-up');
       });
 
-      // Intersection Observer for animations
+      // Intersection Observer for scroll animations
       const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -149,7 +150,6 @@ import "../styles/global.css";
         });
       }, observerOptions);
 
-      // Observe elements with animation class
       document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
       });

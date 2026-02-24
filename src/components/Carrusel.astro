@@ -1,47 +1,68 @@
 ---
-import Icon from "astro-iconify";
-import { skillsCarousels } from "../data/skills";
+import { Icon } from 'astro-iconify';
+import { skillsCarousels } from '../data/skills';
+
+// Color mapping for comic theme
+const sectionColors: Record<string, string> = {
+  'Backend Development': 'var(--comic-red)',
+  'Database Management': 'var(--comic-orange)',
+  'DevOps & Cloud': 'var(--comic-blue)',
+  'Security': 'var(--comic-green)',
+  'Team Collaboration': 'var(--comic-purple)',
+  'Architecture & Optimization': 'var(--comic-yellow-dark)',
+};
 ---
 
-<div class="page-container">
-{
-    skillsCarousels.map((section) => (
-        <div class="w-full overflow-hidden py-6">
-            <h2 class="text-xl sm:text-2xl font-bold mb-4 text-center text-white px-4">
-                {section.title}
-            </h2>
-
-            <div class="relative w-full overflow-hidden">
-                <div class="marquee-wrapper">
-                    <div class="marquee-content">
-                        {[...Array(6)].flatMap(() =>
-                            section.skills.map((skill, index) => (
-                                <div class="marquee-item text-sm sm:text-base lg:text-lg text-gray-300">
-                                    {skill.icon.startsWith("http") ? (
-                                        <img
-                                            src={skill.icon}
-                                            alt={skill.name}
-                                            class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0"
-                                            loading="lazy"
-                                        />
-                                    ) : (
-                                        <Icon
-                                            name={skill.icon}
-                                            class={`${skill.colorClass} w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0`}
-                                        />
-                                    )}
-                                    <span
-                                        class={`ml-2 ${skill.colorClass} font-semibold whitespace-nowrap`}
-                                    >
-                                        {skill.name}
-                                    </span>
-                                </div>
-                            )),
-                        )}
-                    </div>
+<div class="space-y-8">
+  {skillsCarousels.map((section) => {
+    const color = sectionColors[section.title] || 'var(--comic-red)';
+    return (
+      <div class="card p-4 sm:p-6 overflow-hidden">
+        <!-- Section Title -->
+        <h3 class="text-lg sm:text-xl mb-4 flex items-center gap-2" 
+            style={`font-family: var(--font-comic); letter-spacing: 1px; color: ${color};`}>
+          <span class="inline-block w-3 h-3 rounded-sm" style={`background: ${color}; border: 2px solid var(--comic-black);`}></span>
+          {section.title}
+        </h3>
+        
+        <!-- Marquee Container -->
+        <div class="marquee-container">
+          <div class="marquee-content">
+            {[...Array(6)].map(() => (
+              section.skills.map((skill) => (
+                <div class="flex items-center gap-2 px-4 py-2 rounded-lg flex-shrink-0"
+                     style="background: var(--comic-cream); border: 2px solid var(--comic-black); box-shadow: 2px 2px 0 var(--comic-black);">
+                  {skill.icon.startsWith('http') ? (
+                    <img src={skill.icon} alt={skill.name} class="w-6 h-6" />
+                  ) : (
+                    <Icon name={skill.icon} class="w-6 h-6" />
+                  )}
+                  <span class="text-sm font-bold whitespace-nowrap" style="font-family: var(--font-body); color: var(--comic-black);">
+                    {skill.name}
+                  </span>
                 </div>
-            </div>
+              ))
+            ))}
+          </div>
         </div>
-    ))
-}
+      </div>
+    );
+  })}
 </div>
+
+<style>
+  .marquee-container {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .marquee-content {
+    display: flex;
+    gap: 0.75rem;
+    animation: marquee-infinite 30s linear infinite;
+    width: max-content;
+  }
+  .marquee-content:hover {
+    animation-play-state: paused;
+  }
+</style>
