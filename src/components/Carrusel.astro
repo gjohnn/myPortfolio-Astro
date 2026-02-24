@@ -1,6 +1,9 @@
 ---
 import { Icon } from 'astro-iconify';
 import { skillsCarousels } from '../data/skills';
+import { defaultLang } from '../i18n/ui';
+
+const skills = skillsCarousels[defaultLang];
 
 // Color mapping for comic theme
 const sectionColors: Record<string, string> = {
@@ -14,7 +17,7 @@ const sectionColors: Record<string, string> = {
 ---
 
 <div class="space-y-8">
-  {skillsCarousels.map((section) => {
+  {skills.map((section) => {
     const color = sectionColors[section.title] || 'var(--comic-red)';
     return (
       <div class="card p-4 sm:p-6 overflow-hidden">
