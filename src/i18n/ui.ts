@@ -43,8 +43,8 @@ export const ui: Record<Lang, Record<string, string>> = {
     "hero.stat.projects": "Proyectos Completados",
     "hero.stat.tech": "Tecnologías Dominadas",
 
+    "skills.title": "Mis herramientas y habilidades",
     // ── Skills section (index) ──
-    "skills.title": "Mis Poderes",
     "skills.subtitle":
       "Tecnologías y herramientas que uso para construir soluciones de software excepcionales",
 
@@ -200,7 +200,7 @@ export const ui: Record<Lang, Record<string, string>> = {
     "hero.stat.tech": "Technologies Mastered",
 
     // ── Skills section (index) ──
-    "skills.title": "My Powers",
+    "skills.title": "My tools and skills",
     "skills.subtitle":
       "Technologies and tools I use to build exceptional software solutions",
 
