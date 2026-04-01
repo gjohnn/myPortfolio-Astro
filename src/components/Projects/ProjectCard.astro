@@ -6,8 +6,7 @@ interface Props {
   title: string;
   description: string;
   icon: string;
-  iconColor: string;
-  technologies: Array<{ name: string; color: string }>;
+  technologies: Array<{ name: string }>;
   githubUrl?: string;
   liveUrl?: string;
   features?: string[];
@@ -16,44 +15,42 @@ interface Props {
   lang?: Lang;
 }
 
-const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, features, featured, logoUrl, lang = defaultLang } = Astro.props;
+const { title, description, icon, technologies, githubUrl, liveUrl, features, featured, logoUrl, lang = defaultLang } = Astro.props;
 ---
 
-<article class="card p-4 sm:p-6 group animate-comic-shake" 
-  style={featured ? 'border-color: var(--comic-yellow); border-width: 4px;' : ''}>
-  
-  <!-- Featured Badge - Comic style -->
+<article class="card p-4 sm:p-6 group project-entry animate-fade-in-up"
+  style={`border-top: 2px solid var(--accent);${featured ? ' box-shadow: var(--glow-md);' : ''}`}>
+
+  <!-- Featured Badge -->
   {featured && (
-    <div class="absolute -top-3 -right-3 z-10 comic-badge" 
-         style="background: var(--comic-yellow); color: var(--comic-black); font-size: 0.75rem; transform: rotate(5deg);">
+    <div class="absolute -top-3 -right-3 z-10 comic-badge">
       <i class="fas fa-star mr-1"></i>
       {t('proj.featured', lang)}
     </div>
   )}
-  
+
   <!-- Header -->
   <div class="flex items-start gap-4 mb-4">
     <div class="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
-         style={`background: ${iconColor.includes('bg-') ? '' : iconColor}; border: 3px solid var(--comic-black); box-shadow: 3px 3px 0 var(--comic-black);`}
-         class={iconColor.includes('bg-') ? iconColor : ''}>
+         style={`background: var(--accent-subtle); border: 1px solid var(--border-accent); box-shadow: var(--glow-sm);`}>
       {logoUrl ? (
         <img src={logoUrl} alt={`${title} logo`} class="w-full h-full object-contain p-2" />
       ) : (
-        <i class={`${icon} text-white text-xl`}></i>
+        <i class={`${icon} text-xl`} style="color: var(--accent-light);"></i>
       )}
     </div>
     <div class="flex-1 min-w-0">
-      <h3 class="text-lg sm:text-xl mb-1" style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;">
+      <h3 class="text-lg sm:text-xl mb-1 font-semibold" style="color: var(--text-primary);">
         {title}
       </h3>
-      <p class="text-sm leading-relaxed" style="color: var(--gray-600); font-family: var(--font-body);">{description}</p>
+      <p class="text-sm leading-relaxed" style="color: var(--text-muted);">{description}</p>
     </div>
   </div>
 
   <!-- Technologies -->
   <div class="flex flex-wrap gap-2 mb-4">
     {technologies.map(tech => (
-      <span class="tech-badge" style="background: var(--comic-cream);">
+      <span class="tech-badge">
         {tech.name}
       </span>
     ))}
@@ -63,9 +60,9 @@ const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, f
   {features && features.length > 0 && (
     <div class="mb-4 space-y-1">
       {features.map(feature => (
-        <div class="flex items-center gap-2 text-sm" style="color: var(--gray-700);">
-          <i class="fas fa-bolt text-xs" style="color: var(--comic-yellow-dark);"></i>
-          <span style="font-family: var(--font-body); font-weight: 700;">{feature}</span>
+        <div class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);">
+          <i class="fas fa-chevron-right text-xs" style="color: var(--accent-light);"></i>
+          <span>{feature}</span>
         </div>
       ))}
     </div>
@@ -82,15 +79,26 @@ const { title, description, icon, iconColor, technologies, githubUrl, liveUrl, f
     )}
     {liveUrl && (
       <a href={liveUrl} target="_blank" rel="noopener noreferrer"
-         class={`btn flex-1 justify-center text-sm ${featured ? 'btn-secondary' : 'btn-secondary'}`}>
+         class="btn btn-secondary flex-1 justify-center text-sm">
         <i class="fas fa-external-link-alt mr-2"></i>
         {t('proj.liveDemo', lang)}
       </a>
     )}
     {!githubUrl && !liveUrl && (
-      <div class="text-center py-2 text-sm italic w-full" style="color: var(--gray-500); font-family: var(--font-accent);">
+      <div class="text-center py-2 text-sm italic w-full" style="color: var(--text-muted);">
         {t('proj.privateProject', lang)}
       </div>
     )}
   </div>
 </article>
+
+<style>
+  .project-entry {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .project-entry:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow-lg);
+    border-color: var(--border-accent) !important;
+  }
+</style>

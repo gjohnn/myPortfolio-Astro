@@ -20,14 +20,14 @@ const projectList = projects[lang];
   <div class="relative max-w-6xl mx-auto">
     <!-- Page Header -->
     <section class="text-center mb-8  sm:mb-12 px-4">
-      <h1 class="comic-title text-4xl sm:text-5xl mt-8 md:text-6xl mb-4" style="color: var(--comic-orange);">
+      <h1 class="comic-title text-4xl sm:text-5xl mt-8 md:text-6xl mb-4" style="color: var(--text-primary);">
         {t('proj.title', lang)}
       </h1>
-      <p class="text-sm sm:text-base max-w-2xl mx-auto" 
-         style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
+      <p class="text-sm sm:text-base max-w-2xl mx-auto"
+         style="color: var(--text-muted);">
         {t('proj.subtitle', lang)}
       </p>
-      <div class="mt-4 w-20 h-1.5 rounded-full mx-auto" style="background: var(--comic-orange);"></div>
+      <div class="mt-4 w-20 h-px mx-auto" style="background: linear-gradient(90deg, transparent, var(--accent), var(--accent-light), transparent); box-shadow: 0 0 8px rgba(124,58,237,0.5);"></div>
     </section>
 
     <!-- Projects Grid -->
@@ -41,9 +41,9 @@ const projectList = projects[lang];
 
     <!-- CTA -->
     <section class="flex justify-center px-4">
-      <div class="card p-6 sm:p-8 max-w-xl w-full text-center" style="border-color: var(--comic-orange); border-width: 3px;">
+      <div class="card p-6 sm:p-8 max-w-xl w-full text-center" style="border-top: 2px solid var(--accent); box-shadow: var(--glow-md);">
         <div class="comic-action inline-block mb-3" style="font-size: 0.7rem;">{t('proj.wantMore', lang)}</div>
-        <p class="mb-4 text-sm" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
+        <p class="mb-4 text-sm" style="color: var(--text-muted);">
           {t('proj.moreOnGithub', lang)}
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">

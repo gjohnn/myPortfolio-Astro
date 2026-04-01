@@ -15,33 +15,26 @@ const typeIcons: Record<string, string> = {
   certification: 'fas fa-certificate',
   school: 'fas fa-school',
 };
-
-const typeColors: Record<string, string> = {
-  degree: 'var(--comic-blue)',
-  certification: 'var(--comic-green)',
-  school: 'var(--comic-orange)',
-};
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
   {data.map((edu, index) => (
-    <article class="card p-5 sm:p-6 relative group animate-on-scroll"
-             style={`border-left: 5px solid ${typeColors[edu.type]};`}>
-      
+    <article class="card p-5 sm:p-6 relative group animate-on-scroll edu-card"
+             style="border-left: 2px solid var(--accent);"
+             class:list={[`animation-delay-${index}`]}>
+
       {/* Status Badge */}
       {edu.status === 'current' && (
-        <div class="absolute -top-2 -right-2 comic-badge flex items-center gap-1"
-             style="background: var(--comic-green); color: white; font-size: 0.65rem;">
+        <div class="absolute -top-2 -right-2 comic-badge flex items-center gap-1">
           <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style="background: white;"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2" style="background: white;"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style="background: var(--accent-light);"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2" style="background: var(--accent-light);"></span>
           </span>
           {t('education.activeNow', lang)}
         </div>
       )}
       {edu.status === 'completed' && (
-        <div class="absolute -top-2 -right-2 comic-badge flex items-center gap-1"
-             style="background: var(--comic-blue); color: white; font-size: 0.65rem;">
+        <div class="absolute -top-2 -right-2 comic-badge flex items-center gap-1">
           <i class="fas fa-check text-xs"></i>
           {t('education.completed', lang)}
         </div>
@@ -50,15 +43,15 @@ const typeColors: Record<string, string> = {
       {/* Icon & Title */}
       <div class="flex items-start gap-3 mb-3">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-             style={`background: ${typeColors[edu.type]}; border: 2px solid var(--comic-black); box-shadow: 2px 2px 0 var(--comic-black);`}>
-          <i class={`${typeIcons[edu.type]} text-white`}></i>
+             style="background: var(--accent-subtle); border: 1px solid var(--border-accent); box-shadow: var(--glow-sm);">
+          <i class={`${typeIcons[edu.type]}`} style="color: var(--accent-light);"></i>
         </div>
         <div class="flex-1">
-          <h3 class="text-base sm:text-lg leading-tight" 
-              style={`font-family: var(--font-comic); color: ${typeColors[edu.type]}; letter-spacing: 0.5px;`}>
+          <h3 class="text-base sm:text-lg leading-tight font-semibold"
+              style="color: var(--text-primary);">
             {edu.title}
           </h3>
-          <p class="text-sm mt-1" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
+          <p class="text-sm mt-1" style="color: var(--text-muted);">
             {edu.institution}
           </p>
         </div>
@@ -66,16 +59,27 @@ const typeColors: Record<string, string> = {
 
       {/* Period */}
       <div class="flex items-center gap-2 mb-3">
-        <i class="fas fa-calendar-alt text-xs" style={`color: ${typeColors[edu.type]};`}></i>
-        <span class="text-xs" style="font-family: var(--font-accent); color: var(--gray-500); letter-spacing: 0.5px;">{edu.period}</span>
+        <i class="fas fa-calendar-alt text-xs" style="color: var(--accent-light);"></i>
+        <span class="text-xs font-medium" style="color: var(--text-muted);">{edu.period}</span>
       </div>
 
       {/* Description */}
       {edu.description && (
-        <p class="text-sm leading-relaxed" style="font-family: var(--font-body); color: var(--gray-700); font-weight: 700;">
+        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
           {edu.description}
         </p>
       )}
     </article>
   ))}
 </div>
+
+<style>
+  .edu-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .edu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--glow-md);
+    border-color: var(--border-accent) !important;
+  }
+</style>

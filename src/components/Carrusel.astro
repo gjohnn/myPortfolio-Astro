@@ -4,43 +4,32 @@ import { skillsCarousels } from '../data/skills';
 import { defaultLang } from '../i18n/ui';
 
 const skills = skillsCarousels[defaultLang];
-
-// Color mapping for comic theme
-const sectionColors: Record<string, string> = {
-  'Backend Development': 'var(--comic-red)',
-  'Database Management': 'var(--comic-orange)',
-  'DevOps & Cloud': 'var(--comic-blue)',
-  'Security': 'var(--comic-green)',
-  'Team Collaboration': 'var(--comic-purple)',
-  'Architecture & Optimization': 'var(--comic-yellow-dark)',
-};
 ---
 
 <div class="space-y-8">
   {skills.map((section) => {
-    const color = sectionColors[section.title] || 'var(--comic-red)';
     return (
-      <div class="card p-4 sm:p-6 overflow-hidden">
+      <div class="card p-4 sm:p-6 overflow-hidden" style="border-top: 2px solid var(--accent);">
         <!-- Section Title -->
-        <h3 class="text-lg sm:text-xl mb-4 flex items-center gap-2" 
-            style={`font-family: var(--font-comic); letter-spacing: 1px; color: ${color};`}>
-          <span class="inline-block w-3 h-3 rounded-sm" style={`background: ${color}; border: 2px solid var(--comic-black);`}></span>
+        <h3 class="text-base sm:text-lg mb-4 flex items-center gap-2 font-semibold"
+            style="color: var(--accent-light);">
+          <span class="inline-block w-2 h-2 rounded-full" style="background: var(--accent); box-shadow: var(--glow-sm);"></span>
           {section.title}
         </h3>
-        
+
         <!-- Marquee Container -->
-        <div class="marquee-container">
-          <div class="marquee-content">
+        <div class="marquee-wrapper">
+          <div class="marquee-content" style="gap: 0.75rem;">
             {[...Array(6)].map(() => (
               section.skills.map((skill) => (
                 <div class="flex items-center gap-2 px-4 py-2 rounded-lg flex-shrink-0"
-                     style="background: var(--comic-cream); border: 2px solid var(--comic-black); box-shadow: 2px 2px 0 var(--comic-black);">
+                     style="background: var(--accent-subtle); border: 1px solid var(--border); color: var(--text-secondary);">
                   {skill.icon.startsWith('http') ? (
-                    <img src={skill.icon} alt={skill.name} class="w-6 h-6" />
+                    <img src={skill.icon} alt={skill.name} class="w-5 h-5" />
                   ) : (
-                    <Icon name={skill.icon} class="w-6 h-6" />
+                    <Icon name={skill.icon} class="w-5 h-5" style="color: var(--accent-light);" />
                   )}
-                  <span class="text-sm font-bold whitespace-nowrap" style="font-family: var(--font-body); color: var(--comic-black);">
+                  <span class="text-sm font-medium whitespace-nowrap" style="color: var(--text-secondary);">
                     {skill.name}
                   </span>
                 </div>
@@ -52,20 +41,3 @@ const sectionColors: Record<string, string> = {
     );
   })}
 </div>
-
-<style>
-  .marquee-container {
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  }
-  .marquee-content {
-    display: flex;
-    gap: 0.75rem;
-    animation: marquee-infinite 30s linear infinite;
-    width: max-content;
-  }
-  .marquee-content:hover {
-    animation-play-state: paused;
-  }
-</style>
