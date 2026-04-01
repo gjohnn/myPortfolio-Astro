@@ -22,22 +22,22 @@ const altUrl = localePath(basePath, altLang);
 
 <header
   class="fixed top-0 w-full py-3 z-50"
-  style="background: var(--comic-white); border-bottom: 4px solid var(--comic-black); box-shadow: 0 4px 0 var(--comic-black);"
+  style="background: var(--bg-surface); border-bottom: 1px solid var(--border-accent); box-shadow: var(--glow-sm);"
 >
   <nav class="flex justify-between items-center px-6 max-w-7xl mx-auto">
-    <!-- Comic Logo -->
+    <!-- Logo -->
     <div class="flex items-center">
       <a href={localePath('/', lang)} class="group relative flex items-center space-x-3">
-        <div class="relative flex items-center justify-center w-12 h-12 rounded-lg transform rotate-[-3deg] group-hover:rotate-[3deg] transition-transform duration-300"
-             style="background: var(--comic-red); border: 3px solid var(--comic-black); box-shadow: 3px 3px 0 var(--comic-black);">
-          <span class="text-xl text-white" style="font-family: var(--font-comic); letter-spacing: 1px;">JG</span>
+        <div class="relative flex items-center justify-center w-12 h-12 rounded-lg transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(124,58,237,0.5)]"
+             style="background: var(--accent); border: 1px solid var(--border-accent); box-shadow: var(--glow-sm);">
+          <span class="text-xl font-bold text-white" style="letter-spacing: 1px;">JG</span>
         </div>
         <div class="hidden sm:block">
-          <span class="text-lg font-bold transition-colors" 
-                style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;">
+          <span class="text-lg font-bold transition-colors"
+                style="font-family: var(--font-heading); color: var(--text-primary); letter-spacing: -0.3px;">
             Juan S. Guerrero Britos
           </span>
-          <p class="text-xs font-bold" style="font-family: var(--font-accent); color: var(--comic-blue);">
+          <p class="text-xs font-medium" style="color: var(--accent-light);">
             {t('header.role', lang)}
           </p>
         </div>
@@ -46,30 +46,30 @@ const altUrl = localePath(basePath, altLang);
 
     <!-- Desktop Nav -->
     <div class="hidden lg:flex items-center gap-3">
-      <ul class="flex justify-center items-center gap-2 list-none p-0 m-0">
+      <ul class="flex justify-center items-center gap-1 list-none p-0 m-0">
         <li>
-          <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
-             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
+          <a class="nav-link relative px-4 py-2 font-medium rounded-lg transition-all duration-200"
+             style="font-family: var(--font-body); color: var(--text-secondary); font-size: 0.9375rem;"
              href={localePath('/', lang)}>
-            <i class="fas fa-home mr-1" style="color: var(--comic-red);"></i>
+            <i class="fas fa-home mr-1.5" style="color: var(--accent-light);"></i>
             {t('nav.home', lang)}
             <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
-          <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
-             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
+          <a class="nav-link relative px-4 py-2 font-medium rounded-lg transition-all duration-200"
+             style="font-family: var(--font-body); color: var(--text-secondary); font-size: 0.9375rem;"
              href={localePath('/experience', lang)}>
-            <i class="fas fa-briefcase mr-1" style="color: var(--comic-blue);"></i>
+            <i class="fas fa-briefcase mr-1.5" style="color: var(--accent-light);"></i>
             {t('nav.experience', lang)}
             <span class="nav-indicator"></span>
           </a>
         </li>
         <li>
-          <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
-             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
+          <a class="nav-link relative px-4 py-2 font-medium rounded-lg transition-all duration-200"
+             style="font-family: var(--font-body); color: var(--text-secondary); font-size: 0.9375rem;"
              href={localePath('/projects', lang)}>
-            <i class="fas fa-code mr-1" style="color: var(--comic-orange);"></i>
+            <i class="fas fa-code mr-1.5" style="color: var(--accent-light);"></i>
             {t('nav.projects', lang)}
             <span class="nav-indicator"></span>
           </a>
@@ -81,22 +81,22 @@ const altUrl = localePath(basePath, altLang);
           </a>
         </li>
         <li>
-          <a class="nav-link relative px-4 py-2 font-bold rounded-lg transition-all duration-200"
-             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px; font-size: 1.1rem;"
+          <a class="nav-link relative px-4 py-2 font-medium rounded-lg transition-all duration-200"
+             style="font-family: var(--font-body); color: var(--text-secondary); font-size: 0.9375rem;"
              href={localePath('/contact', lang)}>
-            <i class="fas fa-envelope mr-1" style="color: var(--comic-green);"></i>
+            <i class="fas fa-envelope mr-1.5" style="color: var(--accent-light);"></i>
             {t('nav.contact', lang)}
             <span class="nav-indicator"></span>
           </a>
         </li>
       </ul>
-      
+
       <!-- Language Toggle (Desktop) -->
       <a href={altUrl}
-         class="lang-toggle flex items-center gap-1 px-3 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm"
-         style="font-family: var(--font-comic); background: var(--comic-cream); border: 2px solid var(--comic-black); box-shadow: 2px 2px 0 var(--comic-black); color: var(--comic-black); letter-spacing: 1px;"
+         class="lang-toggle flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all duration-200 text-sm"
+         style="font-family: var(--font-body); background: var(--bg-overlay); border: 1px solid var(--border); color: var(--text-secondary); letter-spacing: 0.3px;"
          aria-label={`Switch to ${altLang === 'es' ? 'Spanish' : 'English'}`}>
-        <i class="fas fa-globe" style="color: var(--comic-blue);"></i>
+        <i class="fas fa-globe" style="color: var(--accent-light);"></i>
         {altLang.toUpperCase()}
       </a>
     </div>
@@ -105,23 +105,23 @@ const altUrl = localePath(basePath, altLang);
     <div class="flex lg:hidden items-center gap-3">
       <!-- Language Toggle (Mobile) -->
       <a href={altUrl}
-         class="lang-toggle flex items-center gap-1 px-2.5 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm"
-         style="font-family: var(--font-comic); background: var(--comic-cream); border: 2px solid var(--comic-black); box-shadow: 2px 2px 0 var(--comic-black); color: var(--comic-black); letter-spacing: 1px;"
+         class="lang-toggle flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-medium transition-all duration-200 text-sm"
+         style="font-family: var(--font-body); background: var(--bg-overlay); border: 1px solid var(--border); color: var(--text-secondary); letter-spacing: 0.3px;"
          aria-label={`Switch to ${altLang === 'es' ? 'Spanish' : 'English'}`}>
-        <i class="fas fa-globe text-xs" style="color: var(--comic-blue);"></i>
+        <i class="fas fa-globe text-xs" style="color: var(--accent-light);"></i>
         {altLang.toUpperCase()}
       </a>
-      
+
       <button
         id="hamburger"
         class="relative p-3 focus:outline-none transition-all duration-300 rounded-lg group"
-        style="color: var(--comic-black);"
+        style="color: var(--text-secondary);"
         aria-label="Toggle mobile menu"
       >
         <div class="w-6 h-6 flex flex-col justify-center items-center">
-          <span id="hamburgerLine1" class="block w-6 h-0.5 bg-current transition-all duration-300" style="background: var(--comic-black);"></span>
-          <span id="hamburgerLine2" class="block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5" style="background: var(--comic-black);"></span>
-          <span id="hamburgerLine3" class="block w-6 h-0.5 bg-current transition-all duration-300 mt-1.5" style="background: var(--comic-black);"></span>
+          <span id="hamburgerLine1" class="block w-6 h-0.5 transition-all duration-300" style="background: var(--text-secondary);"></span>
+          <span id="hamburgerLine2" class="block w-6 h-0.5 transition-all duration-300 mt-1.5" style="background: var(--text-secondary);"></span>
+          <span id="hamburgerLine3" class="block w-6 h-0.5 transition-all duration-300 mt-1.5" style="background: var(--text-secondary);"></span>
         </div>
       </button>
     </div>
@@ -131,45 +131,45 @@ const altUrl = localePath(basePath, altLang);
   <div
     id="dropdownMenu"
     class="lg:hidden hidden absolute w-full left-0 top-full"
-    style="background: var(--comic-cream); border-bottom: 4px solid var(--comic-black); box-shadow: 0 4px 0 var(--comic-black);"
+    style="background: var(--bg-surface); border-bottom: 1px solid var(--border-accent); box-shadow: var(--glow-md);"
   >
     <div class="max-w-7xl mx-auto px-6 py-6">
-      <ul class="flex flex-col gap-2">
+      <ul class="flex flex-col gap-1">
         <li>
-          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
-             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
+          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-medium"
+             style="font-family: var(--font-body); color: var(--text-secondary);"
              href={localePath('/', lang)}>
-            <i class="fas fa-home mr-3 w-5" style="color: var(--comic-red);"></i>
+            <i class="fas fa-home mr-3 w-5" style="color: var(--accent-light);"></i>
             {t('nav.home', lang)}
           </a>
         </li>
         <li>
-          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
-             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
+          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-medium"
+             style="font-family: var(--font-body); color: var(--text-secondary);"
              href={localePath('/experience', lang)}>
-            <i class="fas fa-briefcase mr-3 w-5" style="color: var(--comic-blue);"></i>
+            <i class="fas fa-briefcase mr-3 w-5" style="color: var(--accent-light);"></i>
             {t('nav.experience', lang)}
           </a>
         </li>
         <li>
-          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
-             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
+          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-medium"
+             style="font-family: var(--font-body); color: var(--text-secondary);"
              href={localePath('/projects', lang)}>
-            <i class="fas fa-code mr-3 w-5" style="color: var(--comic-orange);"></i>
+            <i class="fas fa-code mr-3 w-5" style="color: var(--accent-light);"></i>
             {t('nav.projects', lang)}
           </a>
         </li>
-        <li class="mt-4 pt-4" style="border-top: 3px dashed var(--comic-black);">
+        <li class="mt-4 pt-4" style="border-top: 1px solid var(--border);">
           <a href={localePath('/cv', lang)} class="btn btn-primary w-full justify-center">
             <i class="fas fa-file-alt mr-2"></i>
             {t('nav.viewCv', lang)}
           </a>
         </li>
-        <li class="mt-2">
-          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-bold"
-             style="font-family: var(--font-comic); color: var(--comic-black); letter-spacing: 1px;"
+        <li class="mt-1">
+          <a class="mobile-nav-link flex items-center px-4 py-3 rounded-lg transition-all duration-200 font-medium"
+             style="font-family: var(--font-body); color: var(--text-secondary);"
              href={localePath('/contact', lang)}>
-            <i class="fas fa-envelope mr-3 w-5" style="color: var(--comic-green);"></i>
+            <i class="fas fa-envelope mr-3 w-5" style="color: var(--accent-light);"></i>
             {t('nav.contact', lang)}
           </a>
         </li>
@@ -185,39 +185,38 @@ const altUrl = localePath(basePath, altLang);
     left: 50%;
     transform: translateX(-50%);
     width: 0;
-    height: 3px;
-    background: var(--comic-red);
+    height: 2px;
+    background: var(--accent-light);
     transition: width 0.3s ease;
     border-radius: 2px;
+    box-shadow: 0 0 8px rgba(167,139,250,0.6);
   }
 
   .nav-link:hover .nav-indicator {
-    width: 100%;
+    width: 70%;
   }
 
   .nav-link:hover {
-    transform: skewX(-3deg);
-    background: var(--comic-yellow-light);
+    background: var(--bg-elevated);
+    color: var(--text-primary) !important;
   }
 
   .mobile-nav-link:hover {
-    background: var(--comic-yellow-light);
+    background: var(--bg-elevated);
+    color: var(--text-primary) !important;
     transform: translateX(4px);
   }
 
   .lang-toggle:hover {
-    background: var(--comic-yellow-light);
+    background: var(--bg-elevated);
+    border-color: var(--border-accent);
+    box-shadow: var(--glow-sm);
     transform: translateY(-1px);
-    box-shadow: 3px 3px 0 var(--comic-black);
-  }
-
-  .lang-toggle:active {
-    transform: translateY(1px);
-    box-shadow: 1px 1px 0 var(--comic-black);
   }
 
   #hamburgerLine1.active {
     transform: rotate(45deg) translate(5px, 5px);
+    background: var(--accent-light) !important;
   }
 
   #hamburgerLine2.active {
@@ -226,6 +225,7 @@ const altUrl = localePath(basePath, altLang);
 
   #hamburgerLine3.active {
     transform: rotate(-45deg) translate(7px, -6px);
+    background: var(--accent-light) !important;
   }
 </style>
 
@@ -283,7 +283,8 @@ const altUrl = localePath(basePath, altLang);
       const normCurrent = currentPath.replace(/\/$/, '') || '/';
       const normHref = href.replace(/\/$/, '') || '/';
       if (normHref === normCurrent) {
-        link.style.background = 'var(--comic-yellow-light)';
+        link.style.background = 'var(--bg-elevated)';
+        link.style.color = 'var(--text-primary)';
       }
     });
 

@@ -18,14 +18,14 @@ const lang = getLangFromUrl(Astro.url) as Lang;
   <div class="relative max-w-6xl mx-auto">
     <!-- Page Header -->
     <section class="text-center mb-12 mt-8 sm:mb-16 animate-on-scroll px-4">
-      <h1 class="comic-title text-4xl sm:text-5xl md:text-6xl mb-4" style="color: var(--comic-blue);">
+      <h1 class="comic-title text-4xl sm:text-5xl md:text-6xl mb-4" style="color: var(--text-primary);">
         {t('exp.title', lang)}
       </h1>
-      <p class="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed" 
-         style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
+      <p class="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed"
+         style="color: var(--text-muted);">
         {t('exp.subtitle', lang)}
       </p>
-      <div class="mt-4 w-24 h-1.5 rounded-full mx-auto" style="background: var(--comic-blue);"></div>
+      <div class="mt-4 w-24 h-px mx-auto" style="background: linear-gradient(90deg, transparent, var(--accent), var(--accent-light), transparent); box-shadow: 0 0 8px rgba(124,58,237,0.5);"></div>
     </section>
 
     <!-- Experience Content -->
@@ -35,12 +35,12 @@ const lang = getLangFromUrl(Astro.url) as Lang;
 
     <!-- CTA -->
     <section class="text-center mt-8 sm:mt-16 animate-on-scroll flex justify-center px-4">
-      <div class="card p-6 sm:p-8 max-w-2xl mx-auto" style="border-color: var(--comic-blue); border-width: 3px;">
+      <div class="card p-6 sm:p-8 max-w-2xl mx-auto" style="border-top: 2px solid var(--accent); box-shadow: var(--glow-md);">
         <div class="comic-action inline-block mb-3" style="font-size: 0.7rem;">{t('exp.impressed', lang)}</div>
-        <h2 class="comic-title text-xl sm:text-2xl mb-4" style="color: var(--comic-blue);">
+        <h2 class="comic-title text-xl sm:text-2xl mb-4" style="color: var(--text-primary);">
           {t('exp.interestedTitle', lang)}
         </h2>
-        <p class="mb-6" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
+        <p class="mb-6" style="color: var(--text-muted);">
           {t('exp.interestedDesc', lang)}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">

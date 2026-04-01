@@ -18,10 +18,10 @@ const lang = getLangFromUrl(Astro.url) as Lang;
     <!-- CV Header -->
     <section class="relative w-full mb-8 text-center animate-on-scroll px-4">
       <div class="relative z-10 max-w-4xl mx-auto">
-        <h1 class="mt-8 comic-title text-4xl sm:text-5xl md:text-6xl mb-4" style="color: var(--comic-purple);">
+        <h1 class="mt-8 comic-title text-4xl sm:text-5xl md:text-6xl mb-4" style="color: var(--text-primary);">
           {t('cv.title', lang)}
         </h1>
-        <p class="text-base sm:text-lg mb-6" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
+        <p class="text-base sm:text-lg mb-6" style="color: var(--text-muted);">
           {t('cv.subtitle', lang)}
         </p>
 
@@ -41,26 +41,26 @@ const lang = getLangFromUrl(Astro.url) as Lang;
 
     <!-- PDF Viewer -->
     <section class="relative w-full animate-on-scroll px-4">
-      <div class="card p-4 sm:p-6" style="border-color: var(--comic-purple); border-width: 3px;">
+      <div class="card p-4 sm:p-6" style="border-top: 2px solid var(--accent); box-shadow: var(--glow-md);">
         <div class="relative w-full" style="min-height: 80vh;">
           <!-- Desktop PDF -->
           <div class="hidden md:block w-full h-full">
             <iframe
               src="/JuanGuerreroCv_Public.pdf"
               class="w-full rounded-lg"
-              style="height: 85vh; border: 3px solid var(--comic-black); box-shadow: 4px 4px 0 var(--comic-black);"
+              style="height: 85vh; border: 1px solid var(--border); box-shadow: var(--glow-sm);"
               title="Juan Sebastián Guerrero Britos - CV"
             ></iframe>
           </div>
 
           <!-- Mobile Fallback -->
           <div class="md:hidden">
-            <div class="text-center p-8 rounded-lg" style="background: var(--comic-cream); border: 3px solid var(--comic-black);">
-              <i class="fas fa-file-pdf text-6xl mb-4" style="color: var(--comic-red);"></i>
-              <h3 class="comic-title text-xl mb-4" style="color: var(--comic-black);">
+            <div class="text-center p-8 rounded-lg" style="background: var(--bg-elevated); border: 1px solid var(--border);">
+              <i class="fas fa-file-pdf text-6xl mb-4" style="color: var(--accent-light);"></i>
+              <h3 class="comic-title text-xl mb-4" style="color: var(--text-primary);">
                 {t('cv.viewMobile', lang)}
               </h3>
-              <p class="mb-6" style="font-family: var(--font-body); color: var(--gray-600); font-weight: 700;">
+              <p class="mb-6" style="color: var(--text-muted);">
                 {t('cv.mobileDesc', lang)}
               </p>
               <a href="/JuanGuerreroCv_Public.pdf" target="_blank"
@@ -75,8 +75,8 @@ const lang = getLangFromUrl(Astro.url) as Lang;
 
       <!-- Updated Info -->
       <div class="mt-8 text-center">
-        <p class="text-sm" style="font-family: var(--font-accent); color: var(--gray-500);">
-          {t('cv.lastUpdated', lang)} <span style="color: var(--comic-red); font-weight: bold;">November 2025</span>
+        <p class="text-sm" style="color: var(--text-muted);">
+          {t('cv.lastUpdated', lang)} <span style="color: var(--accent-light); font-weight: 600;">November 2025</span>
         </p>
       </div>
     </section>
